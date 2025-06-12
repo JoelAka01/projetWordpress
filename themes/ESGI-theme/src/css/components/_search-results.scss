@@ -1,0 +1,44 @@
+@use "../partials/fonts";
+@use "../partials/functions" as f;
+
+.search-results-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 f.rem(20);
+
+    .search-results-section {
+        margin-bottom: f.rem(40);
+
+        .search-results-type-title {
+            @include fonts.text3;
+            margin-bottom: f.rem(15);
+            color: var(--main-color);
+        }
+
+        .search-results-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            .search-result-item {
+                margin-bottom: f.rem(10);
+
+                a {
+                    color: var(--text-color);
+                    text-decoration: none;
+                    transition: color 0.2s ease;
+
+                    &:hover {
+                        color: var(--main-color);
+                    }
+                }
+            }
+        }
+    }
+
+    .no-results {
+        text-align: center;
+        margin-top: f.rem(30);
+        @include fonts.text4;
+    }
+}
