@@ -5,7 +5,7 @@
  * Version:           1.0.0
  * Author:            ESGI Team
  * Author URI:        https://example.com
- * Tags:              events, business, responsive, dark mode
+ * Tags:              events, business, responsive
  * Text Domain:       ESGI
  * Domain Path:       /
  * Tested up to:      6.4
@@ -28,7 +28,6 @@
 @use "components/footer";
 @use "components/identity-card";
 @use "components/post-list";
-@use "components/dark-mode-toggle";
 @use "components/error-page";
 @use "components/search-results";
 

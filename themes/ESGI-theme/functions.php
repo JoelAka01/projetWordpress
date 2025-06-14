@@ -18,9 +18,6 @@ function esgi_enqueue_assets()
     
     // google font - inter
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap', array(), null);
-    
-    // theme script file
-    wp_enqueue_script('esgi-theme-js', get_template_directory_uri() . '/js/dark-mode.js', array('jquery'), filemtime(get_stylesheet_directory() . '/js/dark-mode.js'), true);
 }
 
 add_action('after_setup_theme', 'esgi_add_theme_support', 0);
@@ -79,29 +76,11 @@ function esgi_customize_register($wp_customize)
         'default' => '#3f51b5',
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_hex_color',
-    ]);
-
-    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'main_color', [
+    ]);    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'main_color', [
         'label' => __('Main Color', 'ESGI'),
         'section' => 'esgi_general',
         'priority' => 1,
     ]));
-
-    // Ajout d'un setting : Dark Mode
-    $wp_customize->add_setting('dark_mode', [
-        'type' => 'theme_mod',
-        'capability' => 'edit_theme_options',
-        'default' => false,
-        'transport' => 'refresh',
-        'sanitize_callback' => 'sanitize_bool_value',
-    ]);
-    
-    $wp_customize->add_control('dark_mode', [
-        'label' => __('Enable Dark Mode by Default', 'ESGI'),
-        'section' => 'esgi_general',
-        'type' => 'checkbox',
-        'priority' => 2,
-    ]);
     
     // social media links
     $wp_customize->add_setting('linkedin_url', [
