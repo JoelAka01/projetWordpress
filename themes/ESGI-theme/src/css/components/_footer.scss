@@ -2,31 +2,78 @@
 @use "../partials/functions" as f;
 
 .site-footer {
-	font-family: fonts.$font1;
-	text-align: center;
-	margin-top: f.rem(58);
+	background-color: #0F1A36;
+	color: var(--white);
+	padding: 3rem 0 1.5rem;
 
-	.row>div {
-		border-top: solid thin var(--light-grey);
-		padding: f.rem(80) 0;
+	.footer-logo {
+		margin-bottom: 1.5rem;
+
+		img {
+			max-width: 120px;
+		}
 	}
 
-	#searchform {
-		margin: f.rem(34) 0;
+	.footer-contact {
+		margin-bottom: 2rem;
 
-		input {
-			border: solid thin var(--light-grey);
+		.contact-title {
+			font-weight: 700;
+			font-size: 1.25rem;
+			margin-bottom: 0.5rem;
 		}
 
-		[type="submit"] {
-			color: var(--text-color);
-			border: none;
-			background-color: transparent;
-			transition: color 0.3s;
-			@include fonts.text4;
+		.contact-phone,
+		.contact-email {
+			margin-bottom: 0.25rem;
+		}
+	}
 
-			&:hover {
-				color: var(--main-color);
+	.footer-bottom {
+		border-top: 1px solid rgba(255, 255, 255, 0.1);
+		padding-top: 1.5rem;
+		margin-top: 2rem;
+		font-size: 0.875rem;
+
+		.copyright {
+			margin-bottom: 0;
+		}
+
+		.social-links {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			gap: 1rem;
+
+			a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				opacity: 0.7;
+				transition: opacity 0.3s ease;
+
+				&:hover {
+					opacity: 1;
+				}
+
+				svg {
+					width: 1.25rem;
+					height: 1.25rem;
+
+					path {
+						fill: var(--white);
+					}
+				}
+			}
+		}
+	}
+
+	// responsive
+	@media (max-width: 768px) {
+		.footer-bottom {
+			.social-links {
+				justify-content: center;
+				margin-top: 1rem;
 			}
 		}
 	}
