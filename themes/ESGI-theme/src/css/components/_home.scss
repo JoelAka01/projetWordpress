@@ -1,0 +1,197 @@
+.hero-section {
+    padding: 3rem 0 5rem;
+    position: relative;
+
+    h1 {
+        font-size: 3rem;
+        line-height: 1.2;
+        margin-bottom: 3rem;
+        max-width: 600px;
+    }
+
+    .hero-image {
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+// about 
+.about-section {
+    padding: 3rem 0;
+
+    h2 {
+        font-size: 2.25rem;
+        margin-bottom: 1.5rem;
+    }
+
+    p {
+        margin-bottom: 2rem;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .about-image {
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .who-are-we {
+        margin-top: 4rem;
+
+        .who-are-we-image {
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+// services 
+.services-section {
+    padding: 3rem 0;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .services-list {
+        margin: 0 -15px;
+    }
+
+    .service-item {
+        margin-bottom: 2rem;
+        text-align: center;
+
+        .service-image {
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: auto;
+                transition: transform 0.3s ease;
+            }
+
+            &:hover img {
+                transform: scale(1.05);
+            }
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-description {
+            font-size: 1rem;
+            color: var(--muted-text);
+        }
+    }
+}
+
+// partners 
+.partners-section {
+    padding: 3rem 0;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .partners-list {
+        margin: 0 -15px;
+    }
+
+    .partner-item {
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            max-width: 80%;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        &:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+    }
+}
+
+// responsive 
+@media (max-width: 992px) {
+    .hero-section {
+        h1 {
+            font-size: 2.5rem;
+        }
+    }
+
+    .about-section {
+        .who-are-we {
+            .who-are-we-image {
+                margin-bottom: 2rem;
+                max-height: 300px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 2rem 0 3rem;
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .about-section {
+        .about-image {
+            margin-top: 2rem;
+        }
+    }
+
+    .services-section {
+        .service-item {
+            margin-bottom: 3rem;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .partners-section {
+        .partners-list {
+            .partner-item {
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
