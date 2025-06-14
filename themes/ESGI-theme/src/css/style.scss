@@ -1,11 +1,11 @@
 /**
  * Theme Name:        ESGI Theme
  * Theme URI:         https://esgi.fr
- * Description:       Un thème d'exercice minimal !!
+ * Description:       A professional WordPress theme for event management companies
  * Version:           1.0.0
  * Author:            ESGI Team
  * Author URI:        https://example.com
- * Tags:              minimalist, dark mode
+ * Tags:              events, business, responsive, dark mode
  * Text Domain:       ESGI
  * Domain Path:       /
  * Tested up to:      6.4
@@ -16,7 +16,6 @@
  */
 
 @use "vendor/modern-normalize";
-// pour le plaisir d'utiliser une lib tierse... ce serait plus opti de faire des composants custom
 @use "vendor/bootstrap-grid";
 
 @use "partials/colors";
@@ -32,3 +31,6 @@
 @use "components/dark-mode-toggle";
 @use "components/error-page";
 @use "components/search-results";
+
+@use "components/home";
+@use "components/pages";
