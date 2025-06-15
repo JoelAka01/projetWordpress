@@ -18,6 +18,9 @@ function esgi_enqueue_assets()
     
     // google fonts - inter
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap', array(), null);
+    
+    // menu javascript
+    wp_enqueue_script('esgi-menu', get_template_directory_uri() . '/src/js/menu.js', array(), filemtime(get_template_directory() . '/src/js/menu.js'), true);
 }
 
 add_action('after_setup_theme', 'esgi_add_theme_support', 0);
@@ -710,3 +713,61 @@ function esgi_maybe_add_title_filter()
 
 // include template functions
 require get_template_directory() . '/inc/template-functions.php';
+
+// redirect home to /
+add_action('template_redirect', 'esgi_redirect_home_urls');
+function esgi_redirect_home_urls() {
+    // visiting /home, redirect to homepage
+    if (is_page('home') && !is_front_page()) {
+        wp_redirect(home_url('/'), 301);
+        exit;
+    }
+    
+    // If theres a /home page that shouldnt be the front page, redirect it
+    $home_page = get_page_by_path('home');
+    if ($home_page && is_page($home_page->ID) && !is_front_page()) {
+        wp_redirect(home_url('/'), 301);
+        exit;
+    }
+}
+
+// ensure consistent url structure in menus
+add_filter('wp_nav_menu_objects', 'esgi_fix_home_menu_urls', 10, 2);
+function esgi_fix_home_menu_urls($items, $args) {
+    foreach ($items as $item) {
+        // convert /home url to homepage url
+        if ($item->url === home_url('/home') || $item->url === home_url('/home/')) {
+            $item->url = home_url('/');
+        }
+    }
+    return $items;
+}
+
+// ensure consistent homepage url handling in wp
+add_action('init', 'esgi_setup_homepage_redirects');
+function esgi_setup_homepage_redirects() {
+    // remove any potential /home page from being set as front page
+    if (get_option('page_on_front')) {
+        $front_page = get_post(get_option('page_on_front'));
+        if ($front_page && $front_page->post_name === 'home') {
+            // if a page named 'home' is set as front page, keep it but ensure url consistency
+            add_filter('home_url', 'esgi_clean_home_url', 10, 4);
+        }
+    }
+}
+
+// clean home url to always be the base url
+function esgi_clean_home_url($url, $path, $orig_scheme, $blog_id) {
+    if ($path === '/home' || $path === '/home/') {
+        return untrailingslashit($url);
+    }
+    return $url;
+}
+
+// Handle canonical URLs for homepage consistency
+add_action('wp_head', 'esgi_homepage_canonical');
+function esgi_homepage_canonical() {
+    if (is_front_page() || is_home()) {
+        echo '<link rel="canonical" href="' . esc_url(home_url('/')) . '" />' . "\n";
+    }
+}

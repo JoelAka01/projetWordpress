@@ -4749,16 +4749,76 @@ section:last-child {
   z-index: 9999;
   transform: translateY(-100%);
   transition: transform 0.3s ease;
-  min-height: 100vh;
+  min-height: auto;
+  max-height: 70vh;
+  overflow-y: auto;
 }
 .site-header .mobile-navigation.active {
   transform: translateY(0);
 }
+@media (min-width: 769px) {
+  .site-header .mobile-navigation {
+    max-height: 70vh;
+  }
+}
+@media (max-width: 768px) {
+  .site-header .mobile-navigation {
+    max-height: 80vh;
+  }
+}
+.site-header .mobile-navigation .mobile-menu-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  width: 32px;
+  height: 32px;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.site-header .mobile-navigation .mobile-menu-close svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+.site-header .mobile-navigation .mobile-menu-close:hover {
+  opacity: 0.7;
+}
+@media (max-width: 768px) {
+  .site-header .mobile-navigation .mobile-menu-close {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+}
+@media (min-width: 769px) {
+  .site-header .mobile-navigation .mobile-menu-close {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+}
 .site-header .mobile-navigation .mobile-nav-content {
-  padding: 2rem 1.5rem;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  min-height: auto;
+}
+@media (min-width: 769px) {
+  .site-header .mobile-navigation .mobile-nav-content {
+    align-items: flex-end;
+    padding-right: 3rem;
+  }
+}
+@media (max-width: 768px) {
+  .site-header .mobile-navigation .mobile-nav-content {
+    align-items: center;
+    text-align: center;
+  }
 }
 .site-header .mobile-navigation .mobile-logo {
   max-width: 120px;
@@ -4771,13 +4831,43 @@ section:last-child {
   height: auto;
   filter: brightness(0) saturate(100%) invert(100%);
 }
+@media (min-width: 769px) {
+  .site-header .mobile-navigation .mobile-logo {
+    align-self: flex-start;
+  }
+}
+@media (max-width: 768px) {
+  .site-header .mobile-navigation .mobile-logo {
+    align-self: center;
+  }
+}
+@media (min-width: 769px) {
+  .site-header .mobile-navigation .mobile-nav-menu {
+    align-self: flex-end;
+  }
+}
+@media (max-width: 768px) {
+  .site-header .mobile-navigation .mobile-nav-menu {
+    align-self: center;
+    width: 100%;
+  }
+}
 .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+}
+@media (min-width: 769px) {
+  .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list {
+    text-align: right;
+  }
+}
+@media (max-width: 768px) {
+  .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list {
+    text-align: center;
+  }
 }
 .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li {
   margin: 0;
@@ -4785,11 +4875,12 @@ section:last-child {
 .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li a {
   color: white;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 2.3rem;
   font-weight: 400;
-  padding: 0.5rem 0;
   display: block;
   transition: color 0.3s ease;
+  border-bottom: none;
+  padding: 0;
 }
 .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li a:hover {
   color: #ccc;
@@ -4797,6 +4888,20 @@ section:last-child {
 .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current-menu-item a, .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current_page_parent a {
   color: white;
   font-weight: 600;
+  position: relative;
+}
+.site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current-menu-item a::after, .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current_page_parent a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #FF4FC0, #FFD0A8);
+  border-radius: 2px;
+}
+.site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li:last-child a {
+  border-bottom: none;
 }
 
 body.menu-open {
@@ -4810,10 +4915,19 @@ body.menu-open {
   .site-header .mobile-menu-toggle {
     display: block;
   }
+  .site-header .mobile-navigation {
+    max-height: 80vh;
+  }
 }
 @media (min-width: 769px) {
   .site-header .main-navigation {
     display: flex;
+  }
+  .site-header .mobile-menu-toggle {
+    display: block;
+  }
+  .site-header .mobile-navigation {
+    max-height: 70vh;
   }
 }
 .site-footer {

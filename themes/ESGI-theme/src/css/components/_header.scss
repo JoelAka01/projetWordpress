@@ -1,6 +1,9 @@
 @use "../partials/fonts";
 @use "../partials/functions" as f;
 
+$menu-gradient-start: #FF4FC0;
+$menu-gradient-end: #FFD0A8;
+
 .site-header {
 	padding: 1.5rem 0;
 	position: relative;
@@ -114,17 +117,80 @@
 		z-index: 9999;
 		transform: translateY(-100%);
 		transition: transform 0.3s ease;
-		min-height: 100vh;
+		min-height: auto; // content determines height
+		max-height: 70vh;
+		overflow-y: auto; // allow scroll if content overflows
 
 		&.active {
 			transform: translateY(0);
 		}
 
+		// desktop 
+		@media (min-width: 769px) {
+			max-height: 70vh;
+		}
+
+		// mobile
+		@media (max-width: 768px) {
+			max-height: 80vh;
+		}
+
+		// close button in top right corner
+		.mobile-menu-close {
+			position: absolute;
+			top: 1.5rem;
+			right: 1.5rem;
+			background: none;
+			border: none;
+			cursor: pointer;
+			padding: 0.5rem;
+			width: 32px;
+			height: 32px;
+			z-index: 10000;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			svg {
+				width: 20px;
+				height: 20px;
+				fill: white;
+			}
+
+			&:hover {
+				opacity: 0.7;
+			}
+
+			// close button stays in top right on all screen
+			@media (max-width: 768px) {
+				top: 1.5rem;
+				right: 1.5rem;
+			}
+
+			@media (min-width: 769px) {
+				top: 1.5rem;
+				right: 1.5rem;
+			}
+		}
+
 		.mobile-nav-content {
-			padding: 2rem 1.5rem;
+			padding: 2rem 1.5rem 1.5rem 1.5rem;
 			display: flex;
 			flex-direction: column;
 			gap: 2rem;
+			min-height: auto;
+
+			// desktop : align items to the right
+			@media (min-width: 769px) {
+				align-items: flex-end;
+				padding-right: 3rem;
+			}
+
+			// mobile : center items
+			@media (max-width: 768px) {
+				align-items: center;
+				text-align: center;
+			}
 		}
 
 		.mobile-logo {
@@ -137,18 +203,50 @@
 			img {
 				width: 100%;
 				height: auto;
-				filter: brightness(0) saturate(100%) invert(100%); // Make logo white
+				filter: brightness(0) saturate(100%) invert(100%); // logo white
+			}
+
+			// desktop: align to the left
+			@media (min-width: 769px) {
+				align-self: flex-start;
+			}
+
+			// mobile: center the logo
+			@media (max-width: 768px) {
+				align-self: center;
 			}
 		}
 
 		.mobile-nav-menu {
+
+			// desktop: align menu to the right
+			@media (min-width: 769px) {
+				align-self: flex-end;
+			}
+
+			// mobile: center the menu
+			@media (max-width: 768px) {
+				align-self: center;
+				width: 100%;
+			}
+
 			.mobile-menu-list {
 				list-style: none;
 				margin: 0;
 				padding: 0;
 				display: flex;
 				flex-direction: column;
-				gap: 1.5rem;
+
+
+				// desktop: right-align text
+				@media (min-width: 769px) {
+					text-align: right;
+				}
+
+				// mobile: center text
+				@media (max-width: 768px) {
+					text-align: center;
+				}
 
 				li {
 					margin: 0;
@@ -156,11 +254,12 @@
 					a {
 						color: white;
 						text-decoration: none;
-						font-size: 1.1rem;
+						font-size: 2.3rem;
 						font-weight: 400;
-						padding: 0.5rem 0;
 						display: block;
 						transition: color 0.3s ease;
+						border-bottom: none;
+						padding: 0;
 
 						&:hover {
 							color: #ccc;
@@ -172,7 +271,23 @@
 						a {
 							color: white;
 							font-weight: 600;
+							position: relative;
+
+							&::after {
+								content: '';
+								position: absolute;
+								bottom: 0;
+								left: 0;
+								width: 100%;
+								height: 3px;
+								background: linear-gradient(to right, $menu-gradient-start, $menu-gradient-end);
+								border-radius: 2px;
+							}
 						}
+					}
+
+					&:last-child a {
+						border-bottom: none;
 					}
 				}
 			}
@@ -194,6 +309,10 @@ body.menu-open {
 		.mobile-menu-toggle {
 			display: block;
 		}
+
+		.mobile-navigation {
+			max-height: 80vh;
+		}
 	}
 }
 
@@ -203,5 +322,12 @@ body.menu-open {
 			display: flex;
 		}
 
+		.mobile-menu-toggle {
+			display: block; //desktop
+		}
+
+		.mobile-navigation {
+			max-height: 70vh;
+		}
 	}
 }

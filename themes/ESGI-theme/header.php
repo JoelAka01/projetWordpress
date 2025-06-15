@@ -22,17 +22,7 @@
                     }
                     ?>
                 </div>
-                  <div class="main-navigation">
-                    <?php
-                    if (has_nav_menu('primary_menu')) {
-                        wp_nav_menu([
-                            'container' => 'nav',
-                            'container_class' => 'main-nav',
-                            'theme_location' => 'primary_menu'
-                        ]);
-                    }
-                    ?>
-                </div>
+
                   <button class="mobile-menu-toggle" aria-label="Toggle menu">
                     <div class="open-icon">
                         <?php echo esgi_getIcon('menu'); ?>
@@ -43,9 +33,11 @@
                 </button>
             </div>
         </div>
-        
-        <!-- menu dropdown -->
+          <!-- menu dropdown -->
         <div class="mobile-navigation">
+            <button class="mobile-menu-close" aria-label="Close menu">
+                <?php echo esgi_getIcon('close'); ?>
+            </button>
             <div class="mobile-nav-content">
                 <div class="mobile-logo">
                     <?php 
@@ -66,7 +58,7 @@
                             'theme_location' => 'primary_menu',
                             'menu_class' => 'mobile-menu-list'
                         ]);
-                    } else {
+                    }/*  else {
                         // fallback menu if no menu is set
                         echo '<ul class="mobile-menu-list">';
                         echo '<li><a href="' . esc_url(home_url('/')) . '">Home</a></li>';
@@ -76,7 +68,7 @@
                         echo '<li><a href="' . esc_url(home_url('/blog')) . '">Blog</a></li>';
                         echo '<li><a href="' . esc_url(home_url('/contacts')) . '">Contacts</a></li>';
                         echo '</ul>';
-                    }
+                    } */
                     ?>
                 </nav>
             </div>
