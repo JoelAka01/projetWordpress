@@ -4756,6 +4756,29 @@ section:last-child {
 .site-header .mobile-navigation.active {
   transform: translateY(0);
 }
+.site-header .mobile-navigation .mobile-menu-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  width: 32px;
+  height: 32px;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.site-header .mobile-navigation .mobile-menu-close svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+}
+.site-header .mobile-navigation .mobile-menu-close:hover {
+  opacity: 0.7;
+}
 .site-header .mobile-navigation .mobile-nav-content {
   padding: 2rem 1.5rem 1.5rem 1.5rem;
   display: flex;

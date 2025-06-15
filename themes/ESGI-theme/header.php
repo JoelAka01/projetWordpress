@@ -43,9 +43,11 @@
                 </button>
             </div>
         </div>
-        
-        <!-- menu dropdown -->
+          <!-- menu dropdown -->
         <div class="mobile-navigation">
+            <button class="mobile-menu-close" aria-label="Close menu">
+                <?php echo esgi_getIcon('close'); ?>
+            </button>
             <div class="mobile-nav-content">
                 <div class="mobile-logo">
                     <?php 
