@@ -771,3 +771,28 @@ function esgi_homepage_canonical() {
         echo '<link rel="canonical" href="' . esc_url(home_url('/')) . '" />' . "\n";
     }
 }
+
+// fix current menu item highlighting for front page
+add_filter('nav_menu_css_class', 'esgi_fix_nav_current_class', 10, 2);
+function esgi_fix_nav_current_class($classes, $item) {
+    // remove existing current classes first
+    $classes = array_diff($classes, array('current_page_item', 'current-menu-item', 'current_page_parent', 'current-menu-parent'));
+    
+    // Check if were on the front page and this menu item links to the homepage
+    if ((is_front_page() || is_home()) && ($item->url == home_url('/') || $item->url == home_url())) {
+        $classes[] = 'current-menu-item';
+        $classes[] = 'current_page_item';
+    }
+    // for other pages let wp handle it normally but ensure consistency
+    elseif (!is_front_page() && !is_home()) {
+        global $wp;
+        $current_url = home_url($wp->request);
+        
+        if ($item->url == $current_url || $item->url == $current_url . '/') {
+            $classes[] = 'current-menu-item';
+            $classes[] = 'current_page_item';
+        }
+    }
+    
+    return $classes;
+}

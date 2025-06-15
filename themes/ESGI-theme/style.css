@@ -4681,40 +4681,11 @@ section:last-child {
   height: auto;
 }
 .site-header .main-navigation {
-  display: flex;
-  align-items: center;
-}
-.site-header .main-navigation nav {
-  margin-right: 2rem;
+  display: none;
 }
 .site-header .header-actions {
   display: flex;
   align-items: center;
-}
-.site-header ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-.site-header ul li {
-  margin: 0 1rem;
-  position: relative;
-}
-.site-header ul li.current-menu-item a, .site-header ul li.current_page_parent a {
-  color: var(--main-color);
-  font-weight: 600;
-}
-.site-header ul li a {
-  padding: 0.5rem 0;
-  display: block;
-  text-decoration: none;
-  color: var(--text-color);
-  transition: color 0.3s ease;
-  font-weight: 500;
-}
-.site-header ul li a:hover {
-  color: var(--main-color);
 }
 .site-header .mobile-menu-toggle {
   display: block;
@@ -4885,12 +4856,12 @@ section:last-child {
 .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li a:hover {
   color: #ccc;
 }
-.site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current-menu-item a, .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current_page_parent a {
+.site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current-menu-item a, .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current_page_parent a, .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current_page_item a {
   color: white;
   font-weight: 600;
   position: relative;
 }
-.site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current-menu-item a::after, .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current_page_parent a::after {
+.site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current-menu-item a::after, .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current_page_parent a::after, .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current_page_item a::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -4921,7 +4892,7 @@ body.menu-open {
 }
 @media (min-width: 769px) {
   .site-header .main-navigation {
-    display: flex;
+    display: none;
   }
   .site-header .mobile-menu-toggle {
     display: block;
