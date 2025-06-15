@@ -19,11 +19,9 @@
                         echo '<a href="' . esc_url(home_url('/')) . '" class="site-logo">';
                         echo '<img src="' . get_template_directory_uri() . '/src/images/svg/logo.svg" alt="' . get_bloginfo('name') . '" />';
                         echo '</a>';
-                    }
-                    ?>
-                </div>
+                    }                    ?>                </div>
 
-                  <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
                     <div class="open-icon">
                         <?php echo esgi_getIcon('menu'); ?>
                     </div>
