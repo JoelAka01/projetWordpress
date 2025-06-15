@@ -5110,16 +5110,23 @@ body.menu-open {
 .home-page .about-section {
   padding: 4rem 0;
 }
-.home-page .about-section h2 {
+.home-page .about-section .about-intro {
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.home-page .about-section .about-intro h2 {
   font-size: 2.25rem;
   margin-bottom: 1.5rem;
   font-weight: 400;
+  color: var(--text-color);
 }
-.home-page .about-section p {
-  margin-bottom: 2rem;
+.home-page .about-section .about-intro p {
   font-size: 1.1rem;
   line-height: 1.6;
   color: var(--text-color);
+  margin-bottom: 0;
 }
 .home-page .about-section .about-image {
   border-radius: 0.5rem;
@@ -5132,7 +5139,7 @@ body.menu-open {
   display: block;
 }
 .home-page .about-section .who-are-we {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 .home-page .about-section .who-are-we .who-are-we-image {
   border-radius: 0.5rem;
@@ -5145,6 +5152,27 @@ body.menu-open {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+.home-page .about-section .who-are-we .content-sections {
+  padding-left: 2rem;
+}
+.home-page .about-section .who-are-we .content-sections .content-item {
+  margin-bottom: 2.5rem;
+}
+.home-page .about-section .who-are-we .content-sections .content-item:last-child {
+  margin-bottom: 0;
+}
+.home-page .about-section .who-are-we .content-sections .content-item h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  color: var(--text-color);
+}
+.home-page .about-section .who-are-we .content-sections .content-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-bottom: 0;
 }
 .home-page .services-section {
   padding: 4rem 0;

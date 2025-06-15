@@ -43,7 +43,7 @@ get_header(); ?>
                         if ($who_image) {
                             echo '<img src="' . esc_url($who_image) . '" alt="Who are we" class="img-fluid">';
                         } else {
-                            echo '<img src="' . get_template_directory_uri() . '/src/images/png/3.png" alt="Who are we" class="img-fluid">';
+                            echo '<img src="' . get_template_directory_uri() . '/src/images/png/2.png" alt="Who are we" class="img-fluid">';
                         }
                         ?>
                     </div>
