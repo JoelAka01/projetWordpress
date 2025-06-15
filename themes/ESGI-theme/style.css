@@ -4756,6 +4756,16 @@ section:last-child {
 .site-header .mobile-navigation.active {
   transform: translateY(0);
 }
+@media (min-width: 769px) {
+  .site-header .mobile-navigation {
+    max-height: 70vh;
+  }
+}
+@media (max-width: 768px) {
+  .site-header .mobile-navigation {
+    max-height: 80vh;
+  }
+}
 .site-header .mobile-navigation .mobile-menu-close {
   position: absolute;
   top: 1.5rem;
@@ -4779,12 +4789,36 @@ section:last-child {
 .site-header .mobile-navigation .mobile-menu-close:hover {
   opacity: 0.7;
 }
+@media (max-width: 768px) {
+  .site-header .mobile-navigation .mobile-menu-close {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+}
+@media (min-width: 769px) {
+  .site-header .mobile-navigation .mobile-menu-close {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+}
 .site-header .mobile-navigation .mobile-nav-content {
   padding: 2rem 1.5rem 1.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   min-height: auto;
+}
+@media (min-width: 769px) {
+  .site-header .mobile-navigation .mobile-nav-content {
+    align-items: flex-end;
+    padding-right: 3rem;
+  }
+}
+@media (max-width: 768px) {
+  .site-header .mobile-navigation .mobile-nav-content {
+    align-items: center;
+    text-align: center;
+  }
 }
 .site-header .mobile-navigation .mobile-logo {
   max-width: 120px;
@@ -4797,6 +4831,27 @@ section:last-child {
   height: auto;
   filter: brightness(0) saturate(100%) invert(100%);
 }
+@media (min-width: 769px) {
+  .site-header .mobile-navigation .mobile-logo {
+    align-self: flex-start;
+  }
+}
+@media (max-width: 768px) {
+  .site-header .mobile-navigation .mobile-logo {
+    align-self: center;
+  }
+}
+@media (min-width: 769px) {
+  .site-header .mobile-navigation .mobile-nav-menu {
+    align-self: flex-end;
+  }
+}
+@media (max-width: 768px) {
+  .site-header .mobile-navigation .mobile-nav-menu {
+    align-self: center;
+    width: 100%;
+  }
+}
 .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list {
   list-style: none;
   margin: 0;
@@ -4804,6 +4859,16 @@ section:last-child {
   display: flex;
   flex-direction: column;
   gap: 0;
+}
+@media (min-width: 769px) {
+  .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list {
+    text-align: right;
+  }
+}
+@media (max-width: 768px) {
+  .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list {
+    text-align: center;
+  }
 }
 .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li {
   margin: 0;

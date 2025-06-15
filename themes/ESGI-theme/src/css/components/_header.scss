@@ -122,6 +122,16 @@
 			transform: translateY(0);
 		}
 
+		// desktop 
+		@media (min-width: 769px) {
+			max-height: 70vh;
+		}
+
+		// mobile
+		@media (max-width: 768px) {
+			max-height: 80vh;
+		}
+
 		// close button in top right corner
 		.mobile-menu-close {
 			position: absolute;
@@ -147,6 +157,17 @@
 			&:hover {
 				opacity: 0.7;
 			}
+
+			// close button stays in top right on all screen
+			@media (max-width: 768px) {
+				top: 1.5rem;
+				right: 1.5rem;
+			}
+
+			@media (min-width: 769px) {
+				top: 1.5rem;
+				right: 1.5rem;
+			}
 		}
 
 		.mobile-nav-content {
@@ -155,6 +176,18 @@
 			flex-direction: column;
 			gap: 2rem;
 			min-height: auto;
+
+			// desktop : align items to the right
+			@media (min-width: 769px) {
+				align-items: flex-end;
+				padding-right: 3rem;
+			}
+
+			// mobile : center items
+			@media (max-width: 768px) {
+				align-items: center;
+				text-align: center;
+			}
 		}
 
 		.mobile-logo {
@@ -169,9 +202,31 @@
 				height: auto;
 				filter: brightness(0) saturate(100%) invert(100%); // logo white
 			}
+
+			// desktop: align to the left
+			@media (min-width: 769px) {
+				align-self: flex-start;
+			}
+
+			// mobile: center the logo
+			@media (max-width: 768px) {
+				align-self: center;
+			}
 		}
 
 		.mobile-nav-menu {
+
+			// desktop: align menu to the right
+			@media (min-width: 769px) {
+				align-self: flex-end;
+			}
+
+			// mobile: center the menu
+			@media (max-width: 768px) {
+				align-self: center;
+				width: 100%;
+			}
+
 			.mobile-menu-list {
 				list-style: none;
 				margin: 0;
@@ -179,6 +234,16 @@
 				display: flex;
 				flex-direction: column;
 				gap: 0; // remove gap
+
+				// desktop: right-align text
+				@media (min-width: 769px) {
+					text-align: right;
+				}
+
+				// mobile: center text
+				@media (max-width: 768px) {
+					text-align: center;
+				}
 
 				li {
 					margin: 0;
