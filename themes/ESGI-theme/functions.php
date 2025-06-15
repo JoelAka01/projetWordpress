@@ -79,14 +79,13 @@ function esgi_customize_register($wp_customize)
     ]);    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'main_color', [
         'label' => __('Main Color', 'ESGI'),
         'section' => 'esgi_general',
-        'priority' => 1,
-    ]));
+        'priority' => 1,    ]));
     
     // social media links
     $wp_customize->add_setting('linkedin_url', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'default' => '',
+        'default' => 'https://linkedin.com',
         'transport' => 'refresh',
         'sanitize_callback' => 'esc_url_raw',
     ]);
@@ -97,11 +96,10 @@ function esgi_customize_register($wp_customize)
         'type' => 'url',
         'priority' => 3,
     ]);
-    
-    $wp_customize->add_setting('facebook_url', [
+      $wp_customize->add_setting('facebook_url', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'default' => '',
+        'default' => 'https://facebook.com',
         'transport' => 'refresh',
         'sanitize_callback' => 'esc_url_raw',
     ]);
@@ -500,11 +498,10 @@ function esgi_customize_register($wp_customize)
         'type' => 'text',
         'priority' => 4,
     ]);
-    
-    $wp_customize->add_setting('footer_ceo_phone', [
+      $wp_customize->add_setting('footer_ceo_phone', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'default' => '+33 1 53 31 25 24',
+        'default' => '+33 1 53 31 25 25',
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
@@ -515,11 +512,10 @@ function esgi_customize_register($wp_customize)
         'type' => 'text',
         'priority' => 5,
     ]);
-    
-    $wp_customize->add_setting('footer_ceo_email', [
+      $wp_customize->add_setting('footer_ceo_email', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'default' => 'ceo@esgi.com',
+        'default' => 'ceo@company.com',
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_email',
     ]);
@@ -530,11 +526,10 @@ function esgi_customize_register($wp_customize)
         'type' => 'email',
         'priority' => 6,
     ]);
-    
-    $wp_customize->add_setting('footer_copyright', [
+      $wp_customize->add_setting('footer_copyright', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
-        'default' => '© ' . date('Y') . ' - Event Template for ESGI',
+        'default' => '2022 Figma Template by ESGI',
         'transport' => 'refresh',
         'sanitize_callback' => 'wp_kses_post',
     ]);
