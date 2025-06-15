@@ -18,6 +18,9 @@ function esgi_enqueue_assets()
     
     // google fonts - inter
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap', array(), null);
+    
+    // menu javascript
+    wp_enqueue_script('esgi-menu', get_template_directory_uri() . '/src/js/menu.js', array(), filemtime(get_template_directory() . '/src/js/menu.js'), true);
 }
 
 add_action('after_setup_theme', 'esgi_add_theme_support', 0);

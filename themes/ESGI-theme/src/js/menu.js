@@ -3,12 +3,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const mobileMenuClose = document.querySelector(".mobile-menu-close");
   const mobileNavigation = document.querySelector(".mobile-navigation");
   const body = document.body;
+  let menuJustOpened = false;
 
   // open mobile menu
   function openMobileMenu() {
     mobileMenuToggle.classList.add("active");
     mobileNavigation.classList.add("active");
     body.classList.add("menu-open");
+
+    // prevent immediate close when clicking outside
+    menuJustOpened = true;
+    setTimeout(() => {
+      menuJustOpened = false;
+    }, 100);
   }
 
   // close mobile menu
@@ -50,16 +57,31 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.key === "Escape" && mobileNavigation.classList.contains("active")) {
       closeMobileMenu();
     }
-  });
+  }); // close menu when clicking outside of it
+  document.addEventListener(
+    "click",
+    function (e) {
+      // dont close immediately after opening
+      if (menuJustOpened) {
+        return;
+      }
 
-  // close menu when clicking outside of it
-  document.addEventListener("click", function (e) {
-    if (
-      mobileNavigation.classList.contains("active") &&
-      !mobileNavigation.contains(e.target) &&
-      !mobileMenuToggle.contains(e.target)
-    ) {
-      closeMobileMenu();
-    }
-  });
+      // check if menu is active and the click was outside the menu area
+      if (mobileNavigation && mobileNavigation.classList.contains("active")) {
+        // dont close if clicking inside the mobile navigation
+        if (mobileNavigation.contains(e.target)) {
+          return;
+        }
+
+        // dont close if clicking on the toggle button
+        if (mobileMenuToggle && mobileMenuToggle.contains(e.target)) {
+          return;
+        }
+
+        // close menu for any other click
+        closeMobileMenu();
+      }
+    },
+    true
+  );
 });

@@ -42,45 +42,8 @@
                     </a>
                 </div>
             </div>
-        </div>
-    </div>
+        </div>    </div>
 </footer>
-
-<script>
-    // mobile menu toggle
-    document.addEventListener('DOMContentLoaded', function() {
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const mobileNavigation = document.querySelector('.mobile-navigation');
-        const mobileMenuClose = document.querySelector('.mobile-menu-close');
-        
-        if (mobileMenuToggle && mobileNavigation) {
-            mobileMenuToggle.addEventListener('click', function() {
-                this.classList.toggle('active');
-                mobileNavigation.classList.toggle('active');
-                document.body.classList.toggle('menu-open');
-            });
-            
-            // close menu when clicking the close button
-            if (mobileMenuClose) {
-                mobileMenuClose.addEventListener('click', function() {
-                    mobileMenuToggle.classList.remove('active');
-                    mobileNavigation.classList.remove('active');
-                    document.body.classList.remove('menu-open');
-                });
-            }
-            
-            // close menu when clicking on a menu item
-            const menuLinks = mobileNavigation.querySelectorAll('a');
-            menuLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    mobileMenuToggle.classList.remove('active');
-                    mobileNavigation.classList.remove('active');
-                    document.body.classList.remove('menu-open');
-                });
-            });
-        }
-    });
-</script>
 
 <?php wp_footer(); ?>
 </body>
