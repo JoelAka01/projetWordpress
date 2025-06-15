@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 $black: #1A1A1A;
 $white: #ffffff;
 $blue: #3f51b5;
@@ -15,7 +17,7 @@ $gray-900: #212529;
 	--bg-color: #{$white};
 	--text-color: #{$black};
 	--main-color: #{$blue};
-	--accent-color: #{darken($blue, 10%)};
+	--accent-color: #{color.adjust($blue, $lightness: -10%)};
 	--light-bg: #{$gray-100};
 	--muted-text: #{$gray-600};
 	--border-color: #{$gray-300};
