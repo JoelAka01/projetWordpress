@@ -46,34 +46,28 @@
     </div>
 </footer>
 
-<!-- mobile menu -->
-<div class="mobile-menu-overlay"></div>
-
 <script>
     // mobile menu toggle
     document.addEventListener('DOMContentLoaded', function() {
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-        const mainNavigation = document.querySelector('.main-navigation');
+        const mobileNavigation = document.querySelector('.mobile-navigation');
         
-        if (mobileMenuToggle && mainNavigation) {
+        if (mobileMenuToggle && mobileNavigation) {
             mobileMenuToggle.addEventListener('click', function() {
                 this.classList.toggle('active');
-                mainNavigation.classList.toggle('active');
+                mobileNavigation.classList.toggle('active');
                 document.body.classList.toggle('menu-open');
-                if (mobileMenuOverlay) {
-                    mobileMenuOverlay.classList.toggle('active');
-                }
             });
             
-            if (mobileMenuOverlay) {
-                mobileMenuOverlay.addEventListener('click', function() {
+            // Close menu when clicking on a menu item
+            const menuLinks = mobileNavigation.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
                     mobileMenuToggle.classList.remove('active');
-                    mainNavigation.classList.remove('active');
+                    mobileNavigation.classList.remove('active');
                     document.body.classList.remove('menu-open');
-                    this.classList.remove('active');
                 });
-            }
+            });
         }
     });
 </script>
