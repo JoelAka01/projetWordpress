@@ -22,17 +22,26 @@
                     }
                     ?>
                 </div>
-                
-                <div class="main-navigation">
+                  <div class="main-navigation">
                     <?php
                     if (has_nav_menu('primary_menu')) {
                         wp_nav_menu([
                             'container' => 'nav',
                             'container_class' => 'main-nav',
                             'theme_location' => 'primary_menu'
-                        ]);                    }
+                        ]);
+                    }
                     ?>
                 </div>
+                
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <div class="open-icon">
+                        <?php echo esgi_getIcon('menu'); ?>
+                    </div>
+                    <div class="close-icon">
+                        <?php echo esgi_getIcon('close'); ?>
+                    </div>
+                </button>
             </div>
         </div>
     </header>
