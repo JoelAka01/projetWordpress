@@ -1,25 +1,26 @@
 <?php get_header(); ?>
 
 <main class="home-page">
-    <div class="container">
-        <section class="hero-section">
+    <div class="container">        <section class="hero-section">
             <div class="row">
-                <div class="col-md-6">
-                    <h1><?php echo get_theme_mod('hero_title', 'A really professional structure for all your events!'); ?></h1>
+                <div class="col-12">
+                    <h1><?php echo get_theme_mod('hero_title', 'A really professional structure<br>for all your events!'); ?></h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <div class="hero-image">
-                        <?php
-                        $hero_image = get_theme_mod('hero_image');
-                        if ($hero_image) {
-                            echo '<img src="' . esc_url($hero_image) . '" alt="Hero Image" class="img-fluid">';
-                        } else {
-                            // display default hero image from theme
-                            echo '<img src="' . get_template_directory_uri() . '/src/images/png/1.png" alt="Hero Image" class="img-fluid">';
-                        }
-                        ?>
+                    <div class="hero-image-wrapper">
+                        <div class="hero-image">
+                            <?php
+                            $hero_image = get_theme_mod('hero_image');
+                            if ($hero_image) {
+                                echo '<img src="' . esc_url($hero_image) . '" alt="Hero Image" class="img-fluid">';
+                            } else {
+                                // display default hero image from theme
+                                echo '<img src="' . get_template_directory_uri() . '/src/images/png/1.png" alt="Hero Image" class="img-fluid">';
+                            }
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -33,8 +33,7 @@ Use a better box model (opinionated).
 
 html {
   /* Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3) */
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   line-height: 1.15; /* 1. Correct the line height in all browsers. */
   -webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
   tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
@@ -68,8 +67,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo,
-    monospace; /* 1 */
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
 
@@ -133,9 +131,9 @@ textarea {
 Correct the inability to style clickable types in iOS and Safari.
 */
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type=button],
+[type=reset],
+[type=submit] {
   -webkit-appearance: button;
 }
 
@@ -165,7 +163,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 1. Correct the odd appearance in Chrome and Safari.
 2. Correct the outline style in Safari.
 */
-[type="search"] {
+[type=search] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
@@ -203,7 +201,7 @@ summary {
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root,
-[data-bs-theme="light"] {
+[data-bs-theme=light] {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -271,16 +269,9 @@ summary {
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
-  --bs-gradient: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.15),
-    rgba(255, 255, 255, 0)
-  );
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
@@ -331,7 +322,7 @@ summary {
   --bs-breakpoint-xxl: 1400px;
 }
 
-[data-bs-theme="dark"] {
+[data-bs-theme=dark] {
   --bs-body-color: #adb5bd;
   --bs-body-color-rgb: 173, 181, 189;
   --bs-body-bg: #212529;
@@ -398,42 +389,27 @@ summary {
 }
 
 @media (min-width: 576px) {
-  .container-sm,
-  .container {
+  .container-sm, .container {
     max-width: 540px;
   }
 }
 @media (min-width: 768px) {
-  .container-md,
-  .container-sm,
-  .container {
+  .container-md, .container-sm, .container {
     max-width: 720px;
   }
 }
 @media (min-width: 992px) {
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container {
+  .container-lg, .container-md, .container-sm, .container {
     max-width: 960px;
   }
 }
 @media (min-width: 1200px) {
-  .container-xl,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container {
+  .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1140px;
   }
 }
 @media (min-width: 1400px) {
-  .container-xxl,
-  .container-xl,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container {
+  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1320px;
   }
 }
@@ -4447,7 +4423,7 @@ summary {
 
 :root {
   --bg-color: #ffffff;
-  --text-color: #1a1a1a;
+  --text-color: #1A1A1A;
   --main-color: #3f51b5;
   --accent-color: rgb(49.8319672131, 64.0696721311, 143.1680327869);
   --light-bg: #f8f9fa;
@@ -4456,11 +4432,11 @@ summary {
   --light-gray: #e9ecef;
   --dark-gray: #495057;
   --white: #ffffff;
-  --black: #1a1a1a;
+  --black: #1A1A1A;
 }
 
 .dark {
-  --bg-color: #1a1a1a;
+  --bg-color: #1A1A1A;
   --text-color: #ffffff;
   --light-bg: #343a40;
   --muted-text: #ced4da;
@@ -4479,8 +4455,7 @@ html {
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -4726,8 +4701,7 @@ section:last-child {
   margin: 0 1rem;
   position: relative;
 }
-.site-header ul li.current-menu-item a,
-.site-header ul li.current_page_parent a {
+.site-header ul li.current-menu-item a, .site-header ul li.current_page_parent a {
   color: var(--main-color);
   font-weight: 600;
 }
@@ -4831,7 +4805,7 @@ body.menu-open {
   }
 }
 .site-footer {
-  background-color: #0f1a36;
+  background-color: #0F1A36;
   color: var(--white);
   padding: 3rem 0 1.5rem;
 }
@@ -5057,11 +5031,7 @@ body.menu-open {
   border-radius: 4px;
   cursor: pointer;
 }
-.error-404
-  .page-content
-  .search-form-container
-  .search-form
-  .search-submit:hover {
+.error-404 .page-content .search-form-container .search-form .search-submit:hover {
   opacity: 0.9;
 }
 
@@ -5086,26 +5056,15 @@ body.menu-open {
   padding: 0;
   margin: 0;
 }
-.search-results-container
-  .search-results-section
-  .search-results-list
-  .search-result-item {
+.search-results-container .search-results-section .search-results-list .search-result-item {
   margin-bottom: 0.625rem;
 }
-.search-results-container
-  .search-results-section
-  .search-results-list
-  .search-result-item
-  a {
+.search-results-container .search-results-section .search-results-list .search-result-item a {
   color: var(--text-color);
   text-decoration: none;
   transition: color 0.2s ease;
 }
-.search-results-container
-  .search-results-section
-  .search-results-list
-  .search-result-item
-  a:hover {
+.search-results-container .search-results-section .search-results-list .search-result-item a:hover {
   color: var(--main-color);
 }
 .search-results-container .no-results {
@@ -5125,14 +5084,23 @@ body.menu-open {
   font-size: 3.5rem;
   line-height: 1.2;
   margin-bottom: 3rem;
-  max-width: 600px;
+  max-width: 100%;
   font-weight: 400;
   color: var(--text-color);
 }
+.home-page .hero-section h1 br {
+  display: block;
+}
+.home-page .hero-section .hero-image-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
 .home-page .hero-section .hero-image {
-  border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  max-width: 70%;
+  margin-left: auto;
 }
 .home-page .hero-section .hero-image img {
   width: 100%;
@@ -5246,8 +5214,7 @@ body.menu-open {
   opacity: 0.7;
   transition: all 0.3s ease;
 }
-.home-page .partners-section .partner-item a:hover img,
-.home-page .partners-section .partner-item:hover img {
+.home-page .partners-section .partner-item a:hover img, .home-page .partners-section .partner-item:hover img {
   filter: grayscale(0%);
   opacity: 1;
 }
