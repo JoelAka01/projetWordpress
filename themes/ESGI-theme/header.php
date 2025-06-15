@@ -8,8 +8,7 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
-    <header class="site-header">
+<body <?php body_class(); ?>>    <header class="site-header">
         <div class="container">
             <div class="header-wrapper">
                 <div class="logo">
@@ -23,11 +22,6 @@
                     }
                     ?>
                 </div>
-                
-                <button class="mobile-menu-toggle" aria-label="Toggle Menu">
-                    <img src="<?php echo get_template_directory_uri(); ?>/src/images/svg/menu.svg" alt="Menu" class="open-icon">
-                    <img src="<?php echo get_template_directory_uri(); ?>/src/images/svg/close.svg" alt="Close" class="close-icon">
-                </button>
                 
                 <div class="main-navigation">
                     <?php

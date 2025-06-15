@@ -125,3 +125,32 @@ section {
 		font-size: 1.75rem;
 	}
 }
+
+/* responsive */
+@media (max-width: 1200px) {
+	html {
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 992px) {
+	html {
+		font-size: 14px;
+	}
+
+	.container {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+@media (max-width: 576px) {
+	html {
+		font-size: 13px;
+	}
+
+	.container {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
