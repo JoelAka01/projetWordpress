@@ -4805,15 +4805,42 @@ body.menu-open {
   }
 }
 .site-footer {
-  background-color: #0F1A36;
+  background-color: #050A3A;
   color: var(--white);
   padding: 3rem 0 1.5rem;
 }
 .site-footer .footer-logo {
   margin-bottom: 1.5rem;
 }
-.site-footer .footer-logo img {
+.site-footer .footer-logo img,
+.site-footer .footer-logo svg {
   max-width: 120px;
+}
+.site-footer .footer-logo svg path:not([fill^="url("]) {
+  fill: white !important;
+}
+.site-footer .footer-logo a {
+  display: inline-block;
+}
+.site-footer .footer-contacts {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4rem;
+}
+.site-footer .footer-contacts .contact-item {
+  text-align: right;
+}
+.site-footer .footer-contacts .contact-item .contact-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--white);
+}
+.site-footer .footer-contacts .contact-item .contact-phone,
+.site-footer .footer-contacts .contact-item .contact-email {
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 .site-footer .footer-contact {
   margin-bottom: 2rem;
@@ -4822,19 +4849,22 @@ body.menu-open {
   font-weight: 700;
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
+  color: var(--white);
 }
 .site-footer .footer-contact .contact-phone,
 .site-footer .footer-contact .contact-email {
   margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 .site-footer .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 1.5rem;
   margin-top: 2rem;
   font-size: 0.875rem;
 }
 .site-footer .footer-bottom .copyright {
   margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.8);
 }
 .site-footer .footer-bottom .social-links {
   display: flex;
@@ -4846,7 +4876,7 @@ body.menu-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.7;
+  opacity: 0.8;
   transition: opacity 0.3s ease;
 }
 .site-footer .footer-bottom .social-links a:hover {
@@ -4860,6 +4890,16 @@ body.menu-open {
   fill: var(--white);
 }
 @media (max-width: 768px) {
+  .site-footer .footer-contacts {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .site-footer .footer-contacts .contact-item {
+    text-align: center;
+  }
+  .site-footer .footer-contact {
+    text-align: center;
+  }
   .site-footer .footer-bottom .social-links {
     justify-content: center;
     margin-top: 1rem;

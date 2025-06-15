@@ -2,15 +2,51 @@
 @use "../partials/functions" as f;
 
 .site-footer {
-	background-color: #0F1A36;
+	background-color: #050A3A;
 	color: var(--white);
 	padding: 3rem 0 1.5rem;
 
 	.footer-logo {
 		margin-bottom: 1.5rem;
 
-		img {
+		img,
+		svg {
 			max-width: 120px;
+		}
+
+		// ESGI logo
+		svg path {
+			&:not([fill^="url("]) {
+				fill: white !important;
+			}
+		}
+
+		a {
+			display: inline-block;
+		}
+	}
+
+	.footer-contacts {
+		display: flex;
+		justify-content: flex-end;
+		gap: 4rem;
+
+		.contact-item {
+			text-align: right;
+
+			.contact-title {
+				font-weight: 700;
+				font-size: 1.25rem;
+				margin-bottom: 0.5rem;
+				color: var(--white);
+			}
+
+			.contact-phone,
+			.contact-email {
+				margin-bottom: 0.25rem;
+				font-size: 0.95rem;
+				color: rgba(255, 255, 255, 0.9);
+			}
 		}
 	}
 
@@ -21,22 +57,25 @@
 			font-weight: 700;
 			font-size: 1.25rem;
 			margin-bottom: 0.5rem;
+			color: var(--white);
 		}
 
 		.contact-phone,
 		.contact-email {
 			margin-bottom: 0.25rem;
+			font-size: 0.95rem;
+			color: rgba(255, 255, 255, 0.9);
 		}
 	}
 
 	.footer-bottom {
-		border-top: 1px solid rgba(255, 255, 255, 0.1);
 		padding-top: 1.5rem;
 		margin-top: 2rem;
 		font-size: 0.875rem;
 
 		.copyright {
 			margin-bottom: 0;
+			color: rgba(255, 255, 255, 0.8);
 		}
 
 		.social-links {
@@ -49,7 +88,7 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				opacity: 0.7;
+				opacity: 0.8;
 				transition: opacity 0.3s ease;
 
 				&:hover {
@@ -70,6 +109,19 @@
 
 	// responsive
 	@media (max-width: 768px) {
+		.footer-contacts {
+			flex-direction: column;
+			gap: 2rem;
+
+			.contact-item {
+				text-align: center;
+			}
+		}
+
+		.footer-contact {
+			text-align: center;
+		}
+
 		.footer-bottom {
 			.social-links {
 				justify-content: center;
