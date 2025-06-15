@@ -69,34 +69,41 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="services-section">
+        </section>        <section class="services-section">
+            <!-- "our services" title on the left -->
             <div class="row">
                 <div class="col-12">
-                    <h2><?php echo get_theme_mod('services_title', 'Our Services'); ?></h2>
+                    <h2 class="services-title"><?php echo get_theme_mod('services_title', 'Our Services'); ?></h2>
                 </div>
             </div>
-            <div class="row services-list">
-                <?php
-                // display service boxes from theme customizer
-                for ($i = 1; $i <= 3; $i++) :
-                    $service_image = get_theme_mod('service_image_' . $i);
-                    $service_title = get_theme_mod('service_title_' . $i, 'Service ' . $i);
-                    
-                    $default_image = get_template_directory_uri() . '/src/images/png/' . ($i + 3) . '.png';
-                ?>
-                <div class="col-md-4 service-item">
-                    <div class="service-image">
-                        <?php if ($service_image) : ?>
-                            <img src="<?php echo esc_url($service_image); ?>" alt="<?php echo esc_attr($service_title); ?>" class="img-fluid">
-                        <?php else : ?>
-                            <img src="<?php echo esc_url($default_image); ?>" alt="<?php echo esc_attr($service_title); ?>" class="img-fluid">
-                        <?php endif; ?>
+            
+            <!-- main content row -->
+            <div class="row services-content">
+                <!-- left side images -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="services-images-container">
+                        <div class="service-image-left">
+                            <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/12.png" alt="Service Image 1" class="img-fluid">
+                        </div>
+                        <div class="service-image-right">
+                            <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/5.png" alt="Service Image 2" class="img-fluid">
+                        </div>
                     </div>
-                    <h3><?php echo esc_html($service_title); ?></h3>
                 </div>
-                <?php endfor; ?>
+                
+                <!-- center text -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="private-parties-wrapper">
+                        <h3 class="private-parties-title">Private Parties</h3>
+                    </div>
+                </div>
+                
+                <!-- right side image -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="featured-image-wrapper">
+                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/3.png" alt="Private Parties Featured" class="img-fluid">
+                    </div>
+                </div>
             </div>
         </section>
 
