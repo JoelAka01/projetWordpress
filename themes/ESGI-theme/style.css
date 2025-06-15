@@ -4717,7 +4717,7 @@ section:last-child {
   color: var(--main-color);
 }
 .site-header .mobile-menu-toggle {
-  display: none;
+  display: block;
   background: none;
   border: none;
   cursor: pointer;
@@ -4812,11 +4812,8 @@ body.menu-open {
   }
 }
 @media (min-width: 769px) {
-  .site-header .mobile-menu-toggle {
-    display: none;
-  }
-  .site-header .mobile-navigation {
-    display: none;
+  .site-header .main-navigation {
+    display: flex;
   }
 }
 .site-footer {

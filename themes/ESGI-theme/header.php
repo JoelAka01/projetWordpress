@@ -44,7 +44,7 @@
             </div>
         </div>
         
-        <!-- Mobile Navigation Dropdown -->
+        <!-- menu dropdown -->
         <div class="mobile-navigation">
             <div class="mobile-nav-content">
                 <div class="mobile-logo">
@@ -67,7 +67,7 @@
                             'menu_class' => 'mobile-menu-list'
                         ]);
                     } else {
-                        // Fallback menu if no menu is set
+                        // fallback menu if no menu is set
                         echo '<ul class="mobile-menu-list">';
                         echo '<li><a href="' . esc_url(home_url('/')) . '">Home</a></li>';
                         echo '<li><a href="' . esc_url(home_url('/about-us')) . '">About Us</a></li>';

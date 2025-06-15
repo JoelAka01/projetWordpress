@@ -74,7 +74,7 @@
 
 	// mobile menu toggle
 	.mobile-menu-toggle {
-		display: none;
+		display: block;
 		background: none;
 		border: none;
 		cursor: pointer;
@@ -104,7 +104,7 @@
 		}
 	}
 
-	// Mobile Navigation Dropdown
+	// mobile menu dropdown
 	.mobile-navigation {
 		position: fixed;
 		top: 0;
@@ -188,23 +188,20 @@ body.menu-open {
 @media (max-width: 768px) {
 	.site-header {
 		.main-navigation {
-			display: none; // Hide desktop navigation on mobile
+			display: none; // hide desktop navigation on mobile
 		}
 
 		.mobile-menu-toggle {
-			display: block; // Show mobile menu toggle on mobile
+			display: block;
 		}
 	}
 }
 
 @media (min-width: 769px) {
 	.site-header {
-		.mobile-menu-toggle {
-			display: none; // Hide mobile menu toggle on desktop
+		.main-navigation {
+			display: flex;
 		}
 
-		.mobile-navigation {
-			display: none; // Hide mobile navigation on desktop
-		}
 	}
 }
