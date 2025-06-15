@@ -14,11 +14,10 @@
 			max-width: 120px;
 		}
 
-		// ESGI logo
-		svg path {
-			&:not([fill^="url("]) {
-				fill: white !important;
-			}
+		// white esgi in footer
+		img,
+		svg {
+			filter: brightness(0) saturate(100%) invert(1) contrast(100%);
 		}
 
 		a {

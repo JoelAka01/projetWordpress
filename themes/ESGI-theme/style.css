@@ -4816,8 +4816,9 @@ body.menu-open {
 .site-footer .footer-logo svg {
   max-width: 120px;
 }
-.site-footer .footer-logo svg path:not([fill^="url("]) {
-  fill: white !important;
+.site-footer .footer-logo img,
+.site-footer .footer-logo svg {
+  filter: brightness(0) saturate(100%) invert(1) contrast(100%);
 }
 .site-footer .footer-logo a {
   display: inline-block;
