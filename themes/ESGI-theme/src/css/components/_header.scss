@@ -266,6 +266,8 @@ body.menu-open {
 body.error404 {
 	.site-header {
 		background-color: #050A3A;
+		margin: 0; // remove any margins
+		padding: 1.5rem 0; // keep padding for header content
 
 		.logo img {
 			filter: brightness(0) saturate(100%) invert(100%); // make logo white

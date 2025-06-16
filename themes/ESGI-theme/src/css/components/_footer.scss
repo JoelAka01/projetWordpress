@@ -133,6 +133,8 @@
 // 404 page specific 
 body.error404 {
 	.site-footer {
+		margin: 0; // remove any margins
+
 		.footer-logo {
 			display: none; // hide logo on 404 pages
 		}

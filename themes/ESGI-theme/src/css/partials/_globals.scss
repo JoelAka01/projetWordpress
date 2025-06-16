@@ -15,6 +15,14 @@ body {
 	margin: 0;
 	padding: 0;
 	transition: background-color 0.3s ease;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+// 404 page specific layout
+body.error404 {
+	background-color: #050A3A;
 }
 
 h1,
@@ -73,6 +81,12 @@ ol {
 
 main {
 	padding: 2rem 0;
+	flex: 1; // makes main take up available space
+}
+
+// 404 page specific - remove padding for seamless design
+body.error404 main {
+	padding: 0;
 }
 
 section {

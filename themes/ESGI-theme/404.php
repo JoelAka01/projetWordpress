@@ -2,7 +2,7 @@
 get_header();
 ?>
 <!-- error-404 page not found -->
-<main id="primary" class="site-main page">
+<main id="primary" class="site-main">
     <section class="error-404 not-found">
         <div class="error-content">
             <h1 class="error-title">404 Error.</h1>
@@ -19,6 +19,5 @@ get_header();
         </div>
     </section>
 </main>
-
 <?php
 get_footer();
