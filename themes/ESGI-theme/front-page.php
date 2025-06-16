@@ -36,22 +36,22 @@
                         <p><?php echo get_theme_mod('about_description', 'Specializing in the creation of exceptional events for private and corporate clients, we design, plan and manage every project from conception to execution.'); ?></p>
                     </div>
                 </div>
-            </div>
-
-            <!-- iùage on left content sections on right -->
+            </div>            <!-- image on left content sections on right -->
             <div class="row who-are-we">
-                <div class="col-md-5">
-                    <div class="who-are-we-image">
-                        <?php
-                        $who_image = get_theme_mod('who_are_we_image');
-                        if ($who_image) {
-                            echo '<img src="' . esc_url($who_image) . '" alt="Who are we" class="img-fluid">';
-                        } else {
-                            // display default who are we image from theme
-                            echo '<img src="' . get_template_directory_uri() . '/src/images/png/2.png" alt="Who are we" class="img-fluid">';
-                        }
-                        ?>
+                <div class="col-md-6">
+                    <div class="aboutus-image-wrapper">
+                        <div class="who-are-we-image">
+                            <?php
+                            $who_image = get_theme_mod('who_are_we_image');
+                            if ($who_image) {
+                                echo '<img src="' . esc_url($who_image) . '" alt="Who are we" class="img-fluid">';
+                            } else {
+                                // display default who are we image from theme
+                                echo '<img src="' . get_template_directory_uri() . '/src/images/png/2.png" alt="Who are we" class="img-fluid">';
+                            }
+                            ?>
                         </div>
+                    </div>
                 </div>
                 <div class="col-md-6">
                     <div class="content-sections">
