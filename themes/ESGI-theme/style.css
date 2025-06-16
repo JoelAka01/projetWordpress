@@ -5197,7 +5197,7 @@ body.error404 .site-footer .footer-logo {
   align-items: center;
   padding: 0;
   margin: 0;
-  min-height: calc(100vh - 340px);
+  min-height: calc(100vh - 380px);
   flex: 1;
 }
 .error-404 .error-content {
