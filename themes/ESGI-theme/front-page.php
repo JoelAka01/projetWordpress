@@ -81,7 +81,8 @@
                     <h2 class="services-title"><?php echo get_theme_mod('services_title', 'Our Services'); ?></h2>
                 </div>
             </div>
-            </div>            <!-- main content row -->
+            </div>            
+            <!-- main content row -->
             <div class="row services-content" style="display:flex;flex-wrap:nowrap;gap:0;padding:0;margin:0;width:100vw;margin-left:calc(-50vw + 50%);">
                 <!-- 1st square: left image -->
                 <div class="service-square d-flex align-items-center justify-content-center" style="height:25vw;padding:0;flex:1 1 0;min-width:0;">
@@ -118,7 +119,7 @@
                     <h2><?php echo get_theme_mod('partners_title', 'Our Partners'); ?></h2>
                 </div>
             </div>
-            </div>
+
 
             <div class="row partners-list">
                 <?php
@@ -145,6 +146,7 @@
                 </div>
                 <?php endfor; ?>
             </div>
+                        </div>
         </section>
 </main>
 
