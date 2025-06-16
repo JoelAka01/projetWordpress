@@ -108,7 +108,6 @@
 			}
 		}
 	}
-
 	// responsive
 	@media (max-width: 768px) {
 		.footer-contacts {
@@ -123,8 +122,16 @@
 		.footer-contact {
 			text-align: center;
 		}
-
+		
+		.footer-logo {
+			text-align: center;
+		}
+		
 		.footer-bottom {
+			.copyright {
+				text-align: center;
+			}
+			
 			.social-links {
 				justify-content: center;
 				margin-top: 1rem;

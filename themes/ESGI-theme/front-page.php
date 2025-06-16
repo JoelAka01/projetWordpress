@@ -35,10 +35,9 @@
                         <h2><?php echo get_theme_mod('about_title', 'About Us'); ?></h2>
                         <p><?php echo get_theme_mod('about_description', 'Specializing in the creation of exceptional events for private and corporate clients, we design, plan and manage every project from conception to execution.'); ?></p>
                     </div>
-                </div>
-            </div>            <!-- image on left content sections on right -->
+                </div>            </div>            <!-- image on left content sections on right -->
             <div class="row who-are-we">
-                <div class="col-md-6">
+                <div class="col-12 col-md-6">
                     <div class="aboutus-image-wrapper">
                         <div class="who-are-we-image">
                             <?php
@@ -52,8 +51,7 @@
                             ?>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6">
+                </div>                <div class="col-12 col-md-6">
                     <div class="content-sections">
                         <div class="content-item">
                             <h2><?php echo get_theme_mod('who_are_we_title', 'Who are we?'); ?></h2>

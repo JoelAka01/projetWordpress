@@ -1,0 +1,83 @@
+// Global responsive ensure stacked layouts on mobile
+
+// (less than 768px)
+@media (max-width: 767.98px) {
+
+    // stacking for all content
+    .row {
+        [class*="col-"] {
+            margin-bottom: 1rem;
+        }
+    }
+
+    // container padding for better mobile spacing
+    .container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    // Page titles
+    .page-title {
+        font-size: 2rem;
+        text-align: center;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    // Improve lisibility content on small screens
+    .page-content {
+        font-size: 0.95rem;
+        line-height: 1.6;
+
+        h2 {
+            font-size: 1.75rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem auto;
+            display: block;
+        }
+    }
+
+    // Fix for overly wide elements
+    .wp-block-image,
+    .wp-block-gallery,
+    .wp-block-cover {
+        margin-left: -1.25rem;
+        margin-right: -1.25rem;
+        width: calc(100% + 2.5rem);
+        max-width: none;
+    }
+}
+
+// (less than 576px)
+@media (max-width: 575.98px) {
+
+    // Smaller title on very small screens
+    .page-title {
+        font-size: 1.75rem;
+    }
+
+    // adjustments to spacing
+    .page-content {
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+        }
+    }
+}

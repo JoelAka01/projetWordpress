@@ -23,6 +23,8 @@
 @use "partials/functions";
 @use "partials/globals";
 @use "partials/post";
+@use "partials/responsive";
+@use "partials/mobile";
 
 @use "components/header";
 @use "components/footer";
