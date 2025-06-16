@@ -81,37 +81,37 @@
                     <h2 class="services-title"><?php echo get_theme_mod('services_title', 'Our Services'); ?></h2>
                 </div>
             </div>
-            </div>
-
-            <!-- main content row -->
-            <div class="row services-content">
-                <!-- left side images -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="services-images-container">
-                        <div class="service-image-left">
-                            <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/12.png" alt="Service Image 1" class="img-fluid">
-                        </div>
-                        <div class="service-image-right">
-                            <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/5.png" alt="Service Image 2" class="img-fluid">
-                        </div>
+            </div>            <!-- main content row -->
+            <div class="row services-content" style="display:flex;flex-wrap:nowrap;gap:0;padding:0;margin:0;width:100vw;margin-left:calc(-50vw + 50%);">
+                <!-- 1st square: left image -->
+                <div class="service-square d-flex align-items-center justify-content-center" style="height:25vw;padding:0;flex:1 1 0;min-width:0;">
+                    <div class="service-image-left w-100 h-100">
+                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/12.png" alt="Service Image 1" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
                     </div>
                 </div>
-                
-                <!-- center text -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="private-parties-wrapper">
-                        <h3 class="private-parties-title">Private Parties</h3>
+                <!-- 2nd square: right image -->
+                <div class="service-square d-flex align-items-center justify-content-center" style="height:25vw;padding:0;flex:1 1 0;min-width:0;">
+                    <div class="service-image-right w-100 h-100">
+                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/5.png" alt="Service Image 2" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
                     </div>
                 </div>
-                
-                <!-- right side image -->
-                <div class="col-lg-4 col-md-12">
-                    <div class="featured-image-wrapper">
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/3.png" alt="Private Parties Featured" class="img-fluid">
+                <!-- 3rd square: text -->
+                <div class="service-square d-flex align-items-center justify-content-center" style="height:25vw;padding:0;flex:1 1 0;min-width:0;">
+                    <div class="private-parties-wrapper w-100 h-100 d-flex align-items-center justify-content-center" style="background:#fff;">
+                        <h3 class="private-parties-title" style="margin:0;">Private Parties</h3>
+                    </div>
+                </div>
+                <!-- 4th square: right image -->
+                <div class="service-square d-flex align-items-center justify-content-center" style="height:25vw;padding:0;flex:1 1 0;min-width:0;">
+                    <div class="featured-image-wrapper w-100 h-100">
+                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/3.png" alt="Private Parties Featured" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
                     </div>
                 </div>
             </div>
-        </section>        <section class="partners-section">
+        </section>       
+        
+        
+        <section class="partners-section">
             <div class="container">       
             <div class="row">
                 <div class="col-12">

@@ -159,42 +159,57 @@
         }
 
         .services-content {
-            align-items: center;
+            display: flex;
+            flex-wrap: nowrap;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            gap: 0;
 
-            .services-images-container {
+            .service-square {
+                flex: 1 1 0;
+                min-width: 0;
+                min-height: 0;
                 display: flex;
-                gap: 0;
-                height: 400px;
+                align-items: center;
+                justify-content: center;
+                height: 28vw; // Responsive square height
+                max-height: 400px;
+                position: relative;
+            }
 
-                .service-image-left,
-                .service-image-right {
-                    flex: 1;
+            .service-image-left,
+            .service-image-right,
+            .featured-image-wrapper {
+                width: 100%;
+                height: 100%;
+
+                img {
+                    width: 100%;
                     height: 100%;
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        display: block;
-                    }
-
-
+                    object-fit: cover;
+                    display: block;
                 }
             }
 
             .private-parties-wrapper {
+                width: 100%;
+                height: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                height: 400px;
+                background: #fff;
 
                 .private-parties-title {
-                    font-size: 1.8rem;
+                    font-size: 2vw;
                     font-weight: 500;
                     color: var(--text-color);
-                    position: relative;
                     margin: 0;
                     text-align: center;
+                    width: 100%;
+                    white-space: normal;
+                    word-break: break-word;
+                    position: relative;
 
                     &:after {
                         content: '';
@@ -202,24 +217,11 @@
                         bottom: -10px;
                         left: 50%;
                         transform: translateX(-50%);
-                        width: 100%;
+                        width: 60%;
                         height: 4px;
                         background: linear-gradient(90deg, #FFD0A8, #FF4FC0);
                     }
                 }
-            }
-
-            .featured-image-wrapper {
-                height: 400px;
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-                }
-
-
             }
         }
     }
@@ -284,19 +286,9 @@
 
         .services-section {
             .services-content {
-                .services-images-container {
-                    margin-bottom: 2rem;
-                }
-
-                .private-parties-wrapper {
-                    padding-left: 0;
-                    margin-bottom: 2rem;
-                    height: auto;
-                    padding: 2rem 0;
-                }
-
-                .featured-image-wrapper {
-                    padding-left: 0;
+                .service-square {
+                    height: 38vw;
+                    max-height: 300px;
                 }
             }
         }
@@ -371,25 +363,12 @@
             }
 
             .services-content {
-                .services-images-container {
-                    height: 150px;
-                    flex-direction: column;
-                    gap: 10px;
+                flex-direction: column;
 
-                    .service-image-left,
-                    .service-image-right {
-                        height: 70px;
-                    }
-                }
-
-                .private-parties-wrapper {
-                    .private-parties-title {
-                        font-size: 1.6rem;
-                    }
-                }
-
-                .featured-image-wrapper {
-                    height: 150px;
+                .service-square {
+                    width: 100% !important;
+                    height: 45vw;
+                    max-height: 180px;
                 }
             }
         }
