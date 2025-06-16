@@ -4818,11 +4818,24 @@ section:last-child {
     align-items: center;
     text-align: center;
   }
+  .site-header .mobile-navigation .mobile-nav-content .mobile-nav-header {
+    align-items: center;
+  }
+  .site-header .mobile-navigation .mobile-nav-content .mobile-logo-section {
+    align-items: center;
+    text-align: center;
+  }
 }
 .site-header .mobile-navigation .mobile-nav-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+}
+.site-header .mobile-navigation .mobile-logo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
 }
 .site-header .mobile-navigation .mobile-logo {
   max-width: 120px;
@@ -4835,14 +4848,56 @@ section:last-child {
   height: auto;
   filter: brightness(0) saturate(100%) invert(100%);
 }
+.site-header .mobile-navigation .mobile-nav-bottom {
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
+}
+@media (min-width: 769px) {
+  .site-header .mobile-navigation .mobile-nav-bottom {
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 768px) {
+  .site-header .mobile-navigation .mobile-nav-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+.site-header .mobile-navigation .search-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  transition: color 0.3s ease;
+  flex-shrink: 0;
+}
+@media (min-width: 769px) {
+  .site-header .mobile-navigation .search-button {
+    margin-top: 0;
+    align-self: flex-start;
+  }
+}
+@media (max-width: 768px) {
+  .site-header .mobile-navigation .search-button {
+    text-align: center;
+  }
+}
+.site-header .mobile-navigation .search-button:hover {
+  color: #ccc;
+}
 @media (min-width: 769px) {
   .site-header .mobile-navigation .mobile-nav-menu {
-    align-self: flex-end;
+    flex: 1;
+    text-align: right;
   }
 }
 @media (max-width: 768px) {
   .site-header .mobile-navigation .mobile-nav-menu {
-    align-self: center;
     width: 100%;
   }
 }

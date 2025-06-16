@@ -140,14 +140,30 @@ $menu-gradient-start: #FFD0A8;
 			@media (max-width: 768px) {
 				align-items: center;
 				text-align: center;
+
+				.mobile-nav-header {
+					align-items: center;
+				}
+
+				.mobile-logo-section {
+					align-items: center;
+					text-align: center;
+				}
 			}
 		}
 
 		// consistent positioning wrapper
 		.mobile-nav-header {
 			display: flex;
-			align-items: center;
+			align-items: flex-start;
 			justify-content: space-between;
+		}
+
+		.mobile-logo-section {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 2rem;
 		}
 
 		.mobile-logo {
@@ -164,16 +180,61 @@ $menu-gradient-start: #FFD0A8;
 			}
 		}
 
+		.mobile-nav-bottom {
+			display: flex;
+			align-items: flex-start;
+			gap: 4rem;
+
+			// desktop: align items to the right
+			@media (min-width: 769px) {
+				justify-content: flex-end;
+			}
+
+			// mobile: center items
+			@media (max-width: 768px) {
+				flex-direction: column;
+				align-items: center;
+				gap: 2rem;
+			}
+		}
+
+		.search-button {
+			background: none;
+			border: none;
+			color: white;
+			font-size: 1rem;
+			cursor: pointer;
+			padding: 0;
+			text-align: left;
+			transition: color 0.3s ease;
+			flex-shrink: 0;
+
+			// desktop: align with first menu item
+			@media (min-width: 769px) {
+				margin-top: 0;
+				align-self: flex-start;
+			}
+
+			// mobile: center the button
+			@media (max-width: 768px) {
+				text-align: center;
+			}
+
+			&:hover {
+				color: #ccc;
+			}
+		}
+
 		.mobile-nav-menu {
 
 			// desktop: align menu to the right
 			@media (min-width: 769px) {
-				align-self: flex-end;
+				flex: 1;
+				text-align: right;
 			}
 
 			// mobile: center the menu
 			@media (max-width: 768px) {
-				align-self: center;
 				width: 100%;
 			}
 
