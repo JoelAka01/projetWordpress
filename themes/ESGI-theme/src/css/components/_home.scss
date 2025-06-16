@@ -5,15 +5,15 @@
     overflow-x: hidden; // no horizontal scroll on main content
 
     .hero-section {
-        padding: 4rem 0 0;
+        padding: 2rem 0;
         position: relative;
 
         h1 {
             font-size: 3.8rem;
             line-height: 1.2;
-            margin-bottom: 3rem;
+            margin-bottom: 9rem;
             max-width: 100%;
-            font-weight: 410;
+            font-weight: 400;
             color: var(--text-color);
 
             br {
@@ -30,7 +30,7 @@
         .hero-image {
 
             overflow: hidden;
-            max-width: 80%;
+            max-width: 79%;
             margin-left: auto;
 
             img {
@@ -43,17 +43,17 @@
 
     // about section
     .about-section {
-        padding: 2rem 0;
+        padding: 0 0;
 
         // centered about us introduction
         .about-intro {
-            margin-bottom: 4rem;
+            margin-bottom: 3rem;
             max-width: 650px;
-            margin-left: 19rem;
+            margin-left: 20rem;
             margin-right: auto;
 
             h2 {
-                font-size: 2.25rem;
+                font-size: 3rem;
                 margin-bottom: 1.5rem;
                 font-weight: 400;
                 color: var(--text-color);
@@ -62,14 +62,14 @@
             p {
                 font-size: 1.1rem;
                 line-height: 1.6;
-                color: var(--text-color);
+                color: var(--muted-text);
                 margin-bottom: 0;
             }
         }
 
         .who-are-we {
             margin-top: 2rem;
-            align-items: center; // Vertically center the content with the image
+            align-items: center;
 
             .aboutus-image-wrapper {
                 display: flex;
@@ -78,31 +78,31 @@
             }
 
             .who-are-we-image {
-                display: inline-block; // Container adapts to image size
-                margin-left: auto; // Push to the right side of column
+                overflow: hidden;
+                max-width: 79%;
+                margin-right: auto;
 
                 img {
-                    width: auto; // Let image use its natural width
-                    max-width: 100%; // Ensure it doesn't overflow container
-                    height: auto; // Maintain aspect ratio
-                    object-fit: cover;
+                    width: 80%;
+                    height: auto;
                     display: block;
-                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
                 }
             }
 
             .content-sections {
                 padding-left: 2rem;
 
+
                 .content-item {
                     margin-bottom: 2.5rem;
+
 
                     &:last-child {
                         margin-bottom: 0;
                     }
 
                     h2 {
-                        font-size: 1.8rem;
+                        font-size: 2.4rem;
                         margin-bottom: 1rem;
                         font-weight: 400;
                         color: var(--text-color);
@@ -110,9 +110,10 @@
 
                     p {
                         font-size: 1rem;
-                        line-height: 1.6;
-                        color: var(--text-color);
+                        line-height: 2;
+                        color: var(--muted-text);
                         margin-bottom: 0;
+                        max-width: 570px;
                     }
                 }
             }
@@ -208,7 +209,7 @@
     // partners section
     .partners-section {
         padding: 4rem 0;
-        overflow-x: hidden; // Prevent horizontal scroll
+        overflow-x: hidden; // no horizontal scroll
 
         h2 {
             margin-bottom: 3rem;
@@ -218,7 +219,7 @@
 
         .partners-list {
             margin: 0 0 0 1rem;
-            max-width: 100vw; // Ensure it doesn't exceed viewport width
+            max-width: 100vw; // wont exceed viewport width
         }
 
         .partner-item {

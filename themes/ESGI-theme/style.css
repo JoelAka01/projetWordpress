@@ -5325,15 +5325,15 @@ body.error404 .site-footer .footer-logo {
   overflow-x: hidden;
 }
 .home-page .hero-section {
-  padding: 4rem 0 0;
+  padding: 2rem 0;
   position: relative;
 }
 .home-page .hero-section h1 {
   font-size: 3.8rem;
   line-height: 1.2;
-  margin-bottom: 3rem;
+  margin-bottom: 9rem;
   max-width: 100%;
-  font-weight: 410;
+  font-weight: 400;
   color: var(--text-color);
 }
 .home-page .hero-section h1 br {
@@ -5346,7 +5346,7 @@ body.error404 .site-footer .footer-logo {
 }
 .home-page .hero-section .hero-image {
   overflow: hidden;
-  max-width: 80%;
+  max-width: 79%;
   margin-left: auto;
 }
 .home-page .hero-section .hero-image img {
@@ -5355,16 +5355,16 @@ body.error404 .site-footer .footer-logo {
   display: block;
 }
 .home-page .about-section {
-  padding: 2rem 0;
+  padding: 0 0;
 }
 .home-page .about-section .about-intro {
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   max-width: 650px;
-  margin-left: 19rem;
+  margin-left: 20rem;
   margin-right: auto;
 }
 .home-page .about-section .about-intro h2 {
-  font-size: 2.25rem;
+  font-size: 3rem;
   margin-bottom: 1.5rem;
   font-weight: 400;
   color: var(--text-color);
@@ -5372,7 +5372,7 @@ body.error404 .site-footer .footer-logo {
 .home-page .about-section .about-intro p {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: var(--text-color);
+  color: var(--muted-text);
   margin-bottom: 0;
 }
 .home-page .about-section .who-are-we {
@@ -5385,16 +5385,14 @@ body.error404 .site-footer .footer-logo {
   margin-top: 2rem;
 }
 .home-page .about-section .who-are-we .who-are-we-image {
-  display: inline-block;
-  margin-left: auto;
+  overflow: hidden;
+  max-width: 79%;
+  margin-right: auto;
 }
 .home-page .about-section .who-are-we .who-are-we-image img {
-  width: auto;
-  max-width: 100%;
+  width: 80%;
   height: auto;
-  object-fit: cover;
   display: block;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 .home-page .about-section .who-are-we .content-sections {
   padding-left: 2rem;
@@ -5406,16 +5404,17 @@ body.error404 .site-footer .footer-logo {
   margin-bottom: 0;
 }
 .home-page .about-section .who-are-we .content-sections .content-item h2 {
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   margin-bottom: 1rem;
   font-weight: 400;
   color: var(--text-color);
 }
 .home-page .about-section .who-are-we .content-sections .content-item p {
   font-size: 1rem;
-  line-height: 1.6;
-  color: var(--text-color);
+  line-height: 2;
+  color: var(--muted-text);
   margin-bottom: 0;
+  max-width: 570px;
 }
 .home-page .services-section {
   padding: 4rem 0;

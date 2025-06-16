@@ -40,8 +40,7 @@
 
             <!-- iùage on left content sections on right -->
             <div class="row who-are-we">
-                <div class="col-md-6">
-                                        <div class="aboutus-image-wrapper">
+                <div class="col-md-5">
                     <div class="who-are-we-image">
                         <?php
                         $who_image = get_theme_mod('who_are_we_image');
@@ -53,7 +52,6 @@
                         }
                         ?>
                         </div>
-                    </div>
                 </div>
                 <div class="col-md-6">
                     <div class="content-sections">
@@ -69,7 +67,7 @@
                         
                         <div class="content-item">
                             <h2><?php echo get_theme_mod('mission_title', 'Our mission'); ?></h2>
-                            <p><?php echo get_theme_mod('mission_content', 'Vivamus ac dictum neque, at elementum ipsum. Aliquam eget convallis diam, quis cursus tortor. Aliquam suscipit eros ut amet velit malesuada eleifum. Fusce in venenatis nulla. Donec quis lorem ut magna tincidunt egestas.'); ?></p>
+                            <p><?php echo get_theme_mod('mission_content', 'Vivamus et viverra neque, ut pharetra ipsum. Aliquam eget <br> consequat libero, quis cursus tortor. Aliquam suscipit eros sit amet <br> velit malesuada dapibus. Fusce in vehicula tellus. Donec quis lorem ut <br> magna tincidunt egestas. '); ?></p>
                         </div>
                     </div>
                 </div>
