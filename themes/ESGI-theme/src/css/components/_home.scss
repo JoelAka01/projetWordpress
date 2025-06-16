@@ -2,6 +2,8 @@
 @use "../partials/functions" as f;
 
 .home-page {
+    overflow-x: hidden; // no horizontal scroll on main content
+
     .hero-section {
         padding: 4rem 0 5rem;
         position: relative;
@@ -210,16 +212,17 @@
     // partners section
     .partners-section {
         padding: 4rem 0;
+        overflow-x: hidden; // Prevent horizontal scroll
 
         h2 {
-            text-align: center;
             margin-bottom: 3rem;
             font-size: 2.25rem;
             font-weight: 400;
         }
 
         .partners-list {
-            margin: 0 -15px;
+            margin: 0 0 0 1rem;
+            max-width: 100vw; // Ensure it doesn't exceed viewport width
         }
 
         .partner-item {

@@ -4452,7 +4452,6 @@ summary {
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
@@ -4466,7 +4465,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
 }
 
 body.error404 {
@@ -5294,6 +5292,9 @@ body.error404 .site-footer .footer-logo {
   letter-spacing: 0.03em;
 }
 
+.home-page {
+  overflow-x: hidden;
+}
 .home-page .hero-section {
   padding: 4rem 0 5rem;
   position: relative;
@@ -5466,15 +5467,16 @@ body.error404 .site-footer .footer-logo {
 }
 .home-page .partners-section {
   padding: 4rem 0;
+  overflow-x: hidden;
 }
 .home-page .partners-section h2 {
-  text-align: center;
   margin-bottom: 3rem;
   font-size: 2.25rem;
   font-weight: 400;
 }
 .home-page .partners-section .partners-list {
-  margin: 0 -15px;
+  margin: 0 0 0 1rem;
+  max-width: 100vw;
 }
 .home-page .partners-section .partner-item {
   margin-bottom: 2rem;

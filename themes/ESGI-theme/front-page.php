@@ -1,11 +1,13 @@
 <?php get_header(); ?>
 
 <main class="home-page">
-    <div class="container">        <section class="hero-section">
+         <section class="hero-section">
+            <div class="container">
             <div class="row">
                 <div class="col-12">
                     <h1><?php echo get_theme_mod('hero_title', 'A really professional structure<br>for all your events!'); ?></h1>
                 </div>
+            </div>
             </div>
             <div class="row">
                 <div class="col-12">
@@ -69,14 +71,17 @@
                     </div>
                 </div>
             </div>
-        </section>        <section class="services-section">
+        </section>        
+        <section class="services-section">
             <!-- "our services" title on the left -->
+                 <div class="container">       
             <div class="row">
                 <div class="col-12">
                     <h2 class="services-title"><?php echo get_theme_mod('services_title', 'Our Services'); ?></h2>
                 </div>
             </div>
-            
+            </div>
+
             <!-- main content row -->
             <div class="row services-content">
                 <!-- left side images -->
@@ -105,14 +110,15 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="partners-section">
+        </section>        <section class="partners-section">
+            <div class="container">       
             <div class="row">
                 <div class="col-12">
                     <h2><?php echo get_theme_mod('partners_title', 'Our Partners'); ?></h2>
                 </div>
             </div>
+            </div>
+
             <div class="row partners-list">
                 <?php
                 // display up to 6 partner logos
@@ -139,7 +145,6 @@
                 <?php endfor; ?>
             </div>
         </section>
-    </div>
 </main>
 
 <?php get_footer(); ?>
