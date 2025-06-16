@@ -163,7 +163,7 @@ $menu-gradient-start: #FFD0A8;
 			display: flex;
 			flex-direction: column;
 			align-items: flex-start;
-			gap: 2rem;
+			gap: 0rem;
 		}
 
 		.mobile-logo {
@@ -202,12 +202,14 @@ $menu-gradient-start: #FFD0A8;
 			background: none;
 			border: none;
 			color: white;
-			font-size: 1rem;
+			font-size: 1.1rem;
 			cursor: pointer;
 			padding: 0;
 			text-align: left;
 			transition: color 0.3s ease;
 			flex-shrink: 0;
+			font-weight: 600;
+			letter-spacing: 1px;
 
 			// desktop: align with first menu item
 			@media (min-width: 769px) {
@@ -226,6 +228,7 @@ $menu-gradient-start: #FFD0A8;
 		}
 
 		.mobile-nav-menu {
+			margin-top: -1rem; // reduce gap between close button and first menu item
 
 			// desktop: align menu to the right
 			@media (min-width: 769px) {
