@@ -129,3 +129,12 @@
 		}
 	}
 }
+
+// 404 page specific 
+body.error404 {
+	.site-footer {
+		.footer-logo {
+			display: none; // hide logo on 404 pages
+		}
+	}
+}

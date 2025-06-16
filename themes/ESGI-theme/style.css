@@ -4879,6 +4879,16 @@ body.menu-open {
   overflow: hidden;
 }
 
+body.error404 .site-header {
+  background-color: #050A3A;
+}
+body.error404 .site-header .logo img {
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+body.error404 .site-header .mobile-menu-toggle svg {
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+
 @media (max-width: 768px) {
   .site-header .main-navigation {
     display: none;
@@ -5002,6 +5012,10 @@ body.menu-open {
     justify-content: center;
     margin-top: 1rem;
   }
+}
+
+body.error404 .site-footer .footer-logo {
+  display: none;
 }
 
 .identity-card {

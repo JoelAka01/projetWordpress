@@ -262,6 +262,21 @@ body.menu-open {
 	overflow: hidden;
 }
 
+// 404 page specific
+body.error404 {
+	.site-header {
+		background-color: #050A3A;
+
+		.logo img {
+			filter: brightness(0) saturate(100%) invert(100%); // make logo white
+		}
+
+		.mobile-menu-toggle svg {
+			filter: brightness(0) saturate(100%) invert(100%); // make hamburger menu white
+		}
+	}
+}
+
 // responsive
 @media (max-width: 768px) {
 	.site-header {
