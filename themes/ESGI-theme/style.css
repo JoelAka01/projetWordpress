@@ -5214,6 +5214,12 @@ body.error404 .site-header .mobile-menu-toggle svg {
   .site-footer .footer-contact {
     text-align: center;
   }
+  .site-footer .footer-logo {
+    text-align: center;
+  }
+  .site-footer .footer-bottom .copyright {
+    text-align: center;
+  }
   .site-footer .footer-bottom .social-links {
     justify-content: center;
     margin-top: 1rem;
