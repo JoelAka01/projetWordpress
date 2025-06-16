@@ -5763,6 +5763,28 @@ body.error404 .site-footer .footer-logo {
   .home-page .about-section .who-are-we .aboutus-image-wrapper {
     margin-top: 0;
     width: 100%;
+    margin-bottom: 2rem;
+  }
+  .home-page .about-section .who-are-we .who-are-we-image {
+    width: 100%;
+    text-align: center;
+  }
+  .home-page .about-section .who-are-we .who-are-we-image img {
+    max-height: 450px;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .home-page .about-section .who-are-we .content-sections {
+    padding: 1rem 0;
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+  .home-page .about-section .who-are-we .content-sections .content-item p {
+    margin: 0 auto;
+  }
+  .home-page .about-section .who-are-we .content-sections .content-item p br {
+    display: none;
   }
   .home-page .services-section .services-title {
     text-align: center;
@@ -5810,6 +5832,23 @@ body.error404 .site-footer .footer-logo {
   }
   .home-page .about-section .about-intro p {
     font-size: 1rem;
+  }
+  .home-page .about-section .who-are-we .aboutus-image-wrapper {
+    margin-bottom: 3rem;
+  }
+  .home-page .about-section .who-are-we .who-are-we-image img {
+    max-height: 400px;
+    object-fit: cover;
+  }
+  .home-page .about-section .who-are-we .content-sections .content-item {
+    margin-bottom: 2rem;
+  }
+  .home-page .about-section .who-are-we .content-sections .content-item h2 {
+    font-size: 1.8rem;
+  }
+  .home-page .about-section .who-are-we .content-sections .content-item p {
+    font-size: 0.95rem;
+    line-height: 1.8;
   }
   .home-page .partners-section .partners-list .partner-item {
     width: 100%;
