@@ -4452,6 +4452,7 @@ summary {
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -4465,6 +4466,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 body.error404 {
@@ -5171,18 +5173,8 @@ body.error404 .site-footer .footer-logo {
 }
 .error-404 .error-content {
   width: 100%;
-  padding: 0 7.5rem;
+  padding: 0;
   text-align: left;
-}
-@media (max-width: 768px) {
-  .error-404 .error-content {
-    padding: 0 2.5rem;
-  }
-}
-@media (max-width: 480px) {
-  .error-404 .error-content {
-    padding: 0 1.25rem;
-  }
 }
 .error-404 .error-title {
   font-family: "Overpass", sans-serif;
