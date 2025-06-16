@@ -417,15 +417,21 @@
         }
 
         .partners-section {
+            h2 {
+                text-align: center;
+            }
+
             .partners-list {
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
 
                 .partner-item {
-                    width: 50%;
+                    width: 50%; // 2 partners per row
+                    flex: 0 0 50%; // Dont allow flex to grow or shrink from 50%
                     margin-bottom: 3rem;
                     justify-content: center;
+                    padding: 0 10px; // Add padding between items
                 }
             }
         }

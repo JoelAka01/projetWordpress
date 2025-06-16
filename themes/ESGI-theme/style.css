@@ -5815,6 +5815,9 @@ body.error404 .site-footer .footer-logo {
   .home-page .services-section .services-content .featured-image-wrapper {
     height: 200px;
   }
+  .home-page .partners-section h2 {
+    text-align: center;
+  }
   .home-page .partners-section .partners-list {
     display: flex;
     flex-wrap: wrap;
@@ -5822,8 +5825,10 @@ body.error404 .site-footer .footer-logo {
   }
   .home-page .partners-section .partners-list .partner-item {
     width: 50%;
+    flex: 0 0 50%;
     margin-bottom: 3rem;
     justify-content: center;
+    padding: 0 10px;
   }
 }
 @media (max-width: 576px) {
