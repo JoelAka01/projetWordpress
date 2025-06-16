@@ -68,20 +68,27 @@
             }
         }
 
-
         .who-are-we {
             margin-top: 2rem;
+            align-items: center; // Vertically center the content with the image
+
+            .aboutus-image-wrapper {
+                display: flex;
+                justify-content: flex-start;
+                margin-top: 2rem;
+            }
 
             .who-are-we-image {
-                overflow: hidden;
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-
+                display: inline-block; // Container adapts to image size
+                margin-left: auto; // Push to the right side of column
 
                 img {
-                    width: 62%;
-                    height: 60%;
+                    width: auto; // Let image use its natural width
+                    max-width: 100%; // Ensure it doesn't overflow container
+                    height: auto; // Maintain aspect ratio
                     object-fit: cover;
                     display: block;
+                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
                 }
             }
 

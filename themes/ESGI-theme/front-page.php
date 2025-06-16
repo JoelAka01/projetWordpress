@@ -26,7 +26,8 @@
                     </div>
                 </div>
             </div>
-        </section>        <section class="about-section">
+        </section>        
+        <section class="about-section">
             <!-- ceneter aboutus section -->
             <div class="row">
                 <div class="col-12">
@@ -40,6 +41,7 @@
             <!-- iùage on left content sections on right -->
             <div class="row who-are-we">
                 <div class="col-md-6">
+                                        <div class="aboutus-image-wrapper">
                     <div class="who-are-we-image">
                         <?php
                         $who_image = get_theme_mod('who_are_we_image');
@@ -50,6 +52,7 @@
                             echo '<img src="' . get_template_directory_uri() . '/src/images/png/2.png" alt="Who are we" class="img-fluid">';
                         }
                         ?>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6">

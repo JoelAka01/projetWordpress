@@ -5351,16 +5351,24 @@ body.error404 .site-footer .footer-logo {
 }
 .home-page .about-section .who-are-we {
   margin-top: 2rem;
+  align-items: center;
+}
+.home-page .about-section .who-are-we .aboutus-image-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 2rem;
 }
 .home-page .about-section .who-are-we .who-are-we-image {
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  margin-left: auto;
 }
 .home-page .about-section .who-are-we .who-are-we-image img {
-  width: 62%;
-  height: 60%;
+  width: auto;
+  max-width: 100%;
+  height: auto;
   object-fit: cover;
   display: block;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 .home-page .about-section .who-are-we .content-sections {
   padding-left: 2rem;
