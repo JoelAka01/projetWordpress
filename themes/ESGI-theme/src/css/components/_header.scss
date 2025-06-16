@@ -1,8 +1,8 @@
 @use "../partials/fonts";
 @use "../partials/functions" as f;
 
-$menu-gradient-start: #FF4FC0;
-$menu-gradient-end: #FFD0A8;
+$menu-gradient-end: #FF4FC0;
+$menu-gradient-start: #FFD0A8;
 
 .site-header {
 	padding: 1.5rem 0;
@@ -97,46 +97,35 @@ $menu-gradient-end: #FFD0A8;
 			max-height: 80vh;
 		}
 
-		// close button in top right corner
+
 		.mobile-menu-close {
-			position: absolute;
-			top: 1.5rem;
-			right: 1.5rem;
+			position: relative;
+			top: 0;
+			right: 0;
 			background: none;
 			border: none;
 			cursor: pointer;
-			padding: 0.5rem;
-			width: 32px;
-			height: 32px;
+			padding: 0;
+			width: 15px;
+			height: 15px;
 			z-index: 10000;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 
 			svg {
-				width: 20px;
-				height: 20px;
+				width: 100%;
+				height: 100%;
 				fill: white;
 			}
 
 			&:hover {
 				opacity: 0.7;
 			}
-
-			// close button stays in top right on all screen
-			@media (max-width: 768px) {
-				top: 1.5rem;
-				right: 1.5rem;
-			}
-
-			@media (min-width: 769px) {
-				top: 1.5rem;
-				right: 1.5rem;
-			}
 		}
 
 		.mobile-nav-content {
-			padding: 2rem 1.5rem 1.5rem 1.5rem;
+			padding: 1.5rem 0 1.5rem 0;
 			display: flex;
 			flex-direction: column;
 			gap: 2rem;
@@ -145,14 +134,36 @@ $menu-gradient-end: #FFD0A8;
 			// desktop : align items to the right
 			@media (min-width: 769px) {
 				align-items: flex-end;
-				padding-right: 3rem;
 			}
 
 			// mobile : center items
 			@media (max-width: 768px) {
 				align-items: center;
 				text-align: center;
+
+				.mobile-nav-header {
+					align-items: center;
+				}
+
+				.mobile-logo-section {
+					align-items: center;
+					text-align: center;
+				}
 			}
+		}
+
+		// consistent positioning wrapper
+		.mobile-nav-header {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+		}
+
+		.mobile-logo-section {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0rem;
 		}
 
 		.mobile-logo {
@@ -167,28 +178,66 @@ $menu-gradient-end: #FFD0A8;
 				height: auto;
 				filter: brightness(0) saturate(100%) invert(100%); // logo white
 			}
+		}
 
-			// desktop: align to the left
+		.mobile-nav-bottom {
+			display: flex;
+			align-items: flex-start;
+			gap: 4rem;
+
+			// desktop: align items to the right
 			@media (min-width: 769px) {
+				justify-content: flex-end;
+			}
+
+			// mobile: center items
+			@media (max-width: 768px) {
+				flex-direction: column;
+				align-items: center;
+				gap: 2rem;
+			}
+		}
+
+		.search-button {
+			background: none;
+			border: none;
+			color: white;
+			font-size: 1.1rem;
+			cursor: pointer;
+			padding: 0;
+			text-align: left;
+			transition: color 0.3s ease;
+			flex-shrink: 0;
+			font-weight: 600;
+			letter-spacing: 1px;
+
+			// desktop: align with first menu item
+			@media (min-width: 769px) {
+				margin-top: 0;
 				align-self: flex-start;
 			}
 
-			// mobile: center the logo
+			// mobile: center the button
 			@media (max-width: 768px) {
-				align-self: center;
+				text-align: center;
+			}
+
+			&:hover {
+				color: #ccc;
 			}
 		}
 
 		.mobile-nav-menu {
+			margin-top: -1rem; // reduce gap between close button and first menu item
 
 			// desktop: align menu to the right
 			@media (min-width: 769px) {
-				align-self: flex-end;
+				flex: 1;
+				text-align: right;
 			}
 
 			// mobile: center the menu
 			@media (max-width: 768px) {
-				align-self: center;
 				width: 100%;
 			}
 
@@ -198,7 +247,6 @@ $menu-gradient-end: #FFD0A8;
 				padding: 0;
 				display: flex;
 				flex-direction: column;
-
 
 				// desktop: right-align text
 				@media (min-width: 769px) {
@@ -216,7 +264,7 @@ $menu-gradient-end: #FFD0A8;
 					a {
 						color: white;
 						text-decoration: none;
-						font-size: 2.3rem;
+						font-size: 3rem;
 						font-weight: 400;
 						display: block;
 						transition: color 0.3s ease;
@@ -235,16 +283,16 @@ $menu-gradient-end: #FFD0A8;
 							color: white;
 							font-weight: 600;
 							position: relative;
+							display: inline-block;
 
 							&::after {
 								content: '';
 								position: absolute;
-								bottom: 0;
+								bottom: 8px;
 								left: 0;
 								width: 100%;
-								height: 3px;
+								height: 3.9px;
 								background: linear-gradient(to right, $menu-gradient-start, $menu-gradient-end);
-								border-radius: 2px;
 							}
 						}
 					}
