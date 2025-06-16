@@ -11,7 +11,9 @@
 
 		img,
 		svg {
-			max-width: 120px;
+			max-width: 250px;
+			width: 180px;
+
 		}
 
 		// white esgi in footer
@@ -34,8 +36,9 @@
 			text-align: right;
 
 			.contact-title {
-				font-weight: 700;
-				font-size: 1.25rem;
+				font-weight: 500;
+				line-height: 3;
+				font-size: 0.9rem;
 				margin-bottom: 0.5rem;
 				color: var(--white);
 			}
@@ -70,7 +73,8 @@
 	.footer-bottom {
 		padding-top: 1.5rem;
 		margin-top: 2rem;
-		font-size: 0.875rem;
+		font-size: 0.675rem;
+		margin-bottom: 2rem;
 
 		.copyright {
 			margin-bottom: 0;
@@ -81,13 +85,12 @@
 			display: flex;
 			align-items: center;
 			justify-content: flex-end;
-			gap: 1rem;
+			gap: 2rem;
 
 			a {
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				opacity: 0.8;
 				transition: opacity 0.3s ease;
 
 				&:hover {
@@ -126,6 +129,17 @@
 				justify-content: center;
 				margin-top: 1rem;
 			}
+		}
+	}
+}
+
+// 404 page specific 
+body.error404 {
+	.site-footer {
+		margin: 0; // remove any margins
+
+		.footer-logo {
+			display: none; // hide logo on 404 pages
 		}
 	}
 }

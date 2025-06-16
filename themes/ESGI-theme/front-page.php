@@ -1,11 +1,13 @@
 <?php get_header(); ?>
 
 <main class="home-page">
-    <div class="container">        <section class="hero-section">
+         <section class="hero-section">
+            <div class="container">
             <div class="row">
                 <div class="col-12">
                     <h1><?php echo get_theme_mod('hero_title', 'A really professional structure<br>for all your events!'); ?></h1>
                 </div>
+            </div>
             </div>
             <div class="row">
                 <div class="col-12">
@@ -24,7 +26,8 @@
                     </div>
                 </div>
             </div>
-        </section>        <section class="about-section">
+        </section>        
+        <section class="about-section">
             <!-- ceneter aboutus section -->
             <div class="row">
                 <div class="col-12">
@@ -33,21 +36,21 @@
                         <p><?php echo get_theme_mod('about_description', 'Specializing in the creation of exceptional events for private and corporate clients, we design, plan and manage every project from conception to execution.'); ?></p>
                     </div>
                 </div>
-            </div>
-
-            <!-- iùage on left content sections on right -->
+            </div>            <!-- image on left content sections on right -->
             <div class="row who-are-we">
                 <div class="col-md-6">
-                    <div class="who-are-we-image">
-                        <?php
-                        $who_image = get_theme_mod('who_are_we_image');
-                        if ($who_image) {
-                            echo '<img src="' . esc_url($who_image) . '" alt="Who are we" class="img-fluid">';
-                        } else {
-                            // display default who are we image from theme
-                            echo '<img src="' . get_template_directory_uri() . '/src/images/png/2.png" alt="Who are we" class="img-fluid">';
-                        }
-                        ?>
+                    <div class="aboutus-image-wrapper">
+                        <div class="who-are-we-image">
+                            <?php
+                            $who_image = get_theme_mod('who_are_we_image');
+                            if ($who_image) {
+                                echo '<img src="' . esc_url($who_image) . '" alt="Who are we" class="img-fluid">';
+                            } else {
+                                // display default who are we image from theme
+                                echo '<img src="' . get_template_directory_uri() . '/src/images/png/2.png" alt="Who are we" class="img-fluid">';
+                            }
+                            ?>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -64,55 +67,60 @@
                         
                         <div class="content-item">
                             <h2><?php echo get_theme_mod('mission_title', 'Our mission'); ?></h2>
-                            <p><?php echo get_theme_mod('mission_content', 'Vivamus ac dictum neque, at elementum ipsum. Aliquam eget convallis diam, quis cursus tortor. Aliquam suscipit eros ut amet velit malesuada eleifum. Fusce in venenatis nulla. Donec quis lorem ut magna tincidunt egestas.'); ?></p>
+                            <p><?php echo get_theme_mod('mission_content', 'Vivamus et viverra neque, ut pharetra ipsum. Aliquam eget <br> consequat libero, quis cursus tortor. Aliquam suscipit eros sit amet <br> velit malesuada dapibus. Fusce in vehicula tellus. Donec quis lorem ut <br> magna tincidunt egestas. '); ?></p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>        <section class="services-section">
+        </section>        
+        <section class="services-section">
             <!-- "our services" title on the left -->
+                 <div class="container">       
             <div class="row">
                 <div class="col-12">
                     <h2 class="services-title"><?php echo get_theme_mod('services_title', 'Our Services'); ?></h2>
                 </div>
             </div>
-            
+            </div>            
             <!-- main content row -->
-            <div class="row services-content">
-                <!-- left side images -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="services-images-container">
-                        <div class="service-image-left">
-                            <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/12.png" alt="Service Image 1" class="img-fluid">
-                        </div>
-                        <div class="service-image-right">
-                            <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/5.png" alt="Service Image 2" class="img-fluid">
-                        </div>
+            <div class="row services-content" style="display:flex;flex-wrap:nowrap;gap:0;padding:0;margin:0;width:100vw;margin-left:calc(-50vw + 50%);">
+                <!-- 1st square: left image -->
+                <div class="service-square d-flex align-items-center justify-content-center" style="height:25vw;padding:0;flex:1 1 0;min-width:0;">
+                    <div class="service-image-left w-100 h-100">
+                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/12.png" alt="Service Image 1" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
                     </div>
                 </div>
-                
-                <!-- center text -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="private-parties-wrapper">
-                        <h3 class="private-parties-title">Private Parties</h3>
+                <!-- 2nd square: right image -->
+                <div class="service-square d-flex align-items-center justify-content-center" style="height:25vw;padding:0;flex:1 1 0;min-width:0;">
+                    <div class="service-image-right w-100 h-100">
+                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/5.png" alt="Service Image 2" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
                     </div>
                 </div>
-                
-                <!-- right side image -->
-                <div class="col-lg-4 col-md-12">
-                    <div class="featured-image-wrapper">
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/3.png" alt="Private Parties Featured" class="img-fluid">
+                <!-- 3rd square: text -->
+                <div class="service-square d-flex align-items-center justify-content-center" style="height:25vw;padding:0;flex:1 1 0;min-width:0;">
+                    <div class="private-parties-wrapper w-100 h-100 d-flex align-items-center justify-content-center" style="background:#fff;">
+                        <h3 class="private-parties-title" style="margin:0;">Private Parties</h3>
+                    </div>
+                </div>
+                <!-- 4th square: right image -->
+                <div class="service-square d-flex align-items-center justify-content-center" style="height:25vw;padding:0;flex:1 1 0;min-width:0;">
+                    <div class="featured-image-wrapper w-100 h-100">
+                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/3.png" alt="Private Parties Featured" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
                     </div>
                 </div>
             </div>
-        </section>
-
+        </section>       
+        
+        
         <section class="partners-section">
+            <div class="container">       
             <div class="row">
                 <div class="col-12">
                     <h2><?php echo get_theme_mod('partners_title', 'Our Partners'); ?></h2>
                 </div>
             </div>
+
+
             <div class="row partners-list">
                 <?php
                 // display up to 6 partner logos
@@ -138,8 +146,8 @@
                 </div>
                 <?php endfor; ?>
             </div>
+                        </div>
         </section>
-    </div>
 </main>
 
 <?php get_footer(); ?>

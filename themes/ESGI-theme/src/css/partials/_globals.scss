@@ -5,6 +5,7 @@
 html {
 	font-size: 16px;
 	scroll-behavior: smooth;
+	overflow-x: hidden; // no horizontal scroll
 }
 
 body {
@@ -15,6 +16,15 @@ body {
 	margin: 0;
 	padding: 0;
 	transition: background-color 0.3s ease;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden; // no horizontal scroll
+}
+
+// 404 page specific layout
+body.error404 {
+	background-color: #050A3A;
 }
 
 h1,
@@ -73,6 +83,12 @@ ol {
 
 main {
 	padding: 2rem 0;
+	flex: 1; // makes main take up available space
+}
+
+// 404 page specific - remove padding for seamless design
+body.error404 main {
+	padding: 0;
 }
 
 section {
@@ -83,14 +99,42 @@ section {
 	}
 }
 
+// Custom container modifications to reduce side gaps
 .container {
-	padding-right: 15px;
-	padding-left: 15px;
+
+	// override vootstrap max width values 
+	@media (min-width: 576px) {
+		max-width: 90% !important;
+	}
+
+	@media (min-width: 768px) {
+		max-width: 90% !important;
+	}
+
+	@media (min-width: 992px) {
+		max-width: 95% !important;
+	}
+
+	@media (min-width: 1200px) {
+		max-width: 85% !important;
+	}
+
+	@media (min-width: 1400px) {
+		max-width: 85% !important;
+	}
+
+	@media (min-width: 1600px) {
+		max-width: 85% !important;
+	}
 }
 
-.img-fluid {
-	max-width: 100%;
-	height: auto;
+// alt : class for specific sections that need full width
+.full-width-section {
+	.container {
+		max-width: none !important;
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
 }
 
 /* responsive typo */
