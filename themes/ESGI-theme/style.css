@@ -4779,42 +4779,30 @@ section:last-child {
   }
 }
 .site-header .mobile-navigation .mobile-menu-close {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
+  position: relative;
+  top: 0;
+  right: 0;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.5rem;
-  width: 32px;
-  height: 32px;
+  padding: 0;
+  width: 40px;
+  height: 30px;
   z-index: 10000;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .site-header .mobile-navigation .mobile-menu-close svg {
-  width: 20px;
-  height: 20px;
+  width: 100%;
+  height: 100%;
   fill: white;
 }
 .site-header .mobile-navigation .mobile-menu-close:hover {
   opacity: 0.7;
 }
-@media (max-width: 768px) {
-  .site-header .mobile-navigation .mobile-menu-close {
-    top: 1.5rem;
-    right: 1.5rem;
-  }
-}
-@media (min-width: 769px) {
-  .site-header .mobile-navigation .mobile-menu-close {
-    top: 1.5rem;
-    right: 1.5rem;
-  }
-}
 .site-header .mobile-navigation .mobile-nav-content {
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  padding: 1.5rem 0 1.5rem 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -4823,7 +4811,6 @@ section:last-child {
 @media (min-width: 769px) {
   .site-header .mobile-navigation .mobile-nav-content {
     align-items: flex-end;
-    padding-right: 3rem;
   }
 }
 @media (max-width: 768px) {
@@ -4831,6 +4818,12 @@ section:last-child {
     align-items: center;
     text-align: center;
   }
+}
+.site-header .mobile-navigation .mobile-nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 }
 .site-header .mobile-navigation .mobile-logo {
   max-width: 120px;
@@ -4842,16 +4835,6 @@ section:last-child {
   width: 100%;
   height: auto;
   filter: brightness(0) saturate(100%) invert(100%);
-}
-@media (min-width: 769px) {
-  .site-header .mobile-navigation .mobile-logo {
-    align-self: flex-start;
-  }
-}
-@media (max-width: 768px) {
-  .site-header .mobile-navigation .mobile-logo {
-    align-self: center;
-  }
 }
 @media (min-width: 769px) {
   .site-header .mobile-navigation .mobile-nav-menu {
