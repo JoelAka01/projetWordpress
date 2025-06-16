@@ -1,8 +1,8 @@
 @use "../partials/fonts";
 @use "../partials/functions" as f;
 
-$menu-gradient-start: #FF4FC0;
-$menu-gradient-end: #FFD0A8;
+$menu-gradient-end: #FF4FC0;
+$menu-gradient-start: #FFD0A8;
 
 .site-header {
 	padding: 1.5rem 0;
@@ -216,7 +216,7 @@ $menu-gradient-end: #FFD0A8;
 					a {
 						color: white;
 						text-decoration: none;
-						font-size: 2.3rem;
+						font-size: 3rem;
 						font-weight: 400;
 						display: block;
 						transition: color 0.3s ease;
@@ -235,6 +235,7 @@ $menu-gradient-end: #FFD0A8;
 							color: white;
 							font-weight: 600;
 							position: relative;
+							display: inline-block;
 
 							&::after {
 								content: '';
@@ -242,7 +243,7 @@ $menu-gradient-end: #FFD0A8;
 								bottom: 0;
 								left: 0;
 								width: 100%;
-								height: 3px;
+								height: 4px;
 								background: linear-gradient(to right, $menu-gradient-start, $menu-gradient-end);
 								border-radius: 2px;
 							}

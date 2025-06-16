@@ -4887,7 +4887,7 @@ section:last-child {
 .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li a {
   color: white;
   text-decoration: none;
-  font-size: 2.3rem;
+  font-size: 3rem;
   font-weight: 400;
   display: block;
   transition: color 0.3s ease;
@@ -4901,6 +4901,7 @@ section:last-child {
   color: white;
   font-weight: 600;
   position: relative;
+  display: inline-block;
 }
 .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current-menu-item a::after, .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current_page_parent a::after, .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current_page_item a::after {
   content: "";
@@ -4908,8 +4909,8 @@ section:last-child {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 3px;
-  background: linear-gradient(to right, #FF4FC0, #FFD0A8);
+  height: 4px;
+  background: linear-gradient(to right, #FFD0A8, #FF4FC0);
   border-radius: 2px;
 }
 .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li:last-child a {
