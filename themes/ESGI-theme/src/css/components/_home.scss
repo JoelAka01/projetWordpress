@@ -5,7 +5,7 @@
     overflow-x: hidden; // no horizontal scroll on main content
 
     .hero-section {
-        padding: 4rem 0 5rem;
+        padding: 4rem 0 0;
         position: relative;
 
         h1 {
@@ -31,7 +31,7 @@
 
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            max-width: 70%;
+            max-width: 80%;
             margin-left: auto;
 
             img {
@@ -44,13 +44,13 @@
 
     // about section
     .about-section {
-        padding: 4rem 0;
+        padding: 2rem 0;
 
         // centered about us introduction
         .about-intro {
             margin-bottom: 4rem;
-            max-width: 600px;
-            margin-left: auto;
+            max-width: 650px;
+            margin-left: 19rem;
             margin-right: auto;
 
             h2 {
@@ -68,16 +68,6 @@
             }
         }
 
-        .about-image {
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-
-            img {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
-        }
 
         .who-are-we {
             margin-top: 2rem;
@@ -85,11 +75,11 @@
             .who-are-we-image {
                 overflow: hidden;
                 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-                height: 100%;
+
 
                 img {
-                    width: 100%;
-                    height: 100%;
+                    width: 62%;
+                    height: 60%;
                     object-fit: cover;
                     display: block;
                 }
