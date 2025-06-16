@@ -280,7 +280,13 @@
         }
 
         .about-section {
+            .about-intro {
+                margin-left: 10rem;
+            }
+
             .who-are-we {
+                gap: 4rem;
+
                 .who-are-we-image {
                     margin-bottom: 2rem;
                     max-height: 300px;
@@ -290,9 +296,12 @@
 
         .services-section {
             .services-content {
+                flex-wrap: wrap;
+
                 .service-square {
                     height: 38vw;
                     max-height: 300px;
+                    flex: 1 1 50%; // 2 columns on tablet
                 }
             }
         }
@@ -307,12 +316,41 @@
             h1 {
                 font-size: 2.2rem;
                 margin-bottom: 2rem;
+                text-align: center;
+            }
+
+            .hero-image {
+                max-width: 100%;
+                margin-left: 0;
             }
         }
 
         .about-section {
+            padding: 2rem 0;
+
+            .about-intro {
+                margin-left: 0;
+                margin-right: 0;
+                text-align: center;
+                max-width: 100%;
+            }
+
             .about-image {
                 margin-top: 2rem;
+            }
+
+            .who-are-we {
+                flex-direction: column;
+                gap: 2rem;
+
+                .col-md-6 {
+                    width: 100%;
+                }
+
+                .aboutus-image-wrapper {
+                    margin-top: 0;
+                    width: 100%;
+                }
             }
         }
 
@@ -324,6 +362,14 @@
             }
 
             .services-content {
+                flex-wrap: wrap;
+
+                .service-square {
+                    flex: 1 1 100%; // full width on mobile
+                    height: auto !important;
+                    min-height: 60vw;
+                }
+
                 .services-images-container {
                     height: 200px;
                     margin-bottom: 2rem;
@@ -340,6 +386,20 @@
                 }
             }
         }
+
+        .partners-section {
+            .partners-list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                .partner-item {
+                    width: 50%;
+                    margin-bottom: 3rem;
+                    justify-content: center;
+                }
+            }
+        }
     }
 }
 
@@ -348,12 +408,31 @@
         .hero-section {
             h1 {
                 font-size: 1.8rem;
+
+                br {
+                    display: none; // no line breaks on mobile
+                }
+            }
+        }
+
+        .about-section {
+            .about-intro {
+                h2 {
+                    font-size: 2rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                }
             }
         }
 
         .partners-section {
             .partners-list {
                 .partner-item {
+                    width: 100%; // full width on extra small devices
+                    margin-bottom: 2rem;
+
                     img {
                         max-width: 100%;
                     }
@@ -371,8 +450,8 @@
 
                 .service-square {
                     width: 100% !important;
-                    height: 45vw;
-                    max-height: 180px;
+                    height: 70vw !important; // tall squares on mobile
+                    max-height: none;
                 }
             }
         }

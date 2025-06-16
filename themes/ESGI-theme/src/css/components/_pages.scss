@@ -118,28 +118,106 @@
 
 // responsive 
 @media (max-width: 768px) {
-    .about-page {
-        .who-are-we {
-            &-image {
-                margin-bottom: 2rem;
-                max-height: 300px;
-            }
+
+    // basic page styles
+    .page {
+        .page-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
         }
     }
 
+    // About page 
+    .about-page {
+        .about-description {
+            text-align: center;
+        }
+
+        .who-are-we {
+            flex-direction: column;
+
+            h2 {
+                text-align: center;
+            }
+
+            &-image {
+                margin-bottom: 2rem;
+                max-height: 300px;
+                order: 2; // image below content on mobile
+            }
+
+            .content-col {
+                order: 1; // content first on mobile
+            }
+        }
+
+        .vision-content,
+        .mission-content {
+            text-align: center;
+        }
+    }
+
+    // partners page
     .partners-page {
+        .page-title {
+            text-align: center;
+        }
+
         .partner-item {
             .partner-logo {
                 height: 100px;
             }
         }
     }
+
+    // services page
+    .services-page {
+        .page-title {
+            text-align: center;
+        }
+    }
 }
 
 @media (max-width: 576px) {
+
+    // basic page styles
+    .page {
+        .page-title {
+            font-size: 1.8rem;
+        }
+    }
+
+    // Services page 
     .services-page {
         .service-item {
             margin-bottom: 2.5rem;
+        }
+    }
+
+    // Partners page 
+    .partners-page {
+        .partners-list {
+            .row {
+                margin-left: -5px;
+                margin-right: -5px;
+            }
+
+            .partner-item {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+        }
+    }
+
+    // About page 
+    .about-page {
+        .about-image {
+            margin-left: -15px;
+            margin-right: -15px;
+            width: calc(100% + 30px);
+            max-width: none;
+            border-radius: 0;
         }
     }
 }

@@ -1,0 +1,93 @@
+// mobile devices
+
+@media (max-width: 767.98px) {
+
+    // images in mobile view
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    // improve tap targets
+    button,
+    a,
+    .btn,
+    input[type="button"],
+    input[type="submit"] {
+        min-height: 44px; // apple recommended minimum
+        min-width: 44px;
+    }
+
+    // set global font sizes
+    body {
+        font-size: 16px; // base font size
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    // overflow issues
+    .container {
+        overflow-x: hidden;
+    }
+
+    // Always give scroll feedback
+    ::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 7px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, .5);
+        -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+    }
+
+    // make mobile menus visible
+    .mobile-navigation.active {
+        max-height: 100vh;
+    }
+}
+
+// very small devices
+@media (max-width: 374.98px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+}
+
+// orientation styles
+@media (orientation: portrait) {
+
+    // spacing for portrait
+    .container {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+
+    // landscape on small devices
+    .mobile-navigation.active {
+        max-height: 100vh;
+        overflow-y: auto;
+    }
+}

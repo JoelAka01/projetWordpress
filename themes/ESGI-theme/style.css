@@ -4701,6 +4701,125 @@ section:last-child {
   font-size: 1.25rem;
 }
 
+@media (max-width: 767.98px) {
+  .row [class*=col-] {
+    margin-bottom: 1rem;
+  }
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .page-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .page-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .page-content h2 {
+    font-size: 1.75rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .page-content h3 {
+    font-size: 1.4rem;
+  }
+  .page-content p {
+    margin-bottom: 1.25rem;
+  }
+  .page-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 1rem auto;
+    display: block;
+  }
+  .wp-block-image,
+  .wp-block-gallery,
+  .wp-block-cover {
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    width: calc(100% + 2.5rem);
+    max-width: none;
+  }
+}
+@media (max-width: 575.98px) {
+  .page-title {
+    font-size: 1.75rem;
+  }
+  .page-content h2 {
+    font-size: 1.5rem;
+  }
+  .page-content h3 {
+    font-size: 1.25rem;
+  }
+}
+@media (max-width: 767.98px) {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  button,
+  a,
+  .btn,
+  input[type=button],
+  input[type=submit] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  body {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  .container {
+    overflow-x: hidden;
+  }
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+  }
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  }
+  .mobile-navigation.active {
+    max-height: 100vh;
+  }
+}
+@media (max-width: 374.98px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+}
+@media (orientation: portrait) {
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+@media (orientation: landscape) and (max-height: 500px) {
+  .mobile-navigation.active {
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+}
 .site-header {
   padding: 1.5rem 0;
   position: relative;
@@ -5590,13 +5709,23 @@ body.error404 .site-footer .footer-logo {
   .home-page .hero-section h1 {
     font-size: 2.8rem;
   }
+  .home-page .about-section .about-intro {
+    margin-left: 10rem;
+  }
+  .home-page .about-section .who-are-we {
+    gap: 4rem;
+  }
   .home-page .about-section .who-are-we .who-are-we-image {
     margin-bottom: 2rem;
     max-height: 300px;
   }
+  .home-page .services-section .services-content {
+    flex-wrap: wrap;
+  }
   .home-page .services-section .services-content .service-square {
     height: 38vw;
     max-height: 300px;
+    flex: 1 1 50%;
   }
 }
 @media (max-width: 768px) {
@@ -5606,14 +5735,47 @@ body.error404 .site-footer .footer-logo {
   .home-page .hero-section h1 {
     font-size: 2.2rem;
     margin-bottom: 2rem;
+    text-align: center;
+  }
+  .home-page .hero-section .hero-image {
+    max-width: 100%;
+    margin-left: 0;
+  }
+  .home-page .about-section {
+    padding: 2rem 0;
+  }
+  .home-page .about-section .about-intro {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    max-width: 100%;
   }
   .home-page .about-section .about-image {
     margin-top: 2rem;
+  }
+  .home-page .about-section .who-are-we {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .home-page .about-section .who-are-we .col-md-6 {
+    width: 100%;
+  }
+  .home-page .about-section .who-are-we .aboutus-image-wrapper {
+    margin-top: 0;
+    width: 100%;
   }
   .home-page .services-section .services-title {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 2rem;
+  }
+  .home-page .services-section .services-content {
+    flex-wrap: wrap;
+  }
+  .home-page .services-section .services-content .service-square {
+    flex: 1 1 100%;
+    height: auto !important;
+    min-height: 60vw;
   }
   .home-page .services-section .services-content .services-images-container {
     height: 200px;
@@ -5625,10 +5787,33 @@ body.error404 .site-footer .footer-logo {
   .home-page .services-section .services-content .featured-image-wrapper {
     height: 200px;
   }
+  .home-page .partners-section .partners-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .home-page .partners-section .partners-list .partner-item {
+    width: 50%;
+    margin-bottom: 3rem;
+    justify-content: center;
+  }
 }
 @media (max-width: 576px) {
   .home-page .hero-section h1 {
     font-size: 1.8rem;
+  }
+  .home-page .hero-section h1 br {
+    display: none;
+  }
+  .home-page .about-section .about-intro h2 {
+    font-size: 2rem;
+  }
+  .home-page .about-section .about-intro p {
+    font-size: 1rem;
+  }
+  .home-page .partners-section .partners-list .partner-item {
+    width: 100%;
+    margin-bottom: 2rem;
   }
   .home-page .partners-section .partners-list .partner-item img {
     max-width: 100%;
@@ -5641,8 +5826,8 @@ body.error404 .site-footer .footer-logo {
   }
   .home-page .services-section .services-content .service-square {
     width: 100% !important;
-    height: 45vw;
-    max-height: 180px;
+    height: 70vw !important;
+    max-height: none;
   }
 }
 .page-title {
@@ -5739,17 +5924,63 @@ body.error404 .site-footer .footer-logo {
 }
 
 @media (max-width: 768px) {
+  .page .page-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+  .about-page .about-description {
+    text-align: center;
+  }
+  .about-page .who-are-we {
+    flex-direction: column;
+  }
+  .about-page .who-are-we h2 {
+    text-align: center;
+  }
   .about-page .who-are-we-image {
     margin-bottom: 2rem;
     max-height: 300px;
+    order: 2;
+  }
+  .about-page .who-are-we .content-col {
+    order: 1;
+  }
+  .about-page .vision-content,
+  .about-page .mission-content {
+    text-align: center;
+  }
+  .partners-page .page-title {
+    text-align: center;
   }
   .partners-page .partner-item .partner-logo {
     height: 100px;
   }
+  .services-page .page-title {
+    text-align: center;
+  }
 }
 @media (max-width: 576px) {
+  .page .page-title {
+    font-size: 1.8rem;
+  }
   .services-page .service-item {
     margin-bottom: 2.5rem;
+  }
+  .partners-page .partners-list .row {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+  .partners-page .partners-list .partner-item {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .about-page .about-image {
+    margin-left: -15px;
+    margin-right: -15px;
+    width: calc(100% + 30px);
+    max-width: none;
+    border-radius: 0;
   }
 }
 
