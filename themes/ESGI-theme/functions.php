@@ -806,19 +806,3 @@ function esgi_fix_nav_current_class($classes, $item)
 
     return $classes;
 }
-
-// Redirige /services vers le template page-services.php même sans page WordPress
-add_action('init', function () {
-    add_rewrite_rule('^services/?$', 'index.php?pagename=services', 'top');
-});
-
-// Forcer l'utilisation du template page-services.php pour /services même sans page WordPress
-add_action('template_redirect', function () {
-    if (trim($_SERVER['REQUEST_URI'], '/') === 'services') {
-        $template = get_template_directory() . '/page-services.php';
-        if (file_exists($template)) {
-            include $template;
-            exit;
-        }
-    }
-});
