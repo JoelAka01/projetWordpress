@@ -68,7 +68,7 @@
                                     'theme_location' => 'primary_menu',
                                     'menu_class' => 'mobile-menu-list'
                                 ]);
-                            }/*  else {
+                            } else {
                             // fallback menu if no menu is set
                             echo '<ul class="mobile-menu-list">';
                             echo '<li><a href="' . esc_url(home_url('/')) . '">Home</a></li>';
@@ -77,7 +77,7 @@
                             echo '<li><a href="' . esc_url(home_url('/partners')) . '">Partners</a></li>';
                             echo '<li><a href="' . esc_url(home_url('/blog')) . '">Blog</a></li>';
                             echo '<li><a href="' . esc_url(home_url('/contacts')) . '">Contacts</a></li>';
-                            echo '</ul>';                        } */
+                            echo '</ul>';                        } 
                         ?>
                         </nav>
                     </div>

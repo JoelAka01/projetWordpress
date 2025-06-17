@@ -15,10 +15,10 @@ function esgi_enqueue_assets()
 {
     // main style file with versioning based on file modification time
     wp_enqueue_style('main', get_stylesheet_uri(), array(), filemtime(get_stylesheet_directory() . '/style.css'));
-    
+
     // google fonts - inter
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap', array(), null);
-    
+
     // menu javascript
     wp_enqueue_script('esgi-menu', get_template_directory_uri() . '/src/js/menu.js', array(), filemtime(get_template_directory() . '/src/js/menu.js'), true);
 }
@@ -40,7 +40,8 @@ function esgi_custom_title($title)
 // Fonction helper pour l'affichage des svg
 
 function esgi_getIcon($name)
-{    $markups = [
+{
+    $markups = [
         'menu' => '<svg width="40" height="10" viewBox="0 0 40 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="40" height="3" fill="#050A3A"/>
 <rect x="19" y="7" width="21" height="3" fill="#050A3A"/>
@@ -86,11 +87,13 @@ function esgi_customize_register($wp_customize)
         'default' => '#3f51b5',
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_hex_color',
-    ]);    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'main_color', [
+    ]);
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'main_color', [
         'label' => __('Main Color', 'ESGI'),
         'section' => 'esgi_general',
-        'priority' => 1,    ]));
-    
+        'priority' => 1,
+    ]));
+
     // social media links
     $wp_customize->add_setting('linkedin_url', [
         'type' => 'theme_mod',
@@ -99,35 +102,35 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'esc_url_raw',
     ]);
-    
+
     $wp_customize->add_control('linkedin_url', [
         'label' => __('LinkedIn URL', 'ESGI'),
         'section' => 'esgi_general',
         'type' => 'url',
         'priority' => 3,
     ]);
-      $wp_customize->add_setting('facebook_url', [
+    $wp_customize->add_setting('facebook_url', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
         'default' => 'https://facebook.com',
         'transport' => 'refresh',
         'sanitize_callback' => 'esc_url_raw',
     ]);
-    
+
     $wp_customize->add_control('facebook_url', [
         'label' => __('Facebook URL', 'ESGI'),
         'section' => 'esgi_general',
         'type' => 'url',
         'priority' => 4,
     ]);
-    
+
     // hero
     $wp_customize->add_section('esgi_hero', [
         'title' => __('Hero Section', 'ESGI'),
         'priority' => 2,
         'capability' => 'edit_theme_options',
     ]);
-    
+
     $wp_customize->add_setting('hero_title', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
@@ -135,33 +138,33 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    
+
     $wp_customize->add_control('hero_title', [
         'label' => __('Hero Title', 'ESGI'),
         'section' => 'esgi_hero',
         'type' => 'text',
         'priority' => 1,
     ]);
-    
+
     $wp_customize->add_setting('hero_image', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
         'transport' => 'refresh',
     ]);
-    
+
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_image', [
         'label' => __('Hero Image', 'ESGI'),
         'section' => 'esgi_hero',
         'priority' => 2,
     ]));
-    
+
     // about
     $wp_customize->add_section('esgi_about', [
         'title' => __('About Section', 'ESGI'),
         'priority' => 3,
         'capability' => 'edit_theme_options',
     ]);
-    
+
     $wp_customize->add_setting('about_title', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
@@ -169,14 +172,14 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    
+
     $wp_customize->add_control('about_title', [
         'label' => __('About Title', 'ESGI'),
         'section' => 'esgi_about',
         'type' => 'text',
         'priority' => 1,
     ]);
-    
+
     $wp_customize->add_setting('about_description', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
@@ -184,26 +187,26 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'wp_kses_post',
     ]);
-    
+
     $wp_customize->add_control('about_description', [
         'label' => __('About Description', 'ESGI'),
         'section' => 'esgi_about',
         'type' => 'textarea',
         'priority' => 2,
     ]);
-    
+
     $wp_customize->add_setting('about_image', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
         'transport' => 'refresh',
     ]);
-    
+
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'about_image', [
         'label' => __('About Image', 'ESGI'),
         'section' => 'esgi_about',
         'priority' => 3,
     ]));
-    
+
     // who are we ?
     $wp_customize->add_setting('who_are_we_title', [
         'type' => 'theme_mod',
@@ -212,14 +215,14 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    
+
     $wp_customize->add_control('who_are_we_title', [
         'label' => __('Who Are We Title', 'ESGI'),
         'section' => 'esgi_about',
         'type' => 'text',
         'priority' => 4,
     ]);
-    
+
     $wp_customize->add_setting('who_are_we_content', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
@@ -227,25 +230,25 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'wp_kses_post',
     ]);
-    
+
     $wp_customize->add_control('who_are_we_content', [
         'label' => __('Who Are We Content', 'ESGI'),
         'section' => 'esgi_about',
         'type' => 'textarea',
         'priority' => 5,
     ]);
-    
+
     $wp_customize->add_setting('who_are_we_image', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
         'transport' => 'refresh',
     ]);
-      $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'who_are_we_image', [
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'who_are_we_image', [
         'label' => __('Who Are We Image', 'ESGI'),
         'section' => 'esgi_about',
         'priority' => 6,
     ]));
-    
+
     // vision
     $wp_customize->add_setting('vision_title', [
         'type' => 'theme_mod',
@@ -254,14 +257,14 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    
+
     $wp_customize->add_control('vision_title', [
         'label' => __('Vision Title', 'ESGI'),
         'section' => 'esgi_about',
         'type' => 'text',
         'priority' => 7,
     ]);
-    
+
     $wp_customize->add_setting('vision_content', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
@@ -269,14 +272,14 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'wp_kses_post',
     ]);
-    
+
     $wp_customize->add_control('vision_content', [
         'label' => __('Vision Content', 'ESGI'),
         'section' => 'esgi_about',
         'type' => 'textarea',
         'priority' => 8,
     ]);
-    
+
     // mission
     $wp_customize->add_setting('mission_title', [
         'type' => 'theme_mod',
@@ -285,14 +288,14 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    
+
     $wp_customize->add_control('mission_title', [
         'label' => __('Mission Title', 'ESGI'),
         'section' => 'esgi_about',
         'type' => 'text',
         'priority' => 9,
     ]);
-    
+
     $wp_customize->add_setting('mission_content', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
@@ -300,21 +303,21 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'wp_kses_post',
     ]);
-    
+
     $wp_customize->add_control('mission_content', [
         'label' => __('Mission Content', 'ESGI'),
         'section' => 'esgi_about',
         'type' => 'textarea',
         'priority' => 10,
     ]);
-    
+
     // services
     $wp_customize->add_section('esgi_services', [
         'title' => __('Services Section', 'ESGI'),
         'priority' => 4,
         'capability' => 'edit_theme_options',
     ]);
-    
+
     $wp_customize->add_setting('services_title', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
@@ -322,14 +325,14 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    
+
     $wp_customize->add_control('services_title', [
         'label' => __('Services Section Title', 'ESGI'),
         'section' => 'esgi_services',
         'type' => 'text',
         'priority' => 1,
     ]);
-    
+
     // settings for 3 service
     for ($i = 1; $i <= 3; $i++) {
         $wp_customize->add_setting('service_title_' . $i, [
@@ -339,14 +342,14 @@ function esgi_customize_register($wp_customize)
             'transport' => 'refresh',
             'sanitize_callback' => 'sanitize_text_field',
         ]);
-        
+
         $wp_customize->add_control('service_title_' . $i, [
             'label' => sprintf(__('Service %d Title', 'ESGI'), $i),
             'section' => 'esgi_services',
             'type' => 'text',
             'priority' => $i * 3 - 1,
         ]);
-        
+
         $wp_customize->add_setting('service_description_' . $i, [
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
@@ -354,34 +357,34 @@ function esgi_customize_register($wp_customize)
             'transport' => 'refresh',
             'sanitize_callback' => 'wp_kses_post',
         ]);
-        
+
         $wp_customize->add_control('service_description_' . $i, [
             'label' => sprintf(__('Service %d Description', 'ESGI'), $i),
             'section' => 'esgi_services',
             'type' => 'textarea',
             'priority' => $i * 3,
         ]);
-        
+
         $wp_customize->add_setting('service_image_' . $i, [
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
         ]);
-        
+
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'service_image_' . $i, [
             'label' => sprintf(__('Service %d Image', 'ESGI'), $i),
             'section' => 'esgi_services',
             'priority' => $i * 3 + 1,
         ]));
     }
-    
+
     // partners
     $wp_customize->add_section('esgi_partners', [
         'title' => __('Partners Section', 'ESGI'),
         'priority' => 5,
         'capability' => 'edit_theme_options',
     ]);
-    
+
     $wp_customize->add_setting('partners_title', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
@@ -389,14 +392,14 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    
+
     $wp_customize->add_control('partners_title', [
         'label' => __('Partners Section Title', 'ESGI'),
         'section' => 'esgi_partners',
         'type' => 'text',
         'priority' => 1,
     ]);
-    
+
     // settings for 6 partners
     for ($i = 1; $i <= 6; $i++) {
         $wp_customize->add_setting('partner_name_' . $i, [
@@ -406,14 +409,14 @@ function esgi_customize_register($wp_customize)
             'transport' => 'refresh',
             'sanitize_callback' => 'sanitize_text_field',
         ]);
-        
+
         $wp_customize->add_control('partner_name_' . $i, [
             'label' => sprintf(__('Partner %d Name', 'ESGI'), $i),
             'section' => 'esgi_partners',
             'type' => 'text',
             'priority' => $i * 3 - 1,
         ]);
-        
+
         $wp_customize->add_setting('partner_url_' . $i, [
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
@@ -421,34 +424,34 @@ function esgi_customize_register($wp_customize)
             'transport' => 'refresh',
             'sanitize_callback' => 'esc_url_raw',
         ]);
-        
+
         $wp_customize->add_control('partner_url_' . $i, [
             'label' => sprintf(__('Partner %d URL', 'ESGI'), $i),
             'section' => 'esgi_partners',
             'type' => 'url',
             'priority' => $i * 3,
         ]);
-        
+
         $wp_customize->add_setting('partner_logo_' . $i, [
             'type' => 'theme_mod',
             'capability' => 'edit_theme_options',
             'transport' => 'refresh',
         ]);
-        
+
         $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'partner_logo_' . $i, [
             'label' => sprintf(__('Partner %d Logo', 'ESGI'), $i),
             'section' => 'esgi_partners',
             'priority' => $i * 3 + 1,
         ]));
     }
-    
+
     // footer
     $wp_customize->add_section('esgi_footer', [
         'title' => __('Footer Section', 'ESGI'),
         'priority' => 6,
         'capability' => 'edit_theme_options',
     ]);
-    
+
     $wp_customize->add_setting('footer_contact_title', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
@@ -456,14 +459,14 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    
+
     $wp_customize->add_control('footer_contact_title', [
         'label' => __('Contact Title', 'ESGI'),
         'section' => 'esgi_footer',
         'type' => 'text',
         'priority' => 1,
     ]);
-    
+
     $wp_customize->add_setting('footer_contact_phone', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
@@ -471,14 +474,14 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    
+
     $wp_customize->add_control('footer_contact_phone', [
         'label' => __('Contact Phone', 'ESGI'),
         'section' => 'esgi_footer',
         'type' => 'text',
         'priority' => 2,
     ]);
-    
+
     $wp_customize->add_setting('footer_contact_email', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
@@ -486,14 +489,14 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_email',
     ]);
-    
+
     $wp_customize->add_control('footer_contact_email', [
         'label' => __('Contact Email', 'ESGI'),
         'section' => 'esgi_footer',
         'type' => 'email',
         'priority' => 3,
     ]);
-    
+
     $wp_customize->add_setting('footer_ceo_title', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
@@ -501,53 +504,54 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    
+
     $wp_customize->add_control('footer_ceo_title', [
         'label' => __('CEO Title', 'ESGI'),
         'section' => 'esgi_footer',
         'type' => 'text',
         'priority' => 4,
     ]);
-      $wp_customize->add_setting('footer_ceo_phone', [
+    $wp_customize->add_setting('footer_ceo_phone', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
         'default' => '+33 1 53 31 25 25',
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_text_field',
     ]);
-    
+
     $wp_customize->add_control('footer_ceo_phone', [
         'label' => __('CEO Phone', 'ESGI'),
         'section' => 'esgi_footer',
         'type' => 'text',
         'priority' => 5,
     ]);
-      $wp_customize->add_setting('footer_ceo_email', [
+    $wp_customize->add_setting('footer_ceo_email', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
         'default' => 'ceo@company.com',
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_email',
     ]);
-    
+
     $wp_customize->add_control('footer_ceo_email', [
         'label' => __('CEO Email', 'ESGI'),
         'section' => 'esgi_footer',
         'type' => 'email',
         'priority' => 6,
     ]);
-      $wp_customize->add_setting('footer_copyright', [
+    $wp_customize->add_setting('footer_copyright', [
         'type' => 'theme_mod',
         'capability' => 'edit_theme_options',
         'default' => '2022 Figma Template by ESGI',
         'transport' => 'refresh',
         'sanitize_callback' => 'wp_kses_post',
     ]);
-    
+
     $wp_customize->add_control('footer_copyright', [
         'label' => __('Copyright Text', 'ESGI'),
         'section' => 'esgi_footer',
-        'type' => 'text',        'priority' => 7,
+        'type' => 'text',
+        'priority' => 7,
     ]);
 
     // Ajout d'un setting pour la recherche dans le footer
@@ -570,9 +574,9 @@ function esgi_customize_register($wp_customize)
             'description' => __('Afficher le formulaire de recherche dans le footer', 'ESGI'),
         ]
     );
-    
+
     // Ajout des settings pour les urls des reseaux sociaux
-    
+
     // Twitter
     $wp_customize->add_setting('url_twitter', [
         'type' => 'theme_mod',
@@ -581,7 +585,7 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'esc_url_raw',
     ]);
-    
+
     $wp_customize->add_control(
         'url_twitter',
         [
@@ -592,7 +596,7 @@ function esgi_customize_register($wp_customize)
             'description' => __('URL vers votre profil Twitter', 'ESGI'),
         ]
     );
-    
+
     // Facebook
     $wp_customize->add_setting('url_facebook', [
         'type' => 'theme_mod',
@@ -601,7 +605,7 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'esc_url_raw',
     ]);
-    
+
     $wp_customize->add_control(
         'url_facebook',
         [
@@ -612,7 +616,7 @@ function esgi_customize_register($wp_customize)
             'description' => __('URL vers votre profil Facebook', 'ESGI'),
         ]
     );
-    
+
     // Google
     $wp_customize->add_setting('url_google', [
         'type' => 'theme_mod',
@@ -621,7 +625,7 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'esc_url_raw',
     ]);
-    
+
     $wp_customize->add_control(
         'url_google',
         [
@@ -632,7 +636,7 @@ function esgi_customize_register($wp_customize)
             'description' => __('URL vers votre profil Google', 'ESGI'),
         ]
     );
-    
+
     // LinkedIn
     $wp_customize->add_setting('url_linkedin', [
         'type' => 'theme_mod',
@@ -641,7 +645,7 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'esc_url_raw',
     ]);
-    
+
     $wp_customize->add_control(
         'url_linkedin',
         [
@@ -652,7 +656,7 @@ function esgi_customize_register($wp_customize)
             'description' => __('URL vers votre profil LinkedIn', 'ESGI'),
         ]
     );
-    
+
     // Ajout d'un setting pour les titres en majuscules
     $wp_customize->add_setting('uppercase_title', [
         'type' => 'theme_mod',
@@ -661,9 +665,10 @@ function esgi_customize_register($wp_customize)
         'transport' => 'refresh',
         'sanitize_callback' => 'sanitize_bool_value',
     ]);
-    
+
     // Ajout d'un control pour les titres en majuscules
-    $wp_customize->add_control(        'uppercase_title',
+    $wp_customize->add_control(
+        'uppercase_title',
         [
             'type' => 'checkbox',
             'priority' => 8,
@@ -672,7 +677,6 @@ function esgi_customize_register($wp_customize)
             'description' => __('Afficher tous les titres en majuscules', 'ESGI'),
         ]
     );
-
 }
 
 // helpers for customizer
@@ -716,13 +720,14 @@ require get_template_directory() . '/inc/template-functions.php';
 
 // redirect home to /
 add_action('template_redirect', 'esgi_redirect_home_urls');
-function esgi_redirect_home_urls() {
+function esgi_redirect_home_urls()
+{
     // visiting /home, redirect to homepage
     if (is_page('home') && !is_front_page()) {
         wp_redirect(home_url('/'), 301);
         exit;
     }
-    
+
     // If theres a /home page that shouldnt be the front page, redirect it
     $home_page = get_page_by_path('home');
     if ($home_page && is_page($home_page->ID) && !is_front_page()) {
@@ -733,7 +738,8 @@ function esgi_redirect_home_urls() {
 
 // ensure consistent url structure in menus
 add_filter('wp_nav_menu_objects', 'esgi_fix_home_menu_urls', 10, 2);
-function esgi_fix_home_menu_urls($items, $args) {
+function esgi_fix_home_menu_urls($items, $args)
+{
     foreach ($items as $item) {
         // convert /home url to homepage url
         if ($item->url === home_url('/home') || $item->url === home_url('/home/')) {
@@ -745,7 +751,8 @@ function esgi_fix_home_menu_urls($items, $args) {
 
 // ensure consistent homepage url handling in wp
 add_action('init', 'esgi_setup_homepage_redirects');
-function esgi_setup_homepage_redirects() {
+function esgi_setup_homepage_redirects()
+{
     // remove any potential /home page from being set as front page
     if (get_option('page_on_front')) {
         $front_page = get_post(get_option('page_on_front'));
@@ -757,7 +764,8 @@ function esgi_setup_homepage_redirects() {
 }
 
 // clean home url to always be the base url
-function esgi_clean_home_url($url, $path, $orig_scheme, $blog_id) {
+function esgi_clean_home_url($url, $path, $orig_scheme, $blog_id)
+{
     if ($path === '/home' || $path === '/home/') {
         return untrailingslashit($url);
     }
@@ -766,7 +774,8 @@ function esgi_clean_home_url($url, $path, $orig_scheme, $blog_id) {
 
 // Handle canonical URLs for homepage consistency
 add_action('wp_head', 'esgi_homepage_canonical');
-function esgi_homepage_canonical() {
+function esgi_homepage_canonical()
+{
     if (is_front_page() || is_home()) {
         echo '<link rel="canonical" href="' . esc_url(home_url('/')) . '" />' . "\n";
     }
@@ -774,10 +783,11 @@ function esgi_homepage_canonical() {
 
 // fix current menu item highlighting for front page
 add_filter('nav_menu_css_class', 'esgi_fix_nav_current_class', 10, 2);
-function esgi_fix_nav_current_class($classes, $item) {
+function esgi_fix_nav_current_class($classes, $item)
+{
     // remove existing current classes first
     $classes = array_diff($classes, array('current_page_item', 'current-menu-item', 'current_page_parent', 'current-menu-parent'));
-    
+
     // Check if were on the front page and this menu item links to the homepage
     if ((is_front_page() || is_home()) && ($item->url == home_url('/') || $item->url == home_url())) {
         $classes[] = 'current-menu-item';
@@ -787,12 +797,28 @@ function esgi_fix_nav_current_class($classes, $item) {
     elseif (!is_front_page() && !is_home()) {
         global $wp;
         $current_url = home_url($wp->request);
-        
+
         if ($item->url == $current_url || $item->url == $current_url . '/') {
             $classes[] = 'current-menu-item';
             $classes[] = 'current_page_item';
         }
     }
-    
+
     return $classes;
 }
+
+// Redirige /services vers le template page-services.php même sans page WordPress
+add_action('init', function () {
+    add_rewrite_rule('^services/?$', 'index.php?pagename=services', 'top');
+});
+
+// Forcer l'utilisation du template page-services.php pour /services même sans page WordPress
+add_action('template_redirect', function () {
+    if (trim($_SERVER['REQUEST_URI'], '/') === 'services') {
+        $template = get_template_directory() . '/page-services.php';
+        if (file_exists($template)) {
+            include $template;
+            exit;
+        }
+    }
+});
