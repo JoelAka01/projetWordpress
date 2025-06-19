@@ -4,6 +4,7 @@
 .services-page {
   background: #fff;
   padding: 0rem 0 !important;
+  font-family: fonts.$font2;
 }
 
 .services-section {
@@ -15,6 +16,8 @@
     color: var(--text-color);
     text-align: left;
     margin-bottom: 3rem;
+    font-family: fonts.$font2;
+    /* set font family */
   }
 
   .services-content {
@@ -70,6 +73,7 @@
         white-space: normal;
         word-break: break-word;
         position: relative;
+        font-family: fonts.$font2;
 
         &:after {
           content: '';
@@ -96,6 +100,7 @@
     color: var(--text-color);
     margin-bottom: 1rem;
     text-align: left;
+    font-family: fonts.$font2;
   }
 
   .service-description {
@@ -105,6 +110,7 @@
     line-height: 1.6;
     margin-bottom: 0;
     text-align: left;
+    font-family: fonts.$font2;
   }
 }
 
