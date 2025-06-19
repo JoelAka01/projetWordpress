@@ -32,8 +32,7 @@ Use a better box model (opinionated).
 }
 
 html {
-  /* Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3) */
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-family: "Overpass", sans-serif;
   line-height: 1.15; /* 1. Correct the line height in all browsers. */
   -webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
   tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
@@ -45,6 +44,12 @@ Sections
 */
 body {
   margin: 0; /* Remove the margin in all browsers. */
+  font-family: "Overpass", sans-serif !important; /* Force Overpass font */
+}
+
+/* Ensure consistent font family throughout the site */
+* {
+  font-family: inherit;
 }
 
 /*
@@ -67,7 +72,8 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* 1 */
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo,
+    monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
 
@@ -131,9 +137,9 @@ textarea {
 Correct the inability to style clickable types in iOS and Safari.
 */
 button,
-[type=button],
-[type=reset],
-[type=submit] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button;
 }
 
@@ -163,7 +169,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 1. Correct the odd appearance in Chrome and Safari.
 2. Correct the outline style in Safari.
 */
-[type=search] {
+[type="search"] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
@@ -201,7 +207,7 @@ summary {
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root,
-[data-bs-theme=light] {
+[data-bs-theme="light"] {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
   --bs-purple: #6f42c1;
@@ -269,9 +275,16 @@ summary {
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
-  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  --bs-gradient: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0)
+  );
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
@@ -322,7 +335,7 @@ summary {
   --bs-breakpoint-xxl: 1400px;
 }
 
-[data-bs-theme=dark] {
+[data-bs-theme="dark"] {
   --bs-body-color: #adb5bd;
   --bs-body-color-rgb: 173, 181, 189;
   --bs-body-bg: #212529;
@@ -389,27 +402,42 @@ summary {
 }
 
 @media (min-width: 576px) {
-  .container-sm, .container {
+  .container-sm,
+  .container {
     max-width: 540px;
   }
 }
 @media (min-width: 768px) {
-  .container-md, .container-sm, .container {
+  .container-md,
+  .container-sm,
+  .container {
     max-width: 720px;
   }
 }
 @media (min-width: 992px) {
-  .container-lg, .container-md, .container-sm, .container {
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
     max-width: 960px;
   }
 }
 @media (min-width: 1200px) {
-  .container-xl, .container-lg, .container-md, .container-sm, .container {
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
     max-width: 1140px;
   }
 }
 @media (min-width: 1400px) {
-  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+  .container-xxl,
+  .container-xl,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container {
     max-width: 1320px;
   }
 }
@@ -4423,7 +4451,7 @@ summary {
 
 :root {
   --bg-color: #ffffff;
-  --text-color: #1A1A1A;
+  --text-color: #1a1a1a;
   --main-color: #3f51b5;
   --accent-color: rgb(49.8319672131, 64.0696721311, 143.1680327869);
   --light-bg: #f8f9fa;
@@ -4432,11 +4460,11 @@ summary {
   --light-gray: #e9ecef;
   --dark-gray: #495057;
   --white: #ffffff;
-  --black: #1A1A1A;
+  --black: #1a1a1a;
 }
 
 .dark {
-  --bg-color: #1A1A1A;
+  --bg-color: #1a1a1a;
   --text-color: #ffffff;
   --light-bg: #343a40;
   --muted-text: #ced4da;
@@ -4456,7 +4484,7 @@ html {
 }
 
 body {
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Overpass", sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -4470,7 +4498,7 @@ body {
 }
 
 body.error404 {
-  background-color: #050A3A;
+  background-color: #050a3a;
 }
 
 h1,
@@ -4702,7 +4730,7 @@ section:last-child {
 }
 
 @media (max-width: 767.98px) {
-  .row [class*=col-] {
+  .row [class*="col-"] {
     margin-bottom: 1rem;
   }
   .container {
@@ -4764,8 +4792,8 @@ section:last-child {
   button,
   a,
   .btn,
-  input[type=button],
-  input[type=submit] {
+  input[type="button"],
+  input[type="submit"] {
     min-height: 44px;
     min-width: 44px;
   }
@@ -4876,7 +4904,7 @@ section:last-child {
   top: 0;
   left: 0;
   right: 0;
-  background: #050A3A;
+  background: #050a3a;
   z-index: 9999;
   transform: translateY(-100%);
   transition: transform 0.3s ease;
@@ -5058,22 +5086,61 @@ section:last-child {
 .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li a:hover {
   color: #ccc;
 }
-.site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current-menu-item a, .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current_page_parent a, .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current_page_item a {
+.site-header
+  .mobile-navigation
+  .mobile-nav-menu
+  .mobile-menu-list
+  li.current-menu-item
+  a,
+.site-header
+  .mobile-navigation
+  .mobile-nav-menu
+  .mobile-menu-list
+  li.current_page_parent
+  a,
+.site-header
+  .mobile-navigation
+  .mobile-nav-menu
+  .mobile-menu-list
+  li.current_page_item
+  a {
   color: white;
   font-weight: 600;
   position: relative;
   display: inline-block;
 }
-.site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current-menu-item a::after, .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current_page_parent a::after, .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current_page_item a::after {
+.site-header
+  .mobile-navigation
+  .mobile-nav-menu
+  .mobile-menu-list
+  li.current-menu-item
+  a::after,
+.site-header
+  .mobile-navigation
+  .mobile-nav-menu
+  .mobile-menu-list
+  li.current_page_parent
+  a::after,
+.site-header
+  .mobile-navigation
+  .mobile-nav-menu
+  .mobile-menu-list
+  li.current_page_item
+  a::after {
   content: "";
   position: absolute;
   bottom: 8px;
   left: 0;
   width: 100%;
   height: 3.9px;
-  background: linear-gradient(to right, #FFD0A8, #FF4FC0);
+  background: linear-gradient(to right, #ffd0a8, #ff4fc0);
 }
-.site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li:last-child a {
+.site-header
+  .mobile-navigation
+  .mobile-nav-menu
+  .mobile-menu-list
+  li:last-child
+  a {
   border-bottom: none;
 }
 
@@ -5082,7 +5149,7 @@ body.menu-open {
 }
 
 body.error404 .site-header {
-  background-color: #050A3A;
+  background-color: #050a3a;
   margin: 0;
   padding: 1.5rem 0;
 }
@@ -5116,7 +5183,7 @@ body.error404 .site-header .mobile-menu-toggle svg {
   }
 }
 .site-footer {
-  background-color: #050A3A;
+  background-color: #050a3a;
   color: var(--white);
   padding: 3rem 0 1.5rem;
 }
@@ -5359,7 +5426,7 @@ body.error404 .site-footer .footer-logo {
 }
 
 .error-404 {
-  background-color: #050A3A;
+  background-color: #050a3a;
   display: flex;
   align-items: center;
   padding: 0;
@@ -5470,15 +5537,26 @@ body.error404 .site-footer .footer-logo {
   padding: 0;
   margin: 0;
 }
-.search-results-container .search-results-section .search-results-list .search-result-item {
+.search-results-container
+  .search-results-section
+  .search-results-list
+  .search-result-item {
   margin-bottom: 0.625rem;
 }
-.search-results-container .search-results-section .search-results-list .search-result-item a {
+.search-results-container
+  .search-results-section
+  .search-results-list
+  .search-result-item
+  a {
   color: var(--text-color);
   text-decoration: none;
   transition: color 0.2s ease;
 }
-.search-results-container .search-results-section .search-results-list .search-result-item a:hover {
+.search-results-container
+  .search-results-section
+  .search-results-list
+  .search-result-item
+  a:hover {
   color: var(--main-color);
 }
 .search-results-container .no-results {
@@ -5592,7 +5670,11 @@ body.error404 .site-footer .footer-logo {
 .home-page .about-section .who-are-we .content-sections .content-item {
   margin-bottom: 2.5rem;
 }
-.home-page .about-section .who-are-we .content-sections .content-item:last-child {
+.home-page
+  .about-section
+  .who-are-we
+  .content-sections
+  .content-item:last-child {
   margin-bottom: 0;
 }
 .home-page .about-section .who-are-we .content-sections .content-item h2 {
@@ -5659,7 +5741,11 @@ body.error404 .site-footer .footer-logo {
   justify-content: center;
   background: #fff;
 }
-.home-page .services-section .services-content .private-parties-wrapper .private-parties-title {
+.home-page
+  .services-section
+  .services-content
+  .private-parties-wrapper
+  .private-parties-title {
   font-size: 2vw;
   font-weight: 500;
   color: var(--text-color);
@@ -5670,7 +5756,11 @@ body.error404 .site-footer .footer-logo {
   word-break: break-word;
   position: relative;
 }
-.home-page .services-section .services-content .private-parties-wrapper .private-parties-title:after {
+.home-page
+  .services-section
+  .services-content
+  .private-parties-wrapper
+  .private-parties-title:after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -5678,7 +5768,7 @@ body.error404 .site-footer .footer-logo {
   transform: translateX(-50%);
   width: 55%;
   height: 4px;
-  background: linear-gradient(90deg, #FFD0A8, #FF4FC0);
+  background: linear-gradient(90deg, #ffd0a8, #ff4fc0);
 }
 .home-page .partners-section {
   padding: 4rem 0;
@@ -5706,7 +5796,8 @@ body.error404 .site-footer .footer-logo {
   filter: grayscale(100%);
   transition: all 0.3s ease;
 }
-.home-page .partners-section .partner-item a:hover img, .home-page .partners-section .partner-item:hover img {
+.home-page .partners-section .partner-item a:hover img,
+.home-page .partners-section .partner-item:hover img {
   filter: grayscale(0%);
   opacity: 0.5;
 }
@@ -5809,7 +5900,11 @@ body.error404 .site-footer .footer-logo {
     height: 200px;
     margin-bottom: 2rem;
   }
-  .home-page .services-section .services-content .private-parties-wrapper .private-parties-title {
+  .home-page
+    .services-section
+    .services-content
+    .private-parties-wrapper
+    .private-parties-title {
     font-size: 2rem;
   }
   .home-page .services-section .services-content .featured-image-wrapper {
@@ -6089,7 +6184,10 @@ body.error404 .site-footer .footer-logo {
   justify-content: center;
   background: #fff;
 }
-.services-section .services-content .private-parties-wrapper .private-parties-title {
+.services-section
+  .services-content
+  .private-parties-wrapper
+  .private-parties-title {
   font-size: 2vw;
   font-weight: 500;
   color: var(--text-color);
@@ -6100,7 +6198,10 @@ body.error404 .site-footer .footer-logo {
   word-break: break-word;
   position: relative;
 }
-.services-section .services-content .private-parties-wrapper .private-parties-title:after {
+.services-section
+  .services-content
+  .private-parties-wrapper
+  .private-parties-title:after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -6108,7 +6209,7 @@ body.error404 .site-footer .footer-logo {
   transform: translateX(-50%);
   width: 55%;
   height: 4px;
-  background: linear-gradient(90deg, #FFD0A8, #FF4FC0);
+  background: linear-gradient(90deg, #ffd0a8, #ff4fc0);
 }
 
 .corporate-parties {
