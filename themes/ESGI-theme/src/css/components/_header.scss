@@ -243,10 +243,11 @@ $menu-gradient-start: #FFD0A8;
 
 			.mobile-menu-list {
 				list-style: none;
-				margin: 0;
-				padding: 0;
+				margin: 0 !important;
+				padding: 0 !important;
 				display: flex;
 				flex-direction: column;
+				gap: 0; // consistent gap 
 
 				// desktop: right-align text
 				@media (min-width: 769px) {
@@ -259,7 +260,9 @@ $menu-gradient-start: #FFD0A8;
 				}
 
 				li {
-					margin: 0;
+					margin: 0 !important;
+					padding: 0 !important;
+					list-style: none !important;
 
 					a {
 						color: white;
@@ -269,7 +272,9 @@ $menu-gradient-start: #FFD0A8;
 						display: block;
 						transition: color 0.3s ease;
 						border-bottom: none;
-						padding: 0;
+						padding: 0.2rem 0 !important; // consistent padding
+						margin: 0 !important;
+						line-height: 1.1; // consistent line height
 
 						&:hover {
 							color: #ccc;
@@ -356,6 +361,37 @@ body.error404 {
 
 		.mobile-navigation {
 			max-height: 70vh;
+		}
+	}
+}
+
+//menu consistency across all pages
+.mobile-navigation {
+
+	// override list styles
+	ul,
+	ol {
+		margin: 0 !important;
+		padding: 0 !important;
+		list-style: none !important;
+	}
+
+	// ensure no styles interfere
+	* {
+		box-sizing: border-box !important;
+	}
+
+	// override wp generated classes
+	.menu,
+	.nav-menu {
+		margin: 0 !important;
+		padding: 0 !important;
+		list-style: none !important;
+
+		li {
+			margin: 0 !important;
+			padding: 0 !important;
+			list-style: none !important;
 		}
 	}
 }

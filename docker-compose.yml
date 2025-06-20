@@ -23,9 +23,6 @@ services:
       - type: bind
         source: ./themes/ESGI-theme
         target: /var/www/html/wp-content/themes/ESGI-theme
-      - type: bind
-        source: ./plugins/ESGI-plugin
-        target: /var/www/html/wp-content/plugins/ESGI-plugin
     ports:
       - 80:80
     restart: unless-stopped

@@ -779,7 +779,7 @@ function esgi_homepage_canonical()
     }
 }
 
-// fix current menu item highlighting for front page
+// current menu item highlighting for front page
 add_filter('nav_menu_css_class', 'esgi_fix_nav_current_class', 10, 2);
 function esgi_fix_nav_current_class($classes, $item)
 {
