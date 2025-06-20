@@ -9,7 +9,7 @@
     .container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 15px;
+        padding: 0 0px;
         display: flex;
         flex-wrap: wrap;
         gap: 80px;
@@ -18,7 +18,7 @@
     h1 {
         width: 100%;
         font-family: fonts.$font2;
-        font-size: 3.4rem;
+        font-size: 4.5rem;
         font-weight: 500;
         margin-bottom: 50px;
         text-align: left;
@@ -29,7 +29,7 @@
 
     // left sidebar
     .post-sidebar {
-        width: 320px;
+        width: 430px;
         flex-shrink: 0;
 
         // search 
@@ -37,7 +37,7 @@
             margin-bottom: 50px;
 
             h2 {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
                 margin-bottom: 20px;
                 font-weight: 600;
                 color: var(--text-color);
@@ -52,7 +52,7 @@
                     border: none;
                     border-bottom: 1px solid var(--border-color);
                     font-family: fonts.$font2;
-                    font-size: 0.9rem;
+                    font-size: 1.2rem;
                     background-color: transparent;
 
                     &::placeholder {
@@ -98,7 +98,7 @@
             margin-bottom: 60px;
 
             h2 {
-                font-size: 1.4rem;
+                font-size: 1.1rem;
                 margin-bottom: 25px;
                 font-weight: 500;
                 color: var(--text-color);
