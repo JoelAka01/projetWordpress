@@ -35,7 +35,8 @@
         <div class="mobile-navigation">
             <div class="mobile-nav-content">
                 <div class="container">
-                    <div class="mobile-nav-header">                        <div class="mobile-logo-section">
+                    <div class="mobile-nav-header">                        
+                        <div class="mobile-logo-section">
                             <div class="mobile-logo">
                                 <?php 
                                 if (has_custom_logo()) {
