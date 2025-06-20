@@ -791,6 +791,11 @@ function esgi_fix_nav_current_class($classes, $item)
         $classes[] = 'current-menu-item';
         $classes[] = 'current_page_item';
     }
+    //if we are on a single post page and this menu item links to the blog page
+    elseif (is_single() && ($item->url == home_url('/blog') || $item->url == home_url('/blog/'))) {
+        $classes[] = 'current-menu-item';
+        $classes[] = 'current_page_item';
+    }
     // for other pages let wp handle it normally but ensure consistency
     elseif (!is_front_page() && !is_home()) {
         global $wp;
