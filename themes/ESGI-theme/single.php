@@ -5,40 +5,185 @@ get_header();
 
 // Dans un template d'article seul, WP crée une variable $post : utilisons-la !
 
+// Get post categories
+$categories = get_the_category();
+$category_name = !empty($categories) ? esc_html($categories[0]->name) : '';
+$category_link = !empty($categories) ? get_category_link($categories[0]->term_id) : '#';
+
+// Get post tags
+$tags = get_the_tags();
+
 ?>
 
 <main class="post">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <h1><?php the_title() ?></h1> <!-- Fait référence au post courant -->                <div class="post-meta">
-                    <div class="post-author">
-                        <img src="<?= get_avatar_url($post->post_author) ?>" alt="<?= get_the_author_meta('nickname', $post->post_author)  ?>">
-                        <?= get_the_author_meta('nickname', $post->post_author)  ?>
-                    </div>
-                    <time>
-                        <?= wp_date('j F Y', strtotime($post->post_date)) ?>
-                    </time>
-                </div>
-                <div class="post-thumbnail">
-                    <?php the_post_thumbnail() ?>
-                </div>
-                <div>
-                    <?php the_content() ?>
-                </div>
+        <h1><?php the_title(); ?></h1>
+        
+        <!-- Sidebar -->
+        <div class="post-sidebar">
+            <!-- Search Section -->
+            <div class="search-section">
+                <h2>Search</h2>
+                <form class="search-form" role="search" method="get" action="<?php echo home_url('/'); ?>">
+                    <input type="search" placeholder="Type to search" value="<?php echo get_search_query(); ?>" name="s" />
+                    <button type="submit">
+                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/svg/search.svg" alt="Search" width="16" height="16">
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Recent Posts -->
+            <div class="recent-posts">
+                <h2>Recent posts</h2>
+                <?php
+                $recent_posts = wp_get_recent_posts(array(
+                    'numberposts' => 3,
+                    'post_status' => 'publish'
+                ));
                 
-                <!-- Menu post footer -->
-                <div class="post-footer-menu">
+                foreach($recent_posts as $recent) {
+                    $thumb_url = get_the_post_thumbnail_url($recent['ID'], 'thumbnail') ?: get_template_directory_uri() . '/src/images/png/1.png';
+                ?>
+                <div class="post-item">
+                    <img src="<?php echo $thumb_url; ?>" alt="<?php echo $recent['post_title']; ?>">
+                    <div class="post-info">
+                        <h3><a href="<?php echo get_permalink($recent['ID']); ?>"><?php echo $recent['post_title']; ?></a></h3>
+                        <span class="post-date"><?php echo wp_date('j M, Y', strtotime($recent['post_date'])); ?></span>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+            
+            <!-- Archives -->
+            <div class="archives">
+                <h2>Archives</h2>
+                <ul>
+                    <?php wp_get_archives(array('type' => 'monthly', 'limit' => 5)); ?>
+                </ul>
+            </div>
+            
+            <!-- Categories -->
+            <div class="categories">
+                <h2>Categories</h2>
+                <ul>
                     <?php 
-                    wp_nav_menu(array(
-                        'theme_location' => 'post_footer_menu',
-                        'menu_class' => 'post-footer-nav',
-                        'container' => 'nav',
-                        'container_class' => 'post-footer-navigation',
-                        'fallback_cb' => false,
+                    wp_list_categories(array(
+                        'title_li' => '',
+                        'show_count' => false,
+                        'number' => 5
                     )); 
                     ?>
+                </ul>
+            </div>
+            
+            <!-- Tags -->
+            <div class="tags-sidebar">
+                <h2>Tags</h2>
+                <div class="tag-list">
+                    <?php
+                    $tags_list = get_tags(array('number' => 10));
+                    if ($tags_list) {
+                        foreach($tags_list as $tag) {
+                            echo '<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>';
+                        }
+                    }
+                    ?>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Content Area -->
+        <div class="post-content">
+            <div class="post-thumbnail">
+                <?php 
+                if (has_post_thumbnail()) {
+                    the_post_thumbnail('large');
+                } else {
+                    echo '<img src="' . get_template_directory_uri() . '/src/images/png/1.png" alt="' . get_the_title() . '">';
+                }
+                ?>
+            </div>
+            
+            <div class="post-meta-info">
+                <?php if (!empty($categories)) : ?>
+                <div class="post-category">
+                    <a href="<?php echo $category_link; ?>"><?php echo $category_name; ?></a>
+                </div>
+                <?php endif; ?>
+                <div class="post-date">
+                    <?php echo wp_date('j F Y', strtotime($post->post_date)); ?>
+                </div>
+            </div>
+            
+            <div class="post-body">
+                <?php the_content(); ?>
+            </div>
+            
+            <?php if ($tags) : ?>
+            <div class="post-tags">
+                <div class="tag-list">
+                    <?php
+                    foreach($tags as $tag) {
+                        echo '<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>';
+                    }
+                    ?>
+                </div>
+            </div>
+            <?php endif; ?>
+            
+            <!-- Comments Section -->
+            <div class="comments-section">
+                <h2>Comments (<?php echo get_comments_number(); ?>)</h2>
+                <?php if (comments_open() || get_comments_number()) : ?>
+                <div class="comment-list">
+                    <?php
+                    $comments = get_comments(array(
+                        'post_id' => get_the_ID(),
+                        'status' => 'approve'
+                    ));
+                    
+                    foreach($comments as $comment) {
+                    ?>
+                    <div class="comment">
+                        <div class="comment-author"><?php echo $comment->comment_author; ?></div>
+                        <div class="comment-content"><?php echo $comment->comment_content; ?></div>
+                        <a href="#" class="reply-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M205 34.8c11.5 5.1 19 16.6 19 29.2v64H336c97.2 0 176 78.8 176 176c0 113.3-81.5 163.9-100.2 174.1c-2.5 1.4-5.3 1.9-8.1 1.9c-10.9 0-19.7-8.9-19.7-19.7c0-7.5 4.3-14.4 9.8-19.5c9.4-8.8 22.2-26.4 22.2-56.7c0-53-43-96-96-96H224v64c0 12.6-7.4 24.1-19 29.2s-25 3-34.4-5.4l-160-144C3.9 225.7 0 217.1 0 208s3.9-17.7 10.6-23.8l160-144c9.4-8.5 22.9-10.6 34.4-5.4z"/></svg>
+                            Reply
+                        </a>
+                    </div>
+                    <?php } ?>
+                </div>
+                <?php endif; ?>
+            </div>
+            
+            <!-- Reply Form -->
+            <div class="reply-form">
+                <h3>Leave a reply</h3>
+                <form action="<?php echo site_url('/wp-comments-post.php'); ?>" method="post" id="commentform">
+                    <div class="form-group">
+                        <input id="author" name="author" type="text" placeholder="Full name" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="comment" name="comment" placeholder="Message" required></textarea>
+                    </div>
+                    <input type="hidden" name="comment_post_ID" value="<?php echo get_the_ID(); ?>">
+                    <input type="hidden" name="comment_parent" id="comment_parent" value="0">
+                    <button type="submit" class="submit-button">Submit</button>
+                </form>
+            </div>
+            
+            <!-- Menu post footer -->
+            <div class="post-footer-menu">
+                <?php 
+                wp_nav_menu(array(
+                    'theme_location' => 'post_footer_menu',
+                    'menu_class' => 'post-footer-nav',
+                    'container' => 'nav',
+                    'container_class' => 'post-footer-navigation',
+                    'fallback_cb' => false,
+                )); 
+                ?>
             </div>
         </div>
     </div>
