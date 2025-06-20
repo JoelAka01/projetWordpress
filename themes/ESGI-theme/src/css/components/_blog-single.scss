@@ -4,11 +4,12 @@
 
 .post {
     padding: 60px 0;
+    font-family: fonts.$font2;
 
     .container {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 0px;
         display: flex;
         flex-wrap: wrap;
         gap: 60px;
@@ -16,29 +17,29 @@
 
     h1 {
         width: 100%;
-        font-family: fonts.$font1;
-        font-size: f.rem(48);
-        font-weight: 700;
+        font-family: fonts.$font2;
+        font-size: 3.8rem;
+        font-weight: 500;
         margin-bottom: 50px;
         text-align: left;
-        line-height: 1.1;
         letter-spacing: -0.02em;
+
+        line-height: 1.2;
         color: var(--text-color);
     }
 
-    // Left sidebar
+    // left sidebar
     .post-sidebar {
         width: 320px;
         flex-shrink: 0;
 
-        // Search section
+        // search 
         .search-section {
             margin-bottom: 50px;
 
             h2 {
-                font-size: f.rem(16);
+                font-size: 1.2rem;
                 margin-bottom: 20px;
-                font-family: fonts.$font2;
                 font-weight: 600;
                 color: var(--text-color);
             }
@@ -52,7 +53,7 @@
                     border: 1px solid var(--border-color);
                     border-radius: 6px;
                     font-family: fonts.$font2;
-                    font-size: f.rem(14);
+                    font-size: 0.9rem;
                     background-color: var(--white);
 
                     &::placeholder {
@@ -84,14 +85,13 @@
             }
         }
 
-        // Recent posts section
+        // recent posts 
         .recent-posts {
             margin-bottom: 50px;
 
             h2 {
-                font-size: f.rem(16);
+                font-size: 1.2rem;
                 margin-bottom: 20px;
-                font-family: fonts.$font2;
                 font-weight: 600;
                 color: var(--text-color);
             }
@@ -113,8 +113,7 @@
                     flex: 1;
 
                     h3 {
-                        font-size: f.rem(14);
-                        font-family: fonts.$font1;
+                        font-size: 0.9rem;
                         margin: 0 0 8px;
                         line-height: 1.4;
                         font-weight: 400;
@@ -130,22 +129,20 @@
                     }
 
                     .post-date {
-                        font-size: f.rem(12);
+                        font-size: 0.8rem;
                         color: var(--muted-text);
-                        font-family: fonts.$font2;
                     }
                 }
             }
         }
 
-        // Archives section
+        // archives 
         .archives {
             margin-bottom: 50px;
 
             h2 {
-                font-size: f.rem(16);
+                font-size: 1.2rem;
                 margin-bottom: 20px;
-                font-family: fonts.$font2;
                 font-weight: 600;
                 color: var(--text-color);
             }
@@ -182,14 +179,13 @@
             }
         }
 
-        // Categories section
+        // categories 
         .categories {
             margin-bottom: 50px;
 
             h2 {
-                font-size: f.rem(16);
+                font-size: 1.2rem;
                 margin-bottom: 20px;
-                font-family: fonts.$font2;
                 font-weight: 600;
                 color: var(--text-color);
             }
@@ -226,12 +222,11 @@
             }
         }
 
-        // Tags section
+        // tags 
         .tags-sidebar {
             h2 {
-                font-size: f.rem(16);
+                font-size: 1.2rem;
                 margin-bottom: 20px;
-                font-family: fonts.$font2;
                 font-weight: 600;
                 color: var(--text-color);
             }
@@ -260,7 +255,7 @@
         }
     }
 
-    // Main content area
+    // main content area
     .post-content {
         flex: 1;
         min-width: 0;
@@ -280,7 +275,6 @@
             display: flex;
             align-items: center;
             margin-bottom: 35px;
-            font-family: fonts.$font2;
 
             .post-category {
                 margin-right: 15px;
@@ -318,10 +312,9 @@
 
             p {
                 margin-bottom: 25px;
-                font-family: fonts.$font1;
-                font-size: f.rem(16);
-                line-height: 1.7;
-                color: var(--text-color);
+                font-size: 1.1rem;
+                line-height: 1.6;
+                color: var(--muted-text);
 
                 &:last-child {
                     margin-bottom: 0;
@@ -356,15 +349,14 @@
             }
         }
 
-        // Comments section
+        // comments 
         .comments-section {
             margin-bottom: 50px;
 
             h2 {
-                font-size: f.rem(24);
+                font-size: 2rem;
                 margin-bottom: 30px;
-                font-family: fonts.$font2;
-                font-weight: 600;
+                font-weight: 400;
                 color: var(--text-color);
             }
 
@@ -416,13 +408,12 @@
             }
         }
 
-        // Reply form
+        // reply form
         .reply-form {
             h3 {
-                font-size: f.rem(24);
+                font-size: 2rem;
                 margin-bottom: 30px;
-                font-family: fonts.$font2;
-                font-weight: 600;
+                font-weight: 400;
                 color: var(--text-color);
             }
 
@@ -461,8 +452,7 @@
                 color: white;
                 border: none;
                 padding: 12px 30px;
-                font-family: fonts.$font2;
-                font-size: f.rem(16);
+                font-size: 1rem;
                 font-weight: 600;
                 border-radius: 6px;
                 cursor: pointer;
@@ -474,7 +464,7 @@
             }
         }
 
-        // Post footer menu
+        // post footer menu
         .post-footer-menu {
             margin-top: 50px;
             padding-top: 30px;
@@ -502,7 +492,7 @@
         }
     }
 
-    // Mobile adaptations
+    // mobile 
     @media (max-width: 768px) {
         .container {
             flex-direction: column;
@@ -511,7 +501,7 @@
         }
 
         h1 {
-            font-size: f.rem(36);
+            font-size: 2.2rem;
             margin-bottom: 30px;
         }
 

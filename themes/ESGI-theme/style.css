@@ -5523,24 +5523,25 @@ body.error404 .site-footer .footer-logo {
 
 .post {
   padding: 60px 0;
+  font-family: "Overpass", sans-serif;
 }
 .post .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 0px;
   display: flex;
   flex-wrap: wrap;
   gap: 60px;
 }
 .post h1 {
   width: 100%;
-  font-family: "Source Serif Pro", serif;
-  font-size: 3rem;
-  font-weight: 700;
+  font-family: "Overpass", sans-serif;
+  font-size: 3.8rem;
+  font-weight: 500;
   margin-bottom: 50px;
   text-align: left;
-  line-height: 1.1;
   letter-spacing: -0.02em;
+  line-height: 1.2;
   color: var(--text-color);
 }
 .post .post-sidebar {
@@ -5551,9 +5552,8 @@ body.error404 .site-footer .footer-logo {
   margin-bottom: 50px;
 }
 .post .post-sidebar .search-section h2 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 20px;
-  font-family: "Overpass", sans-serif;
   font-weight: 600;
   color: var(--text-color);
 }
@@ -5566,7 +5566,7 @@ body.error404 .site-footer .footer-logo {
   border: 1px solid var(--border-color);
   border-radius: 6px;
   font-family: "Overpass", sans-serif;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   background-color: var(--white);
 }
 .post .post-sidebar .search-section .search-form input[type=search]::placeholder {
@@ -5595,9 +5595,8 @@ body.error404 .site-footer .footer-logo {
   margin-bottom: 50px;
 }
 .post .post-sidebar .recent-posts h2 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 20px;
-  font-family: "Overpass", sans-serif;
   font-weight: 600;
   color: var(--text-color);
 }
@@ -5617,8 +5616,7 @@ body.error404 .site-footer .footer-logo {
   flex: 1;
 }
 .post .post-sidebar .recent-posts .post-item .post-info h3 {
-  font-size: 0.875rem;
-  font-family: "Source Serif Pro", serif;
+  font-size: 0.9rem;
   margin: 0 0 8px;
   line-height: 1.4;
   font-weight: 400;
@@ -5631,17 +5629,15 @@ body.error404 .site-footer .footer-logo {
   color: var(--main-color);
 }
 .post .post-sidebar .recent-posts .post-item .post-info .post-date {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   color: var(--muted-text);
-  font-family: "Overpass", sans-serif;
 }
 .post .post-sidebar .archives {
   margin-bottom: 50px;
 }
 .post .post-sidebar .archives h2 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 20px;
-  font-family: "Overpass", sans-serif;
   font-weight: 600;
   color: var(--text-color);
 }
@@ -5675,9 +5671,8 @@ body.error404 .site-footer .footer-logo {
   margin-bottom: 50px;
 }
 .post .post-sidebar .categories h2 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 20px;
-  font-family: "Overpass", sans-serif;
   font-weight: 600;
   color: var(--text-color);
 }
@@ -5708,9 +5703,8 @@ body.error404 .site-footer .footer-logo {
   color: var(--main-color);
 }
 .post .post-sidebar .tags-sidebar h2 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 20px;
-  font-family: "Overpass", sans-serif;
   font-weight: 600;
   color: var(--text-color);
 }
@@ -5750,7 +5744,6 @@ body.error404 .site-footer .footer-logo {
   display: flex;
   align-items: center;
   margin-bottom: 35px;
-  font-family: "Overpass", sans-serif;
 }
 .post .post-content .post-meta-info .post-category {
   margin-right: 15px;
@@ -5782,10 +5775,9 @@ body.error404 .site-footer .footer-logo {
 }
 .post .post-content .post-body p {
   margin-bottom: 25px;
-  font-family: "Source Serif Pro", serif;
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--text-color);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--muted-text);
 }
 .post .post-content .post-body p:last-child {
   margin-bottom: 0;
@@ -5817,10 +5809,9 @@ body.error404 .site-footer .footer-logo {
   margin-bottom: 50px;
 }
 .post .post-content .comments-section h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 30px;
-  font-family: "Overpass", sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--text-color);
 }
 .post .post-content .comments-section .comment-list .comment {
@@ -5863,10 +5854,9 @@ body.error404 .site-footer .footer-logo {
   text-decoration: underline;
 }
 .post .post-content .reply-form h3 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 30px;
-  font-family: "Overpass", sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--text-color);
 }
 .post .post-content .reply-form .form-group {
@@ -5901,7 +5891,6 @@ body.error404 .site-footer .footer-logo {
   color: white;
   border: none;
   padding: 12px 30px;
-  font-family: "Overpass", sans-serif;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 6px;
@@ -5940,7 +5929,7 @@ body.error404 .site-footer .footer-logo {
     padding: 0 15px;
   }
   .post h1 {
-    font-size: 2.25rem;
+    font-size: 2.2rem;
     margin-bottom: 30px;
   }
   .post .post-sidebar {

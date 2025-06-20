@@ -5,12 +5,12 @@ get_header();
 
 // Dans un template d'article seul, WP crée une variable $post : utilisons-la !
 
-// Get post categories
+// get post categories
 $categories = get_the_category();
 $category_name = !empty($categories) ? esc_html($categories[0]->name) : '';
 $category_link = !empty($categories) ? get_category_link($categories[0]->term_id) : '#';
 
-// Get post tags
+// get post tags
 $tags = get_the_tags();
 
 ?>
@@ -19,9 +19,9 @@ $tags = get_the_tags();
     <div class="container">
         <h1><?php the_title(); ?></h1>
         
-        <!-- Sidebar -->
+        <!-- sidebar -->
         <div class="post-sidebar">
-            <!-- Search Section -->
+            <!-- search -->
             <div class="search-section">
                 <h2>Search</h2>
                 <form class="search-form" role="search" method="get" action="<?php echo home_url('/'); ?>">
@@ -32,7 +32,7 @@ $tags = get_the_tags();
                 </form>
             </div>
             
-            <!-- Recent Posts -->
+            <!-- recent posts -->
             <div class="recent-posts">
                 <h2>Recent posts</h2>
                 <?php
@@ -54,7 +54,7 @@ $tags = get_the_tags();
                 <?php } ?>
             </div>
             
-            <!-- Archives -->
+            <!-- archives -->
             <div class="archives">
                 <h2>Archives</h2>
                 <ul>
@@ -62,7 +62,7 @@ $tags = get_the_tags();
                 </ul>
             </div>
             
-            <!-- Categories -->
+            <!-- categories -->
             <div class="categories">
                 <h2>Categories</h2>
                 <ul>
@@ -76,7 +76,7 @@ $tags = get_the_tags();
                 </ul>
             </div>
             
-            <!-- Tags -->
+            <!-- tags -->
             <div class="tags-sidebar">
                 <h2>Tags</h2>
                 <div class="tag-list">
@@ -92,7 +92,7 @@ $tags = get_the_tags();
             </div>
         </div>
         
-        <!-- Content Area -->
+        <!-- main content area -->
         <div class="post-content">
             <div class="post-thumbnail">
                 <?php 
@@ -131,7 +131,7 @@ $tags = get_the_tags();
             </div>
             <?php endif; ?>
             
-            <!-- Comments Section -->
+            <!-- comments -->
             <div class="comments-section">
                 <h2>Comments (<?php echo get_comments_number(); ?>)</h2>
                 <?php if (comments_open() || get_comments_number()) : ?>
@@ -157,7 +157,7 @@ $tags = get_the_tags();
                 <?php endif; ?>
             </div>
             
-            <!-- Reply Form -->
+            <!-- reply form -->
             <div class="reply-form">
                 <h3>Leave a reply</h3>
                 <form action="<?php echo site_url('/wp-comments-post.php'); ?>" method="post" id="commentform">
@@ -173,7 +173,7 @@ $tags = get_the_tags();
                 </form>
             </div>
             
-            <!-- Menu post footer -->
+            <!-- menu post footer -->
             <div class="post-footer-menu">
                 <?php 
                 wp_nav_menu(array(
