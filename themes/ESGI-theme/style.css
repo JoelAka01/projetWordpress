@@ -5521,6 +5521,503 @@ body.error404 .site-footer .footer-logo {
   letter-spacing: 0.03em;
 }
 
+.post {
+  padding: 120px 0 80px;
+  font-family: "Overpass", sans-serif;
+}
+.post .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+}
+.post h1 {
+  width: 100%;
+  font-family: "Overpass", sans-serif;
+  font-size: 4.5rem;
+  font-weight: 500;
+  margin-bottom: 50px;
+  text-align: left;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--text-color);
+}
+.post .post-sidebar {
+  width: 430px;
+  flex-shrink: 0;
+}
+.post .post-sidebar .search-section {
+  margin-bottom: 50px;
+}
+.post .post-sidebar .search-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+.post .post-sidebar .search-section .search-form {
+  position: relative;
+}
+.post .post-sidebar .search-section .search-form input[type=search] {
+  width: 100%;
+  padding: 12px 30px 12px 0;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  font-family: "Overpass", sans-serif;
+  font-size: 1.2rem;
+  background-color: transparent;
+}
+.post .post-sidebar .search-section .search-form input[type=search]::placeholder {
+  color: var(--muted-text);
+}
+.post .post-sidebar .search-section .search-form input[type=search]:focus {
+  outline: none;
+  border-bottom-color: var(--main-color);
+}
+.post .post-sidebar .search-section .search-form button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.post .post-sidebar .search-section .search-form button img {
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  filter: brightness(0) saturate(0%);
+}
+.post .post-sidebar .search-section .search-form button:hover img {
+  opacity: 1;
+}
+.post .post-sidebar .recent-posts {
+  margin-bottom: 60px;
+}
+.post .post-sidebar .recent-posts h2 {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.post .post-sidebar .recent-posts .post-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+.post .post-sidebar .recent-posts .post-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 0;
+}
+.post .post-sidebar .recent-posts .post-item .post-info {
+  flex: 1;
+}
+.post .post-sidebar .recent-posts .post-item .post-info h3 {
+  font-size: 1rem;
+  margin: 0 0 6px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+.post .post-sidebar .recent-posts .post-item .post-info h3 a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.post .post-sidebar .recent-posts .post-item .post-info h3 a:hover {
+  color: var(--main-color);
+}
+.post .post-sidebar .recent-posts .post-item .post-info .post-date {
+  font-size: 0.85rem;
+  color: var(--muted-text);
+}
+.post .post-sidebar .archives {
+  margin-bottom: 60px;
+}
+.post .post-sidebar .archives h2 {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.post .post-sidebar .archives ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.post .post-sidebar .archives ul li {
+  margin-bottom: 15px;
+  position: relative;
+  font-family: "Overpass", sans-serif;
+  font-size: 1rem;
+  padding-left: 20px;
+}
+.post .post-sidebar .archives ul li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--muted-text);
+  font-weight: bold;
+}
+.post .post-sidebar .archives ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.post .post-sidebar .archives ul li a:hover {
+  color: var(--main-color);
+}
+.post .post-sidebar .categories {
+  margin-bottom: 60px;
+}
+.post .post-sidebar .categories h2 {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.post .post-sidebar .categories ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.post .post-sidebar .categories ul li {
+  margin-bottom: 15px;
+  position: relative;
+  font-family: "Overpass", sans-serif;
+  font-size: 1rem;
+  padding-left: 20px;
+}
+.post .post-sidebar .categories ul li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--muted-text);
+  font-weight: bold;
+}
+.post .post-sidebar .categories ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.post .post-sidebar .categories ul li a:hover {
+  color: var(--main-color);
+}
+.post .post-sidebar .tags-sidebar h2 {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.post .post-sidebar .tags-sidebar .tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.post .post-sidebar .tags-sidebar .tag-list a {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #f5f5f5;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: "Overpass", sans-serif;
+  transition: all 0.2s;
+}
+.post .post-sidebar .tags-sidebar .tag-list a:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+.post .post-content {
+  flex: 1;
+  min-width: 0;
+}
+.post .post-content .post-thumbnail {
+  margin-bottom: 30px;
+}
+.post .post-content .post-thumbnail img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;
+}
+.post .post-content .post-meta-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.post .post-content .post-meta-info .post-category {
+  margin-right: 15px;
+}
+.post .post-content .post-meta-info .post-category a {
+  color: var(--main-color);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+.post .post-content .post-meta-info .post-category a:hover {
+  opacity: 0.8;
+}
+.post .post-content .post-meta-info .post-date {
+  color: var(--muted-text);
+  font-size: 1rem;
+  position: relative;
+  padding-left: 15px;
+}
+.post .post-content .post-meta-info .post-date:before {
+  content: "•";
+  position: absolute;
+  left: 5px;
+  top: 0;
+  color: var(--muted-text);
+}
+.post .post-content .post-body {
+  margin-bottom: 40px;
+}
+.post .post-content .post-body p {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+.post .post-content .post-body p:last-child {
+  margin-bottom: 0;
+}
+.post .post-content .post-body h2,
+.post .post-content .post-body h3,
+.post .post-content .post-body h4 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: var(--text-color);
+  font-weight: 500;
+}
+.post .post-content .post-body h2 {
+  font-size: 2rem;
+}
+.post .post-content .post-body h3 {
+  font-size: 1.7rem;
+}
+.post .post-content .post-body h4 {
+  font-size: 1.4rem;
+}
+.post .post-content .post-tags {
+  margin-bottom: 60px;
+  padding-top: 20px;
+}
+.post .post-content .post-tags .tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.post .post-content .post-tags .tag-list a {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #f5f5f5;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-family: "Overpass", sans-serif;
+  transition: all 0.2s;
+}
+.post .post-content .post-tags .tag-list a:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+.post .post-content .comments-section {
+  margin-bottom: 60px;
+}
+.post .post-content .comments-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.post .post-content .comments-section .comment-list .comment {
+  background-color: #f9f9f9;
+  padding: 30px;
+  margin-bottom: 25px;
+  border-left: 4px solid var(--main-color);
+}
+.post .post-content .comments-section .comment-list .comment .comment-author {
+  font-weight: 600;
+  font-family: "Overpass", sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: var(--text-color);
+}
+.post .post-content .comments-section .comment-list .comment .comment-content {
+  font-family: "Overpass", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+.post .post-content .comments-section .comment-list .comment .reply-button {
+  display: inline-flex;
+  align-items: center;
+  color: var(--main-color);
+  font-family: "Overpass", sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+.post .post-content .comments-section .comment-list .comment .reply-button svg {
+  margin-right: 8px;
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+.post .post-content .comments-section .comment-list .comment .reply-button:hover {
+  opacity: 0.8;
+}
+.post .post-content .reply-form h3 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+.post .post-content .reply-form .form-group {
+  margin-bottom: 25px;
+}
+.post .post-content .reply-form .form-group input,
+.post .post-content .reply-form .form-group textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  padding: 15px 0;
+  font-family: "Overpass", sans-serif;
+  font-size: 1rem;
+  background: transparent;
+  color: var(--text-color);
+}
+.post .post-content .reply-form .form-group input::placeholder,
+.post .post-content .reply-form .form-group textarea::placeholder {
+  color: var(--muted-text);
+}
+.post .post-content .reply-form .form-group input:focus,
+.post .post-content .reply-form .form-group textarea:focus {
+  outline: none;
+  border-color: var(--main-color);
+}
+.post .post-content .reply-form .form-group textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+.post .post-content .reply-form .submit-button {
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  padding: 14px 35px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.post .post-content .reply-form .submit-button:hover {
+  background-color: var(--accent-color, #0056b3);
+  opacity: 0.9;
+}
+.post .post-content .post-footer-menu {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-color);
+}
+.post .post-content .post-footer-menu nav ul {
+  display: flex;
+  gap: 30px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.post .post-content .post-footer-menu nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-family: "Overpass", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.post .post-content .post-footer-menu nav ul li a:hover {
+  color: var(--main-color);
+}
+@media (max-width: 768px) {
+  .post {
+    padding: 80px 0 60px;
+  }
+  .post .container {
+    flex-direction: column;
+    gap: 50px;
+    padding: 0 15px;
+  }
+  .post h1 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+  }
+  .post .post-sidebar {
+    width: 100%;
+    order: 2;
+  }
+  .post .post-content {
+    order: 1;
+  }
+  .post .post-content .post-body p {
+    font-size: 1rem;
+  }
+  .post .post-content .post-body h2 {
+    font-size: 1.7rem;
+  }
+  .post .post-content .post-body h3 {
+    font-size: 1.5rem;
+  }
+  .post .post-content .comments-section h2 {
+    font-size: 1.7rem;
+  }
+  .post .post-content .comments-section .comment {
+    padding: 25px 20px;
+  }
+  .post .post-content .reply-form h3 {
+    font-size: 1.7rem;
+  }
+}
+@media (max-width: 576px) {
+  .post {
+    padding: 60px 0 40px;
+  }
+  .post h1 {
+    font-size: 1.8rem;
+  }
+  .post .post-sidebar .recent-posts .post-item img {
+    width: 60px;
+    height: 60px;
+  }
+  .post .post-content .post-meta-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .post .post-content .post-meta-info .post-date {
+    padding-left: 0;
+  }
+  .post .post-content .post-meta-info .post-date:before {
+    display: none;
+  }
+}
+
 .home-page {
   overflow-x: hidden;
   font-family: "Overpass", sans-serif;
