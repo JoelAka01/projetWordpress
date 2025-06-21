@@ -49,20 +49,20 @@ $reading_time = esgi_get_post_reading_time();
                     'numberposts' => 3,
                     'post_status' => 'publish'
                 ));
-                
-                foreach($recent_posts as $recent) {
+                  foreach($recent_posts as $recent) {
                     // try to get the custom main image
                     $main_image_url = esgi_get_post_main_image_url($recent['ID'], 'thumbnail');
                     if (!$main_image_url) {
                         // Fallback to featured image if no main image is set
                         $main_image_url = get_the_post_thumbnail_url($recent['ID'], 'thumbnail');
                     }
-                    // If no main image nor featured image exist, dont display any image
+                    // If no main image nor featured image exist, use default no-image.jpg
+                    if (!$main_image_url) {
+                        $main_image_url = get_template_directory_uri() . '/src/images/png/no-image.jpg';
+                    }
                 ?>
                 <div class="post-item">
-                    <?php if ($main_image_url) : ?>
                     <img src="<?php echo $main_image_url; ?>" alt="<?php echo $recent['post_title']; ?>">
-                    <?php endif; ?>
                     <div class="post-info">
                         <h3><a href="<?php echo get_permalink($recent['ID']); ?>"><?php echo $recent['post_title']; ?></a></h3>
                         <span class="post-date"><?php echo wp_date('j M, Y', strtotime($recent['post_date'])); ?></span>

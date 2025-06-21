@@ -5631,10 +5631,6 @@ body.error404 .site-footer .footer-logo {
   border-radius: 0;
   flex-shrink: 0;
 }
-.post .post-sidebar .recent-posts .post-item:not(:has(img)) .post-info,
-.post .post-sidebar .recent-posts .post-item .post-info:only-child {
-  margin-left: 0;
-}
 .post .post-sidebar .recent-posts .post-item .post-info {
   flex: 1;
   height: 70px;

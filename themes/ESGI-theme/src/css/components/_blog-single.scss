@@ -130,12 +130,6 @@
                     flex-shrink: 0;
                 }
 
-                // when no image is present, adjust the layout
-                &:not(:has(img)) .post-info,
-                .post-info:only-child {
-                    margin-left: 0;
-                }
-
                 .post-info {
                     flex: 1;
                     height: 70px;
