@@ -40,13 +40,13 @@ $reading_time = esgi_get_post_reading_time();
                         <img src="<?php echo get_template_directory_uri(); ?>/src/images/svg/search.svg" alt="Search" width="16" height="16">
                     </button>
                 </form>
-            </div>
-              <!-- recent posts -->
+            </div>            <!-- recent posts -->
             <div class="recent-posts">
                 <h2>Recent posts</h2>
                 <?php
+                // max posts in the recent posts area
                 $recent_posts = wp_get_recent_posts(array(
-                    'numberposts' => 3,
+                    'numberposts' => 4,
                     'post_status' => 'publish'
                 ));
                   foreach($recent_posts as $recent) {
