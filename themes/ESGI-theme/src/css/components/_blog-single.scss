@@ -12,7 +12,7 @@
         padding: 0 0px;
         display: flex;
         flex-wrap: wrap;
-        gap: 80px;
+        gap: 40px;
     }
 
     h1 {
@@ -318,6 +318,7 @@
             img {
                 width: 100%;
                 height: auto;
+                max-height: 25rem;
                 object-fit: cover;
                 border-radius: 0;
             }
@@ -332,10 +333,10 @@
                 margin-right: 15px;
 
                 a {
-                    color: var(--main-color);
+                    color: var(--text-color);
                     text-decoration: none;
-                    font-size: 1rem;
-                    font-weight: 500;
+                    font-size: 1.1rem;
+                    font-weight: 800;
                     transition: opacity 0.2s;
 
                     &:hover {
@@ -345,17 +346,18 @@
             }
 
             .post-date {
-                color: var(--muted-text);
-                font-size: 1rem;
+                color: var(--text-color);
+                font-size: 1.1rem;
+                font-weight: 800;
                 position: relative;
                 padding-left: 15px;
 
                 &:before {
-                    content: "•";
+                    content: "-";
                     position: absolute;
-                    left: 5px;
+                    left: 0px;
                     top: 0;
-                    color: var(--muted-text);
+                    color: var(--text-color);
                 }
             }
 
@@ -611,7 +613,7 @@
 
         .container {
             flex-direction: column;
-            gap: 50px;
+            gap: 30px;
             padding: 0 15px;
         }
 

@@ -67,7 +67,7 @@ $reading_time = esgi_get_post_reading_time();
                     <img src="<?php echo $main_image_url; ?>" alt="<?php echo $recent['post_title']; ?>">
                     <div class="post-info">
                         <h3><a href="<?php echo get_permalink($recent['ID']); ?>"><?php echo $recent['post_title']; ?></a></h3>
-                        <span class="post-date"><?php echo wp_date('j M, Y', strtotime($recent['post_date'])); ?></span>
+                        <span class="post-date"><?php echo ucfirst(wp_date('j M, Y', strtotime($recent['post_date']))); ?></span>
                     </div>
                 </div>
                 <?php } ?>
@@ -121,7 +121,7 @@ $reading_time = esgi_get_post_reading_time();
                     // Fallback to featured image if no main image is set
                     the_post_thumbnail('large');
                 }
-                // If neither main image nor featured image exist, don't display any image
+                // If neither main image nor featured image exist, dont display any image
                 ?>
             </div>
               <div class="post-meta-info">
@@ -129,9 +129,8 @@ $reading_time = esgi_get_post_reading_time();
                 <div class="post-category">
                     <a href="<?php echo $category_link; ?>"><?php echo $category_name; ?></a>
                 </div>
-                <?php endif; ?>
-                <div class="post-date">
-                    <?php echo wp_date('j F Y', strtotime($post->post_date)); ?>
+                <?php endif; ?>                <div class="post-date">
+                    <?php echo ucfirst(wp_date('F j, Y', strtotime($post->post_date))); ?>
                 </div>
                 <?php if ($reading_time) : ?>
                 <div class="reading-time">
