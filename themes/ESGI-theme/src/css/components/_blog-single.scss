@@ -204,7 +204,10 @@
                         content: "•";
                         position: absolute;
                         left: 0;
-                        color: var(--muted-text);
+                        background: linear-gradient(to right, #FFD0A8, #FF4FC0);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
                         font-weight: bold;
                     }
 
@@ -212,6 +215,7 @@
                         color: var(--text-color);
                         text-decoration: none;
                         transition: color 0.2s;
+                        text-transform: capitalize;
 
                         &:hover {
                             color: var(--main-color);
@@ -248,7 +252,10 @@
                         content: "•";
                         position: absolute;
                         left: 0;
-                        color: var(--muted-text);
+                        background: linear-gradient(to right, #FFD0A8, #FF4FC0);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
                         font-weight: bold;
                     }
 
@@ -256,6 +263,7 @@
                         color: var(--text-color);
                         text-decoration: none;
                         transition: color 0.2s;
+                        text-transform: capitalize;
 
                         &:hover {
                             color: var(--main-color);
