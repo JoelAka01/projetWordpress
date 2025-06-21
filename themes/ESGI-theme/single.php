@@ -197,8 +197,10 @@ $reading_time = esgi_get_post_reading_time();
                     <input type="hidden" name="comment_post_ID" value="<?php echo get_the_ID(); ?>">
                     <input type="hidden" name="comment_parent" id="comment_parent" value="0">
                     <button type="submit" class="submit-button">Submit</button>
-                </form>
-            </div>
+                </form>            </div>
+            
+            <!-- separator line for mobile view -->
+            <div class="mobile-sidebar-separator"></div>
             
             <!-- mobile only sidebar after reply form -->
             <div class="post-sidebar-mobile">
