@@ -560,23 +560,23 @@
 
                     &:focus {
                         outline: none;
-                        border-color: var(--main-color);
+
                     }
                 }
 
                 textarea {
                     min-height: 140px;
-                    resize: vertical;
+                    resize: none;
                 }
             }
 
             .submit-button {
                 color: var(--text-color);
+                background: none;
                 border: none;
-                padding: 14px 35px;
+                padding: 0;
                 font-size: 1rem;
                 font-weight: 900;
-                border-radius: 0;
                 cursor: pointer;
                 transition: all 0.3s;
 
@@ -588,9 +588,8 @@
 
         // post footer menu
         .post-footer-menu {
-            margin-top: 60px;
+            margin-top: 0px;
             padding-top: 40px;
-            border-top: 1px solid var(--border-color);
 
             nav ul {
                 display: flex;
