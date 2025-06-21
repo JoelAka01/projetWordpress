@@ -13,11 +13,21 @@ $category_link = !empty($categories) ? get_category_link($categories[0]->term_id
 // get post tags
 $tags = get_the_tags();
 
+// get custom fields
+$subtitle = esgi_get_post_subtitle();
+$featured_quote = esgi_get_post_featured_quote();
+$reading_time = esgi_get_post_reading_time();
+
 ?>
 
 <main class="post">
     <div class="container">
         <h1><?php the_title(); ?></h1>
+        <?php if ($subtitle) : ?>
+        <div class="post-subtitle">
+            <p><?php echo esc_html($subtitle); ?></p>
+        </div>
+        <?php endif; ?>
         
         <!-- sidebar -->
         <div class="post-sidebar">
@@ -103,8 +113,7 @@ $tags = get_the_tags();
                 }
                 ?>
             </div>
-            
-            <div class="post-meta-info">
+              <div class="post-meta-info">
                 <?php if (!empty($categories)) : ?>
                 <div class="post-category">
                     <a href="<?php echo $category_link; ?>"><?php echo $category_name; ?></a>
@@ -113,11 +122,23 @@ $tags = get_the_tags();
                 <div class="post-date">
                     <?php echo wp_date('j F Y', strtotime($post->post_date)); ?>
                 </div>
+                <?php if ($reading_time) : ?>
+                <div class="reading-time">
+                    <?php echo esc_html($reading_time); ?> min read
+                </div>
+                <?php endif; ?>
             </div>
-            
-            <div class="post-body">
+              <div class="post-body">
                 <?php the_content(); ?>
             </div>
+            
+            <?php if ($featured_quote) : ?>
+            <div class="post-featured-quote">
+                <blockquote>
+                    <p>"<?php echo esc_html($featured_quote); ?>"</p>
+                </blockquote>
+            </div>
+            <?php endif; ?>
             
             <?php if ($tags) : ?>
             <div class="post-tags">
