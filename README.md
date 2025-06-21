@@ -1,5 +1,7 @@
 # ESGI Wordpress Website
 
+- Beautiful wordpress theme made from a figma mockup
+
 ## Running the project
 
 1. Run `docker-compose up -d` to start the containers.
