@@ -133,7 +133,6 @@
 
             .pagination {
                 display: flex;
-                gap: 10px;
                 align-items: center;
 
                 .page-link {
@@ -142,7 +141,7 @@
                     justify-content: center;
                     width: 40px;
                     height: 40px;
-                    border: 1px solid var(--border-color);
+                    border: 1px solid transparent;
                     color: var(--text-color);
                     text-decoration: none;
                     font-size: 0.9rem;
@@ -160,6 +159,19 @@
                         border-color: var(--text-color);
                         color: white;
                         cursor: default;
+                    }
+
+                    &.ellipsis {
+                        border: none;
+                        background: transparent;
+                        cursor: default;
+                        font-weight: 600;
+
+                        &:hover {
+                            background: transparent;
+                            color: var(--text-color);
+                            border: none;
+                        }
                     }
 
                     &.prev,
