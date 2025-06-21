@@ -41,8 +41,7 @@ $reading_time = esgi_get_post_reading_time();
                     </button>
                 </form>
             </div>
-            
-            <!-- recent posts -->
+              <!-- recent posts -->
             <div class="recent-posts">
                 <h2>Recent posts</h2>
                 <?php
@@ -52,10 +51,18 @@ $reading_time = esgi_get_post_reading_time();
                 ));
                 
                 foreach($recent_posts as $recent) {
-                    $thumb_url = get_the_post_thumbnail_url($recent['ID'], 'thumbnail') ?: get_template_directory_uri() . '/src/images/png/1.png';
+                    // try to get the custom main image
+                    $main_image_url = esgi_get_post_main_image_url($recent['ID'], 'thumbnail');
+                    if (!$main_image_url) {
+                        // Fallback to featured image if no main image is set
+                        $main_image_url = get_the_post_thumbnail_url($recent['ID'], 'thumbnail');
+                    }
+                    // If no main image nor featured image exist, dont display any image
                 ?>
                 <div class="post-item">
-                    <img src="<?php echo $thumb_url; ?>" alt="<?php echo $recent['post_title']; ?>">
+                    <?php if ($main_image_url) : ?>
+                    <img src="<?php echo $main_image_url; ?>" alt="<?php echo $recent['post_title']; ?>">
+                    <?php endif; ?>
                     <div class="post-info">
                         <h3><a href="<?php echo get_permalink($recent['ID']); ?>"><?php echo $recent['post_title']; ?></a></h3>
                         <span class="post-date"><?php echo wp_date('j M, Y', strtotime($recent['post_date'])); ?></span>
@@ -101,16 +108,19 @@ $reading_time = esgi_get_post_reading_time();
                 </div>
             </div>
         </div>
-        
-        <!-- main content area -->
+          <!-- main content area -->
         <div class="post-content">
             <div class="post-thumbnail">
                 <?php 
-                if (has_post_thumbnail()) {
+                // First try to get the custom main image
+                $main_image = esgi_get_post_main_image();
+                if ($main_image) {
+                    echo $main_image;
+                } elseif (has_post_thumbnail()) {
+                    // Fallback to featured image if no main image is set
                     the_post_thumbnail('large');
-                } else {
-                    echo '<img src="' . get_template_directory_uri() . '/src/images/png/1.png" alt="' . get_the_title() . '">';
                 }
+                // If neither main image nor featured image exist, don't display any image
                 ?>
             </div>
               <div class="post-meta-info">

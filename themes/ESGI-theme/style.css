@@ -5576,7 +5576,7 @@ body.error404 .site-footer .footer-logo {
   border: none;
   border-bottom: 1px solid var(--border-color);
   font-family: "Overpass", sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   background-color: transparent;
 }
 .post .post-sidebar .search-section .search-form input[type=search]::placeholder {
@@ -5630,6 +5630,10 @@ body.error404 .site-footer .footer-logo {
   margin-right: 15px;
   border-radius: 0;
   flex-shrink: 0;
+}
+.post .post-sidebar .recent-posts .post-item:not(:has(img)) .post-info,
+.post .post-sidebar .recent-posts .post-item .post-info:only-child {
+  margin-left: 0;
 }
 .post .post-sidebar .recent-posts .post-item .post-info {
   flex: 1;

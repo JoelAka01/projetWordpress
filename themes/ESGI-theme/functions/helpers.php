@@ -31,6 +31,32 @@ function esgi_get_post_reading_time($post_id = null)
     return get_post_meta($post_id, '_esgi_post_reading_time', true);
 }
 
+// get post main image
+function esgi_get_post_main_image($post_id = null, $size = 'large')
+{
+    if (!$post_id) {
+        $post_id = get_the_ID();
+    }
+    $image_id = get_post_meta($post_id, '_esgi_post_main_image', true);
+    if ($image_id) {
+        return wp_get_attachment_image($image_id, $size);
+    }
+    return false;
+}
+
+// get post main image url
+function esgi_get_post_main_image_url($post_id = null, $size = 'large')
+{
+    if (!$post_id) {
+        $post_id = get_the_ID();
+    }
+    $image_id = get_post_meta($post_id, '_esgi_post_main_image', true);
+    if ($image_id) {
+        return wp_get_attachment_image_url($image_id, $size);
+    }
+    return false;
+}
+
 function esgi_get_member_field($field, $post_id = null)
 {
     if (!$post_id) {

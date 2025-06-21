@@ -64,7 +64,7 @@
                     border: none;
                     border-bottom: 1px solid var(--border-color);
                     font-family: fonts.$font2;
-                    font-size: 1.2rem;
+                    font-size: 1.1rem;
                     background-color: transparent;
 
                     &::placeholder {
@@ -128,6 +128,12 @@
                     margin-right: 15px;
                     border-radius: 0;
                     flex-shrink: 0;
+                }
+
+                // when no image is present, adjust the layout
+                &:not(:has(img)) .post-info,
+                .post-info:only-child {
+                    margin-left: 0;
                 }
 
                 .post-info {

@@ -20,14 +20,17 @@ get_header();
                     $linkedin = esgi_get_member_field('linkedin');
                     ?>
                     
-                    <div class="member-card">
-                        <div class="member-image">
+                    <div class="member-card">                        <div class="member-image">
                             <?php 
-                            if (has_post_thumbnail()) {
+                            // First try to get the custom main image
+                            $main_image = esgi_get_post_main_image(null, 'medium');
+                            if ($main_image) {
+                                echo $main_image;
+                            } elseif (has_post_thumbnail()) {
+                                // Fallback to featured image if no main image is set
                                 the_post_thumbnail('medium');
-                            } else {
-                                echo '<img src="' . get_template_directory_uri() . '/src/images/png/1.png" alt="' . get_the_title() . '">';
                             }
+                            // If neither main image nor featured image exist, don't display any image
                             ?>
                         </div>
                         

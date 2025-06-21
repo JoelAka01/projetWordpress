@@ -47,11 +47,28 @@ function esgi_post_custom_fields_callback($post)
     $subtitle = get_post_meta($post->ID, '_esgi_post_subtitle', true);
     $featured_quote = get_post_meta($post->ID, '_esgi_post_featured_quote', true);
     $reading_time = get_post_meta($post->ID, '_esgi_post_reading_time', true);
+    $main_image = get_post_meta($post->ID, '_esgi_post_main_image', true);
     
     echo '<table class="form-table">';
     echo '<tr>';
     echo '<th><label for="esgi_post_subtitle">' . __('Subtitle', 'ESGI') . '</label></th>';
     echo '<td><input type="text" id="esgi_post_subtitle" name="esgi_post_subtitle" value="' . esc_attr($subtitle) . '" class="regular-text" /></td>';
+    echo '</tr>';
+    echo '<tr>';
+    echo '<th><label for="esgi_post_main_image">' . __('Main Image (Thumbnail)', 'ESGI') . '</label></th>';
+    echo '<td>';
+    echo '<input type="hidden" id="esgi_post_main_image" name="esgi_post_main_image" value="' . esc_attr($main_image) . '" />';
+    echo '<div id="esgi_main_image_preview" style="margin-bottom: 10px;">';
+    if ($main_image) {
+        $image_url = wp_get_attachment_image_url($main_image, 'medium');
+        if ($image_url) {
+            echo '<img src="' . esc_url($image_url) . '" style="max-width: 300px; height: auto; display: block;" />';
+        }
+    }
+    echo '</div>';
+    echo '<button type="button" id="esgi_upload_main_image" class="button">' . __('Choose Image', 'ESGI') . '</button>';
+    echo '<button type="button" id="esgi_remove_main_image" class="button" style="margin-left: 10px;">' . __('Remove Image', 'ESGI') . '</button>';
+    echo '</td>';
     echo '</tr>';
     echo '<tr>';
     echo '<th><label for="esgi_post_featured_quote">' . __('Featured Quote', 'ESGI') . '</label></th>';
@@ -62,6 +79,46 @@ function esgi_post_custom_fields_callback($post)
     echo '<td><input type="number" id="esgi_post_reading_time" name="esgi_post_reading_time" value="' . esc_attr($reading_time) . '" min="1" max="60" /></td>';
     echo '</tr>';
     echo '</table>';
+    
+    // Add js for media uploader
+    ?>
+    <script>
+    jQuery(document).ready(function($) {
+        var mediaUploader;
+        
+        $('#esgi_upload_main_image').click(function(e) {
+            e.preventDefault();
+            
+            if (mediaUploader) {
+                mediaUploader.open();
+                return;
+            }
+            
+            mediaUploader = wp.media({
+                title: 'Choose Main Image',
+                button: {
+                    text: 'Choose Image'
+                },
+                multiple: false
+            });
+            
+            mediaUploader.on('select', function() {
+                var attachment = mediaUploader.state().get('selection').first().toJSON();
+                $('#esgi_post_main_image').val(attachment.id);
+                $('#esgi_main_image_preview').html('<img src="' + attachment.url + '" style="max-width: 300px; height: auto; display: block;" />');
+            });
+            
+            mediaUploader.open();
+        });
+        
+        $('#esgi_remove_main_image').click(function(e) {
+            e.preventDefault();
+            $('#esgi_post_main_image').val('');
+            $('#esgi_main_image_preview').html('');
+        });
+    });
+    </script>
+    <?php
 }
 
 // for members
@@ -180,6 +237,9 @@ function esgi_save_post_fields($post_id)
     }
     if (isset($_POST['esgi_post_reading_time'])) {
         update_post_meta($post_id, '_esgi_post_reading_time', intval($_POST['esgi_post_reading_time']));
+    }
+    if (isset($_POST['esgi_post_main_image'])) {
+        update_post_meta($post_id, '_esgi_post_main_image', intval($_POST['esgi_post_main_image']));
     }
 }
 

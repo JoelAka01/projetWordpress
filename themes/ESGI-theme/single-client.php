@@ -63,13 +63,20 @@ $testimonial = esgi_get_client_field('testimonial');
                     'post__not_in' => array(get_the_ID()),
                     'post_status' => 'publish'
                 ));
-                
-                foreach($other_clients as $client) {
+                  foreach($other_clients as $client) {
                     $client_company = get_post_meta($client->ID, '_esgi_client_company_name', true);
-                    $thumb_url = get_the_post_thumbnail_url($client->ID, 'thumbnail') ?: get_template_directory_uri() . '/src/images/png/1.png';
+                    // First try to get the custom main image
+                    $thumb_url = esgi_get_post_main_image_url($client->ID, 'thumbnail');
+                    if (!$thumb_url) {
+                        // Fallback to featured image if no main image is set
+                        $thumb_url = get_the_post_thumbnail_url($client->ID, 'thumbnail');
+                    }
+                    // If neither main image nor featured image exist, don't display any image
                 ?>
                 <div class="post-item">
+                    <?php if ($thumb_url) : ?>
                     <img src="<?php echo $thumb_url; ?>" alt="<?php echo $client->post_title; ?>">
+                    <?php endif; ?>
                     <div class="post-info">
                         <h3><a href="<?php echo get_permalink($client->ID); ?>"><?php echo $client->post_title; ?></a></h3>
                         <?php if ($client_company) : ?>
@@ -82,14 +89,17 @@ $testimonial = esgi_get_client_field('testimonial');
         </div>
         
         <!-- main content area -->
-        <div class="post-content">
-            <div class="post-thumbnail">
+        <div class="post-content">            <div class="post-thumbnail">
                 <?php 
-                if (has_post_thumbnail()) {
+                // First try to get the custom main image
+                $main_image = esgi_get_post_main_image();
+                if ($main_image) {
+                    echo $main_image;
+                } elseif (has_post_thumbnail()) {
+                    // Fallback to featured image if no main image is set
                     the_post_thumbnail('large');
-                } else {
-                    echo '<img src="' . get_template_directory_uri() . '/src/images/png/1.png" alt="' . get_the_title() . '">';
                 }
+                // If neither main image nor featured image exist, don't display any image
                 ?>
             </div>
             

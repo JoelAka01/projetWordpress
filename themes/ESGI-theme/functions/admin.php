@@ -66,8 +66,7 @@ function esgi_admin_styles()
         .form-table td input[type="email"],
         .form-table td input[type="url"],
         .form-table td input[type="tel"],
-        .form-table td textarea {
-            width: 100%;
+        .form-table td textarea {            width: 100%;
             max-width: 400px;
         }
         .form-table td input[type="number"],
@@ -75,4 +74,13 @@ function esgi_admin_styles()
             width: 200px;
         }
     </style>';
+}
+
+// Enqueue media uploader for post edit pages
+add_action('admin_enqueue_scripts', 'esgi_admin_scripts');
+function esgi_admin_scripts($hook) {
+    // Only load on post edit pages
+    if ($hook == 'post.php' || $hook == 'post-new.php') {
+        wp_enqueue_media();
+    }
 }
