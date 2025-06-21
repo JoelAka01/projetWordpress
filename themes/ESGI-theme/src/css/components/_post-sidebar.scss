@@ -3,7 +3,8 @@
 @use "../partials/functions" as f;
 
 // sidebar (desktop and mobile)
-.post {
+.post,
+.blog-page {
 
     // left sidebar
     .post-sidebar {
