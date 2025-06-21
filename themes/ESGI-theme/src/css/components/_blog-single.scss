@@ -204,7 +204,7 @@
                         content: "•";
                         position: absolute;
                         left: 0;
-                        background: linear-gradient(to right, #FFD0A8, #FF4FC0);
+                        background: linear-gradient(to right, colors.$gradient-start, colors.$gradient-end);
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
                         background-clip: text;
@@ -252,7 +252,7 @@
                         content: "•";
                         position: absolute;
                         left: 0;
-                        background: linear-gradient(to right, #FFD0A8, #FF4FC0);
+                        background: linear-gradient(to right, colors.$gradient-start, colors.$gradient-end);
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;
                         background-clip: text;

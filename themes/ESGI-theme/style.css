@@ -5696,13 +5696,17 @@ body.error404 .site-footer .footer-logo {
   content: "•";
   position: absolute;
   left: 0;
-  color: var(--muted-text);
+  background: linear-gradient(to right, #FFD0A8, #FF4FC0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: bold;
 }
 .post .post-sidebar .archives ul li a {
   color: var(--text-color);
   text-decoration: none;
   transition: color 0.2s;
+  text-transform: capitalize;
 }
 .post .post-sidebar .archives ul li a:hover {
   color: var(--main-color);
@@ -5732,13 +5736,17 @@ body.error404 .site-footer .footer-logo {
   content: "•";
   position: absolute;
   left: 0;
-  color: var(--muted-text);
+  background: linear-gradient(to right, #FFD0A8, #FF4FC0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-weight: bold;
 }
 .post .post-sidebar .categories ul li a {
   color: var(--text-color);
   text-decoration: none;
   transition: color 0.2s;
+  text-transform: capitalize;
 }
 .post .post-sidebar .categories ul li a:hover {
   color: var(--main-color);
