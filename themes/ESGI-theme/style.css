@@ -4424,8 +4424,8 @@ summary {
 :root {
   --bg-color: #ffffff;
   --text-color: #1A1A1A;
-  --main-color: #3f51b5;
-  --accent-color: rgb(49.8319672131, 64.0696721311, 143.1680327869);
+  --main-color: #060a3a;
+  --accent-color: rgb(1.21875, 2.03125, 11.78125);
   --light-bg: #f8f9fa;
   --muted-text: #6c757d;
   --border-color: #dee2e6;
@@ -5675,7 +5675,7 @@ body.error404 .site-footer .footer-logo {
   margin-bottom: 60px;
 }
 .post .post-sidebar .archives h2 {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   margin-bottom: 25px;
   font-weight: 500;
   color: var(--text-color);
@@ -5715,7 +5715,7 @@ body.error404 .site-footer .footer-logo {
   margin-bottom: 60px;
 }
 .post .post-sidebar .categories h2 {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   margin-bottom: 25px;
   font-weight: 500;
   color: var(--text-color);
@@ -5752,7 +5752,7 @@ body.error404 .site-footer .footer-logo {
   color: var(--main-color);
 }
 .post .post-sidebar .tags-sidebar h2 {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   margin-bottom: 25px;
   font-weight: 500;
   color: var(--text-color);
@@ -5764,12 +5764,13 @@ body.error404 .site-footer .footer-logo {
 }
 .post .post-sidebar .tags-sidebar .tag-list a {
   display: inline-block;
-  padding: 8px 15px;
+  padding: 1px 5px 1px;
   background-color: #f5f5f5;
   color: var(--text-color);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   font-family: "Overpass", sans-serif;
+  letter-spacing: 1.1px;
   transition: all 0.2s;
 }
 .post .post-sidebar .tags-sidebar .tag-list a:hover {
@@ -5891,11 +5892,11 @@ body.error404 .site-footer .footer-logo {
 }
 .post .post-content .post-tags .tag-list a {
   display: inline-block;
-  padding: 8px 15px;
+  padding: 5px 10px;
   background-color: #f5f5f5;
   color: var(--text-color);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-family: "Overpass", sans-serif;
   transition: all 0.2s;
 }

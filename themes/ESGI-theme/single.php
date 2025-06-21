@@ -8,6 +8,8 @@ get_header();
 // get post categories
 $categories = get_the_category();
 $category_name = !empty($categories) ? esc_html($categories[0]->name) : '';
+// translate category name if need
+$category_name = esgi_translate_category_name($category_name);
 $category_link = !empty($categories) ? get_category_link($categories[0]->term_id) : '#';
 
 // get post tags
@@ -78,13 +80,12 @@ $reading_time = esgi_get_post_reading_time();
                     <?php wp_get_archives(array('type' => 'monthly', 'limit' => 5)); ?>
                 </ul>
             </div>
-            
-            <!-- categories -->
+              <!-- categories -->
             <div class="categories">
                 <h2>Categories</h2>
                 <ul>
                     <?php 
-                    wp_list_categories(array(
+                    esgi_list_categories(array(
                         'title_li' => '',
                         'show_count' => false,
                         'number' => 5

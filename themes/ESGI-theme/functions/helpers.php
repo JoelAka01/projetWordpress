@@ -165,3 +165,31 @@ function esgi_truncate_text($text, $length = 100, $suffix = '...')
     
     return substr($text, 0, $length) . $suffix;
 }
+
+// translate category names to match mockup
+function esgi_translate_category_name($category_name)
+{
+    if ($category_name === 'Non classé') {
+        return 'Uncategorized';
+    }
+    return $category_name;
+}
+
+// custom categories list with translation
+function esgi_list_categories($args = array())
+{
+    $defaults = array(
+        'title_li' => '',
+        'show_count' => false,
+        'number' => 5,
+        'echo' => false
+    );
+    
+    $args = wp_parse_args($args, $defaults);
+    $categories_html = wp_list_categories($args);
+    
+    // Replace fr category names with eng ones
+    $categories_html = str_replace('Non classé', 'Uncategorized', $categories_html);
+    
+    echo $categories_html;
+}
