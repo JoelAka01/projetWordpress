@@ -1,8 +1,6 @@
 @use "../partials/fonts";
 @use "../partials/functions" as f;
-
-$menu-gradient-end: #FF4FC0;
-$menu-gradient-start: #FFD0A8;
+@use "../partials/colors";
 
 .site-header {
 	padding: 1.5rem 0;
@@ -297,7 +295,7 @@ $menu-gradient-start: #FFD0A8;
 								left: 0;
 								width: 100%;
 								height: 3.9px;
-								background: linear-gradient(to right, $menu-gradient-start, $menu-gradient-end);
+								background: linear-gradient(to right, colors.$gradient-start, colors.$gradient-end);
 							}
 						}
 					}
