@@ -373,7 +373,7 @@
                     margin-bottom: 25px;
 
                     img {
-                        width: 70px;
+                        width: 80px;
                         height: 70px;
                         object-fit: cover;
                         margin-right: 15px;
@@ -392,9 +392,8 @@
                         h3 {
                             font-size: 0.9rem;
                             margin: 0;
-                            line-height: 1.7;
+                            line-height: 2;
                             font-weight: 500;
-                            width: 70%;
                             max-height: 45px;
                             display: -webkit-box;
                             -webkit-line-clamp: 2;
@@ -402,17 +401,10 @@
                             -webkit-box-orient: vertical;
                             overflow: hidden;
                             text-overflow: ellipsis;
-                            word-wrap: break-word;
-                            hyphens: auto;
 
                             a {
-                                color: var(--muted-text);
+                                color: var(--text-color);
                                 text-decoration: none;
-                                transition: color 0.2s;
-                                display: block;
-                                width: 100%;
-                                overflow: hidden;
-                                text-overflow: ellipsis;
 
                                 &:hover {
                                     color: var(--main-color);
@@ -421,12 +413,12 @@
                         }
 
                         .post-date {
-                            font-size: 0.85rem;
                             color: var(--muted-text);
+                            font-size: 0.8rem;
                             line-height: 1.2;
                             height: 20px;
                             margin: 0;
-                            margin-bottom: -3px;
+                            margin-bottom: 2px;
                             display: flex;
                             align-items: center;
                             margin-top: auto;
@@ -573,8 +565,13 @@
                 @media (max-width: 576px) {
                     .tag-list {
                         a {
-                            font-size: 0.6rem;
-                            padding: 1px 2px;
+                            font-size: 1rem;
+                            padding: 5px 2px;
+                            line-height: 1;
+                            display: inline-flex;
+                            align-items: center;
+                            justify-content: center;
+                            min-height: auto;
                         }
                     }
                 }
