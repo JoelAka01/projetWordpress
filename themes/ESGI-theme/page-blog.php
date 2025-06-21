@@ -141,17 +141,11 @@ $blog_posts = new WP_Query(array(
                     </article>
                     <?php endwhile; ?>
                 </div>
-                
-                <!-- pagination -->
+                  <!-- pagination -->
                 <?php if ($blog_posts->max_num_pages > 1) : ?>
                 <div class="pagination-wrapper">
                     <div class="pagination">
                         <?php
-                        // previous page link
-                        if ($paged > 1) {
-                            echo '<a href="' . get_pagenum_link($paged - 1) . '" class="page-link prev">←</a>';
-                        }
-                        
                         // page numbers
                         for ($i = 1; $i <= $blog_posts->max_num_pages; $i++) {
                             if ($i == $paged) {
@@ -159,11 +153,6 @@ $blog_posts = new WP_Query(array(
                             } else {
                                 echo '<a href="' . get_pagenum_link($i) . '" class="page-link">' . $i . '</a>';
                             }
-                        }
-                        
-                        // next page link
-                        if ($paged < $blog_posts->max_num_pages) {
-                            echo '<a href="' . get_pagenum_link($paged + 1) . '" class="page-link next">→</a>';
                         }
                         ?>
                     </div>

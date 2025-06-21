@@ -78,7 +78,7 @@
 
                     h2 {
                         margin: 0 0 15px 0;
-                        font-size: 1.4rem;
+                        font-size: 1.7rem;
                         font-weight: 500;
                         line-height: 1.3;
                         display: -webkit-box;
@@ -128,7 +128,7 @@
         // pagination
         .pagination-wrapper {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             margin-top: 60px;
 
             .pagination {
