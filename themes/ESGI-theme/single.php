@@ -24,7 +24,7 @@ $reading_time = esgi_get_post_reading_time();
 
 <main class="post">
     <div class="container">
-        <h1><?php the_title(); ?></h1>
+        <h1><?php the_title(); ?>.</h1>
         <?php if ($subtitle) : ?>
         <div class="post-subtitle">
             <p><?php echo esc_html($subtitle); ?></p>
