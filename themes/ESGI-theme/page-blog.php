@@ -144,14 +144,39 @@ $blog_posts = new WP_Query(array(
                   <!-- pagination -->
                 <?php if ($blog_posts->max_num_pages > 1) : ?>
                 <div class="pagination-wrapper">
-                    <div class="pagination">
-                        <?php
-                        // page numbers
-                        for ($i = 1; $i <= $blog_posts->max_num_pages; $i++) {
-                            if ($i == $paged) {
-                                echo '<span class="page-link current">' . $i . '</span>';
-                            } else {
-                                echo '<a href="' . get_pagenum_link($i) . '" class="page-link">' . $i . '</a>';
+                    <div class="pagination">                        <?php
+                        // page numbers with ellipsis logic
+                        $total_pages = $blog_posts->max_num_pages;
+                        
+                        if ($total_pages <= 8) {
+                            // Show all pages if 8 or fewer
+                            for ($i = 1; $i <= $total_pages; $i++) {
+                                if ($i == $paged) {
+                                    echo '<span class="page-link current">' . $i . '</span>';
+                                } else {
+                                    echo '<a href="' . get_pagenum_link($i) . '" class="page-link">' . $i . '</a>';
+                                }
+                            }
+                        } else {
+                            // show first 5 pages
+                            for ($i = 1; $i <= 5; $i++) {
+                                if ($i == $paged) {
+                                    echo '<span class="page-link current">' . $i . '</span>';
+                                } else {
+                                    echo '<a href="' . get_pagenum_link($i) . '" class="page-link">' . $i . '</a>';
+                                }
+                            }
+                            
+                            // show ellipsis
+                            echo '<span class="page-link ellipsis">...</span>';
+                            
+                            // show last 2 pages
+                            for ($i = $total_pages - 1; $i <= $total_pages; $i++) {
+                                if ($i == $paged) {
+                                    echo '<span class="page-link current">' . $i . '</span>';
+                                } else {
+                                    echo '<a href="' . get_pagenum_link($i) . '" class="page-link">' . $i . '</a>';
+                                }
                             }
                         }
                         ?>
