@@ -131,14 +131,12 @@ $blog_posts = new WP_Query(array(
                         </div>
                         
                         <div class="post-content">
-                            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                            <div class="post-excerpt">
+                            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>                            <div class="post-excerpt">
                                 <?php 
                                 $excerpt = get_the_excerpt();
                                 echo esgi_truncate_text($excerpt, 120, '...');
                                 ?>
                             </div>
-                            <div class="post-date"><?php echo get_the_date('F j, Y'); ?></div>
                         </div>
                     </article>
                     <?php endwhile; ?>
