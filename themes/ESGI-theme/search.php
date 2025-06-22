@@ -23,76 +23,85 @@ $search_posts = new WP_Query([
             <h1 class="search-title">
                 <?php printf('Search results for: <span class="search-term">%s</span>', esc_html($search_query)); ?>
             </h1>
-        </header>
-
-        <?php if ($search_posts->have_posts()) : ?>
+        </header>        <?php if ($search_posts->have_posts()) : ?>
             <div class="search-results-grid">
                 <?php while ($search_posts->have_posts()) : $search_posts->the_post(); ?>
                     <article class="search-post-item">
-                        <div class="post-image">
-                            <?php 
-                            $main_image_url = esgi_get_post_main_image_url(get_the_ID(), 'medium');
-                            if (!$main_image_url) {
-                                $main_image_url = get_the_post_thumbnail_url(get_the_ID(), 'medium');
-                            }
-                            if (!$main_image_url) {
-                                $main_image_url = get_template_directory_uri() . '/src/images/png/no-image.jpg';
-                            }
-                            ?>
-                            <img src="<?php echo esc_url($main_image_url); ?>" alt="<?php the_title_attribute(); ?>">
-                              <?php if (get_post_type() == 'post') : ?>
-                                <div class="post-category">
-                                    <?php 
-                                    $categories = get_the_category();
-                                    if (!empty($categories)) {
-                                        echo '<a href="' . esc_url(get_category_link($categories[0]->term_id)) . '">' . esc_html($categories[0]->name) . '</a>';
-                                    }
-                                    ?>
-                                </div>
-                            <?php endif; ?>
-                        </div>
-                        
                         <div class="post-content">
                             <h2>
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h2>
                             
-                            <div class="post-excerpt">
+                            <div class="post-meta">
                                 <?php 
-                                if (has_excerpt()) {
-                                    echo wp_trim_words(get_the_excerpt(), 15, '...');
+                                $post_type = get_post_type();                                if (get_post_type() == 'post') {
+                                    // Get categories
+                                    $categories = get_the_category();
+                                    $category_name = !empty($categories) ? $categories[0]->name : 'Uncategorized';
+                                    
+                                    // Translate "non classé" to "Uncategorized"
+                                    if (strtolower($category_name) === 'non classé' || strtolower($category_name) === 'non classe') {
+                                        $category_name = 'Uncategorized';
+                                    }
+                                    
+                                    // Format date with capitalized first letter of month
+                                    $date = get_the_date('F j, Y');
+                                    
+                                    echo '<span class="post-category">' . esc_html($category_name) . '</span>';
+                                    echo '<span class="meta-separator">, </span>';
+                                    echo '<span class="post-date">' . esc_html($date) . '</span>';
                                 } else {
-                                    echo wp_trim_words(get_the_content(), 15, '...');
+                                    $type_label = 'Page';
+                                    switch($post_type) {
+                                        case 'member':
+                                            $type_label = 'Team Member';
+                                            break;
+                                        case 'client':
+                                            $type_label = 'Client';
+                                            break;
+                                        case 'page':
+                                            $type_label = 'Page';
+                                            break;
+                                        default:
+                                            $type_label = 'Content';
+                                            break;
+                                    }
+                                    echo '<span class="post-type">' . esc_html($type_label) . '</span>';
                                 }
                                 ?>
                             </div>
-                              <div class="post-meta">
+                            
+                            <div class="post-excerpt">
                                 <?php 
-                                $post_type = get_post_type();
-                                $type_label = 'Page';
-                                
-                                switch($post_type) {
-                                    case 'post':
-                                        $type_label = 'Article';
-                                        break;
-                                    case 'member':
-                                        $type_label = 'Member';
-                                        break;
-                                    case 'client':
-                                        $type_label = 'Client';
-                                        break;
-                                    case 'page':
-                                        $type_label = 'Page';
-                                        break;
-                                    default:
-                                        $type_label = 'Content';
-                                        break;
+                                $content = '';
+                                if (has_excerpt()) {
+                                    $content = get_the_excerpt();
+                                } else {
+                                    $content = get_the_content();
                                 }
+                                // Remove HTML tags and get plain text
+                                $content = strip_tags($content);
+                                // Remove extra whitespace and normalize line breaks
+                                $content = preg_replace('/\s+/', ' ', $content);
+                                $content = trim($content);
+                                
+                                // Split into sentences and get first 3 lines worth
+                                $sentences = explode('.', $content);
+                                $first_sentences = array_slice($sentences, 0, 3);
+                                $trimmed_content = implode('. ', $first_sentences);
+                                
+                                // If we have content and it doesn't end with a period, add one
+                                if (!empty($trimmed_content) && !str_ends_with($trimmed_content, '.')) {
+                                    $trimmed_content .= '.';
+                                }
+                                
+                                // If there are more sentences, add ellipsis
+                                if (count($sentences) > 3) {
+                                    $trimmed_content .= '..';
+                                }
+                                
+                                echo esc_html($trimmed_content);
                                 ?>
-                                <span class="post-type"><?php echo esc_html($type_label); ?></span>
-                                <?php if (get_post_type() == 'post') : ?>
-                                    <span class="post-date"><?php echo get_the_date('F j, Y'); ?></span>
-                                <?php endif; ?>
                             </div>
                         </div>
                     </article>
