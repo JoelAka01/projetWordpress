@@ -21,11 +21,12 @@ $category_posts = new WP_Query($args);
 ?>
 
 <main class="blog-page category-archive">
-
     <div class="container">
         <h1><?php echo esc_html($category_name); ?>.</h1>
         <p class="archive-description">Posts in category "<?php echo esc_html($category_name); ?>"</p>
-        
+    </div>
+
+    <div class="container">
         <!-- sidebar -->
         <div class="post-sidebar">
             <!-- search -->

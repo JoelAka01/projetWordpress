@@ -23,7 +23,9 @@ $tag_posts = new WP_Query($args);
     <div class="container">
         <h1>Tag: <?php echo esc_html($tag->name); ?>.</h1>
         <p class="archive-description">Posts tagged with "<?php echo esc_html($tag->name); ?>"</p>
-        
+    </div>
+
+    <div class="container">
         <!-- sidebar -->
         <div class="post-sidebar">
             <!-- search -->

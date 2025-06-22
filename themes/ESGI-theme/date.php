@@ -37,7 +37,9 @@ $archive_posts = new WP_Query($args);
     <div class="container">
         <h1>Archive: <?php echo esc_html($archive_title); ?>.</h1>
         <p class="archive-description"><?php echo esc_html($archive_description); ?></p>
-        
+    </div>
+
+    <div class="container">
         <!-- sidebar -->
         <div class="post-sidebar">
             <!-- search -->
