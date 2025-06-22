@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
   const mobileMenuClose = document.querySelector(".mobile-menu-close");
   const mobileNavigation = document.querySelector(".mobile-navigation");
+  const searchButton = document.querySelector(".search-button");
   const body = document.body;
   let menuJustOpened = false;
 
@@ -25,6 +26,16 @@ document.addEventListener("DOMContentLoaded", function () {
     body.classList.remove("menu-open");
   }
 
+  // search functionality
+  function handleSearch() {
+    const searchTerm = prompt("Enter your search term:");
+    if (searchTerm && searchTerm.trim()) {
+      const searchUrl =
+        window.location.origin + "/?s=" + encodeURIComponent(searchTerm.trim());
+      window.location.href = searchUrl;
+    }
+  }
+
   // event listeners
   if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener("click", function (e) {
@@ -41,6 +52,13 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileMenuClose.addEventListener("click", function (e) {
       e.preventDefault();
       closeMobileMenu();
+    });
+  }
+
+  if (searchButton) {
+    searchButton.addEventListener("click", function (e) {
+      e.preventDefault();
+      handleSearch();
     });
   }
 

@@ -1,36 +1,128 @@
 @use "../partials/fonts";
 @use "../partials/functions" as f;
+@use "../partials/colors";
 
-.search-results-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 f.rem(20);
+.search-page {
+    padding: 80px 10px 80px;
+    font-family: fonts.$font2;
 
-    .search-results-section {
-        margin-bottom: f.rem(40);
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 0px;
+    }
 
-        .search-results-type-title {
-            @include fonts.text3;
-            margin-bottom: f.rem(15);
-            color: var(--main-color);
-        }
+    .search-header {
+        margin-bottom: 80px;
 
-        .search-results-list {
-            list-style: none;
-            padding: 0;
+        .search-title {
+            font-family: fonts.$font2;
+            font-size: 4.2rem;
+            font-weight: 400;
+            text-align: left;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: var(--text-color);
             margin: 0;
 
-            .search-result-item {
-                margin-bottom: f.rem(10);
+            .search-term {
+                position: relative;
+                display: inline-block;
 
-                a {
-                    color: var(--text-color);
-                    text-decoration: none;
-                    transition: color 0.2s ease;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 8px;
+                    left: 0;
+                    width: 100%;
+                    height: 3.9px;
+                    background: linear-gradient(to right, colors.$gradient-start, colors.$gradient-end);
+                }
+            }
+        }
+    }
 
-                    &:hover {
-                        color: var(--main-color);
+    .search-results-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-bottom: 60px;
+
+        .search-post-item {
+            background: #fff;
+            border-radius: 0;
+            overflow: hidden;
+
+            .post-content {
+                padding: 0;
+
+                h2 {
+                    margin: 0 0 15px 0;
+                    font-size: 1.8rem;
+                    font-weight: 500;
+                    line-height: 1.3;
+
+                    a {
+                        color: var(--text-color);
+                        text-decoration: none;
+                        transition: color 0.3s ease;
+
+                        &:hover {
+                            color: var(--main-color);
+                        }
                     }
+                }
+
+                .post-meta {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 15px;
+                    font-size: 0.9rem;
+                    color: var(--muted-text);
+                    font-weight: 500;
+
+                    .post-category {
+                        color: var(--black);
+                        font-weight: 800;
+
+                        a {
+                            color: inherit;
+                            text-decoration: none;
+                            transition: color 0.3s ease;
+
+                            &:hover {
+                                color: var(--main-color);
+                            }
+                        }
+                    }
+
+                    .meta-separator {
+                        color: var(--muted-text);
+                        white-space: pre; // Preserve spaces
+                    }
+
+                    .post-date {
+                        color: var(--black);
+                        font-weight: 800;
+                    }
+
+                    .post-type {
+                        color: var(--main-color);
+                        font-weight: 600;
+                    }
+                }
+
+                .post-excerpt {
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    color: var(--muted-text);
+                    margin: 0;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
             }
         }
@@ -38,7 +130,175 @@
 
     .no-results {
         text-align: center;
-        margin-top: f.rem(30);
-        @include fonts.text4;
+        padding: 60px 20px;
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--muted-text);
+        }
+    }
+
+    // Pagination
+    .pagination-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 60px;
+
+        .pagination {
+            display: flex;
+            align-items: center;
+
+            .page-link {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                border: 1px solid transparent;
+                color: var(--text-color);
+                text-decoration: none;
+                font-size: 0.9rem;
+                font-weight: 500;
+                transition: all 0.2s;
+
+                &:hover {
+                    background-color: var(--main-color);
+                    border-color: var(--main-color);
+                    color: white;
+                }
+
+                &.current {
+                    background-color: var(--text-color);
+                    border-color: var(--text-color);
+                    color: white;
+                    cursor: default;
+                }
+
+                &.ellipsis {
+                    border: none;
+                    background: transparent;
+                    cursor: default;
+                    font-weight: 600;
+
+                    &:hover {
+                        background: transparent;
+                        color: var(--text-color);
+                        border: none;
+                    }
+                }
+
+                &.prev,
+                &.next {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+
+// Mobile 
+@media (max-width: 768px) {
+    .search-page {
+        padding: 80px 0 60px;
+
+        .container {
+            padding: 0 15px;
+        }
+
+        .search-header {
+            margin-bottom: 30px;
+
+            .search-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        .search-results-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+
+            .search-post-item {
+                .post-content {
+                    h2 {
+                        font-size: 1.5rem;
+                    }
+
+                    .post-meta {
+                        font-size: 0.85rem;
+                        flex-wrap: wrap;
+                        gap: 5px;
+                    }
+
+                    .post-excerpt {
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+
+        .pagination-wrapper {
+            margin-top: 40px;
+
+            .pagination {
+                gap: 5px;
+
+                .page-link {
+                    width: 35px;
+                    height: 35px;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+// Tablet responsive
+@media (min-width: 769px) and (max-width: 1024px) {
+    .search-page {
+        .search-results-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .search-page {
+        padding: 60px 0 40px;
+
+        .search-header {
+            .search-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        .search-results-grid {
+            gap: 25px;
+
+            .search-post-item {
+                .post-content {
+                    h2 {
+                        font-size: 1.3rem;
+                        margin-bottom: 12px;
+                    }
+
+                    .post-meta {
+                        font-size: 0.8rem;
+                        margin-bottom: 12px;
+                    }
+
+                    .post-excerpt {
+                        font-size: 0.85rem;
+                    }
+                }
+            }
+        }
     }
 }

@@ -147,38 +147,69 @@ $blog_posts = new WP_Query(array(
                     <div class="pagination">                        <?php
                         // page numbers with ellipsis logic
                         $total_pages = $blog_posts->max_num_pages;
-                        
-                        if ($total_pages <= 8) {
-                            // Show all pages if 8 or fewer
-                            for ($i = 1; $i <= $total_pages; $i++) {
-                                if ($i == $paged) {
-                                    echo '<span class="page-link current">' . $i . '</span>';
-                                } else {
-                                    echo '<a href="' . get_pagenum_link($i) . '" class="page-link">' . $i . '</a>';
-                                }
-                            }
-                        } else {
-                            // show first 5 pages
-                            for ($i = 1; $i <= 5; $i++) {
-                                if ($i == $paged) {
-                                    echo '<span class="page-link current">' . $i . '</span>';
-                                } else {
-                                    echo '<a href="' . get_pagenum_link($i) . '" class="page-link">' . $i . '</a>';
-                                }
-                            }
-                            
-                            // show ellipsis
-                            echo '<span class="page-link ellipsis">...</span>';
-                            
-                            // show last 2 pages
-                            for ($i = $total_pages - 1; $i <= $total_pages; $i++) {
-                                if ($i == $paged) {
-                                    echo '<span class="page-link current">' . $i . '</span>';
-                                } else {
-                                    echo '<a href="' . get_pagenum_link($i) . '" class="page-link">' . $i . '</a>';
-                                }
-                            }
-                        }
+
+if ($total_pages > 1) {
+    echo '<div class="pagination-wrapper"><div class="pagination">';
+
+    $ellipsis = '<span class="page-link ellipsis">...</span>';
+
+    // always show first 2 pages
+    for ($i = 1; $i <= 2; $i++) {
+        if ($i == $paged) {
+            echo '<span class="page-link current">' . $i . '</span>';
+        } else {
+            echo '<a href="' . get_pagenum_link($i) . '" class="page-link">' . $i . '</a>';
+        }
+    }
+
+    // ellipsis if needed
+    if ($paged > 5) {
+        echo $ellipsis;
+    }
+
+    // determine middle range
+    $start = max(3, $paged - 1);
+    $end = min($total_pages - 2, $paged + 1);
+
+    // if current page is near start
+    if ($paged <= 4) {
+        $start = 3;
+        $end = 5;
+    }
+
+    // if current page is near end
+    if ($paged >= $total_pages - 3) {
+        $start = $total_pages - 4;
+        $end = $total_pages - 2;
+    }
+
+    // middle pages
+    for ($i = $start; $i <= $end; $i++) {
+        if ($i <= 2 || $i >= $total_pages - 1) continue; // avoid duplicating first/last two pages
+        if ($i == $paged) {
+            echo '<span class="page-link current">' . $i . '</span>';
+        } else {
+            echo '<a href="' . get_pagenum_link($i) . '" class="page-link">' . $i . '</a>';
+        }
+    }
+
+    // ellipsis before last 2 if needed
+    if ($paged < $total_pages - 3) {
+        echo $ellipsis;
+    }
+
+    // last 2 pages
+    for ($i = $total_pages - 1; $i <= $total_pages; $i++) {
+        if ($i == $paged) {
+            echo '<span class="page-link current">' . $i . '</span>';
+        } else {
+            echo '<a href="' . get_pagenum_link($i) . '" class="page-link">' . $i . '</a>';
+        }
+    }
+
+    echo '</div></div>';
+}
+
                         ?>
                     </div>
                 </div>
