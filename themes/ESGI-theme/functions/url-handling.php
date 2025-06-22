@@ -70,22 +70,18 @@ add_filter('nav_menu_css_class', 'esgi_fix_nav_current_class', 10, 2);
 function esgi_fix_nav_current_class($classes, $item)
 {
     // remove existing current class
-    $classes = array_diff($classes, array('current_page_item', 'current-menu-item', 'current_page_parent', 'current-menu-parent'));
-
-    // check if we are on front page and this menu item links to homepage
-    if ((is_front_page() || is_home()) && ($item->url == home_url('/') || $item->url == home_url())) {
+    $classes = array_diff($classes, array('current_page_item', 'current-menu-item', 'current_page_parent', 'current-menu-parent'));    // check if we are on front page and this menu item links to homepage (but not on search pages)
+    if ((is_front_page() || is_home()) && !is_search() && ($item->url == home_url('/') || $item->url == home_url())) {
         $classes[] = 'current-menu-item';
         $classes[] = 'current_page_item';
-    }
-    // if we are on a single post page, category, tag, or archive page and this menu item links to the blog page
-    elseif ((is_single() || is_category() || is_tag() || is_date() || is_author() || is_archive()) && 
+    }// if we are on a single post page, category, tag, archive, or search page and this menu item links to the blog page
+    elseif ((is_single() || is_category() || is_tag() || is_date() || is_author() || is_archive() || is_search()) && 
             ($item->url == home_url('/blog') || $item->url == home_url('/blog/'))) {
         $classes[] = 'current-menu-item';
         $classes[] = 'current_page_item';
         $classes[] = 'current_page_parent';
-    }
-    // other pages, wp handle it normally but verify consistency
-    elseif (!is_front_page() && !is_home()) {
+    }    // other pages, wp handle it normally but verify consistency (excluding front page, home, and search pages)
+    elseif (!is_front_page() && !is_home() && !is_search()) {
         global $wp;
         $current_url = home_url($wp->request);
 
