@@ -38,6 +38,7 @@ $search_posts = new WP_Query([
                                     // Get categories
                                     $categories = get_the_category();
                                     $category_name = !empty($categories) ? $categories[0]->name : 'Uncategorized';
+                                    $category_link = !empty($categories) ? get_category_link($categories[0]->term_id) : '';
                                     
                                     // traduit "non classé" to "Uncategorized"
                                     if (strtolower($category_name) === 'non classé' || strtolower($category_name) === 'non classe') {
@@ -45,9 +46,13 @@ $search_posts = new WP_Query([
                                     }
                                       // capitalize first letter of month
                                     $date = get_the_date('F j, Y');
-                                    $date = ucfirst($date); // Ensure first letter is uppercase
+                                    $date = ucfirst($date); 
                                     
-                                    echo '<span class="post-category">' . esc_html($category_name) . '</span>';
+                                    if ($category_link) {
+                                        echo '<span class="post-category"><a href="' . esc_url($category_link) . '">' . esc_html($category_name) . '</a></span>';
+                                    } else {
+                                        echo '<span class="post-category">' . esc_html($category_name) . '</span>';
+                                    }
                                     echo '<span class="meta-separator">, </span>';
                                     echo '<span class="post-date">' . esc_html($date) . '</span>';
                                 } else {

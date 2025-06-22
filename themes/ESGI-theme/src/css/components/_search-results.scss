@@ -3,7 +3,7 @@
 @use "../partials/colors";
 
 .search-page {
-    padding: 120px 10px 80px;
+    padding: 80px 10px 80px;
     font-family: fonts.$font2;
 
     .container {
@@ -13,12 +13,12 @@
     }
 
     .search-header {
-        margin-bottom: 50px;
+        margin-bottom: 80px;
 
         .search-title {
             font-family: fonts.$font2;
-            font-size: 4.5rem;
-            font-weight: 500;
+            font-size: 4.2rem;
+            font-weight: 400;
             text-align: left;
             letter-spacing: -0.02em;
             line-height: 1.2;
@@ -82,8 +82,18 @@
                     font-weight: 500;
 
                     .post-category {
-                        color: var(--main-color);
-                        font-weight: 600;
+                        color: var(--black);
+                        font-weight: 800;
+
+                        a {
+                            color: inherit;
+                            text-decoration: none;
+                            transition: color 0.3s ease;
+
+                            &:hover {
+                                color: var(--main-color);
+                            }
+                        }
                     }
 
                     .meta-separator {
@@ -92,7 +102,8 @@
                     }
 
                     .post-date {
-                        color: var(--muted-text);
+                        color: var(--black);
+                        font-weight: 800;
                     }
 
                     .post-type {
@@ -104,7 +115,7 @@
                 .post-excerpt {
                     font-size: 1rem;
                     line-height: 1.6;
-                    color: var(--text-color);
+                    color: var(--muted-text);
                     margin: 0;
                     display: -webkit-box;
                     -webkit-line-clamp: 3;
