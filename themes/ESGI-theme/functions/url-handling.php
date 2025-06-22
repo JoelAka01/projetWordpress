@@ -65,7 +65,7 @@ function esgi_homepage_canonical()
     }
 }
 
-// current menu item highlighting for front page
+// current menu item highlighting for front page and blog-related pages
 add_filter('nav_menu_css_class', 'esgi_fix_nav_current_class', 10, 2);
 function esgi_fix_nav_current_class($classes, $item)
 {
@@ -77,10 +77,12 @@ function esgi_fix_nav_current_class($classes, $item)
         $classes[] = 'current-menu-item';
         $classes[] = 'current_page_item';
     }
-    // if we are on a single post page and this menu item links to the blog page
-    elseif (is_single() && ($item->url == home_url('/blog') || $item->url == home_url('/blog/'))) {
+    // if we are on a single post page, category, tag, or archive page and this menu item links to the blog page
+    elseif ((is_single() || is_category() || is_tag() || is_date() || is_author() || is_archive()) && 
+            ($item->url == home_url('/blog') || $item->url == home_url('/blog/'))) {
         $classes[] = 'current-menu-item';
         $classes[] = 'current_page_item';
+        $classes[] = 'current_page_parent';
     }
     // other pages, wp handle it normally but verify consistency
     elseif (!is_front_page() && !is_home()) {
