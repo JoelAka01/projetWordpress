@@ -39,13 +39,13 @@ $search_posts = new WP_Query([
                                     $categories = get_the_category();
                                     $category_name = !empty($categories) ? $categories[0]->name : 'Uncategorized';
                                     
-                                    // Translate "non classé" to "Uncategorized"
+                                    // traduit "non classé" to "Uncategorized"
                                     if (strtolower($category_name) === 'non classé' || strtolower($category_name) === 'non classe') {
                                         $category_name = 'Uncategorized';
                                     }
-                                    
-                                    // Format date with capitalized first letter of month
+                                      // capitalize first letter of month
                                     $date = get_the_date('F j, Y');
+                                    $date = ucfirst($date); // Ensure first letter is uppercase
                                     
                                     echo '<span class="post-category">' . esc_html($category_name) . '</span>';
                                     echo '<span class="meta-separator">, </span>';
