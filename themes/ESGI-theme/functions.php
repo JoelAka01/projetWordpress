@@ -34,6 +34,7 @@ $function_files = [
     'admin.php',
     'helpers.php',
     'url-handling.php',
+    'partners-admin.php',
 ];
 
 foreach ($function_files as $file) {

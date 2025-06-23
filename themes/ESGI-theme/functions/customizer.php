@@ -169,24 +169,20 @@ function esgi_add_about_section($wp_customize)
             'section' => 'esgi_about',
             'type' => $data[1],
             'priority' => $priority++,
-        ]);
-    }
+        ]);    }
 
-    // about images
-    $image_fields = ['about_image', 'who_are_we_image'];
-    foreach ($image_fields as $field) {
-        $wp_customize->add_setting($field, [
-            'type' => 'theme_mod',
-            'capability' => 'edit_theme_options',
-            'transport' => 'refresh',
-        ]);
+    // about image
+    $wp_customize->add_setting('who_are_we_image', [
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+    ]);
 
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $field, [
-            'label' => __(ucwords(str_replace('_', ' ', $field)), 'ESGI'),
-            'section' => 'esgi_about',
-            'priority' => $priority++,
-        ]));
-    }
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'who_are_we_image', [
+        'label' => __('About Image', 'ESGI'),
+        'section' => 'esgi_about',
+        'priority' => $priority++,
+    ]));
 }
 
 //services settings
@@ -268,6 +264,7 @@ function esgi_add_partners_section($wp_customize)
         'title' => __('Partners Section', 'ESGI'),
         'priority' => 5,
         'capability' => 'edit_theme_options',
+        'description' => __('Note: For full management with unlimited partners, go to Appearance > Partners in your admin dashboard.', 'ESGI'),
     ]);
 
     $wp_customize->add_setting('partners_title', [
@@ -285,9 +282,24 @@ function esgi_add_partners_section($wp_customize)
         'priority' => 1,
     ]);
 
-    // settings for 6 partners
+    // Add notice about new admin page
+    $wp_customize->add_setting('partners_admin_notice', [
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'sanitize_callback' => '__return_false',
+    ]);
+
+    $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'partners_admin_notice', [
+        'label' => __('New Partner Management', 'ESGI'),
+        'section' => 'esgi_partners',
+        'type' => 'hidden',
+        'description' => __('<strong>Upgrade Available!</strong><br>We\'ve added a new partner management system that allows unlimited partners with better organization.<br><br><a href="' . admin_url('themes.php?page=esgi-partners') . '" target="_blank">Go to Partners Management →</a>', 'ESGI'),
+        'priority' => 2,
+    ]));
+
+    // settings for 6 partners (legacy support)
     for ($i = 1; $i <= 6; $i++) {
-        $priority = $i * 3 - 1;
+        $priority = $i * 3 + 2;
 
         $wp_customize->add_setting('partner_name_' . $i, [
             'type' => 'theme_mod',
