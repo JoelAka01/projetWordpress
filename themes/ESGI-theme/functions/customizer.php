@@ -169,24 +169,20 @@ function esgi_add_about_section($wp_customize)
             'section' => 'esgi_about',
             'type' => $data[1],
             'priority' => $priority++,
-        ]);
-    }
+        ]);    }
 
-    // about images
-    $image_fields = ['about_image', 'who_are_we_image'];
-    foreach ($image_fields as $field) {
-        $wp_customize->add_setting($field, [
-            'type' => 'theme_mod',
-            'capability' => 'edit_theme_options',
-            'transport' => 'refresh',
-        ]);
+    // about image
+    $wp_customize->add_setting('who_are_we_image', [
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+    ]);
 
-        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $field, [
-            'label' => __(ucwords(str_replace('_', ' ', $field)), 'ESGI'),
-            'section' => 'esgi_about',
-            'priority' => $priority++,
-        ]));
-    }
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'who_are_we_image', [
+        'label' => __('About Image', 'ESGI'),
+        'section' => 'esgi_about',
+        'priority' => $priority++,
+    ]));
 }
 
 //services settings

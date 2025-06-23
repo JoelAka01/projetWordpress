@@ -193,3 +193,25 @@ function esgi_list_categories($args = array())
     
     echo $categories_html;
 }
+
+// Get about section image ( who_are_we_image setting)
+function esgi_get_about_image_data()
+{
+    $image_setting = get_theme_mod('who_are_we_image');
+    return [
+        'url' => $image_setting,
+        'has_custom' => !empty($image_setting),
+        'default' => get_template_directory_uri() . '/src/images/png/2.png'
+    ];
+}
+
+// Get hero section image
+function esgi_get_hero_image_data()
+{
+    $hero_image = get_theme_mod('hero_image');
+    return [
+        'url' => $hero_image,
+        'has_custom' => !empty($hero_image),
+        'default' => get_template_directory_uri() . '/src/images/png/1.png'
+    ];
+}

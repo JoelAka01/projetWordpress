@@ -79,31 +79,48 @@
                     <h2 class="services-title"><?php echo get_theme_mod('services_title', 'Our Services'); ?></h2>
                 </div>
             </div>
-            </div>            
-            <!-- main content row -->
+            </div>              <!-- main content row -->
             <div class="row services-content" style="display:flex;flex-wrap:nowrap;gap:0;padding:0;margin:0;width:100vw;margin-left:calc(-50vw + 50%);">
                 <!-- 1st square: left image -->
                 <div class="service-square d-flex align-items-center justify-content-center" style="height:25vw;padding:0;flex:1 1 0;min-width:0;">
-                    <div class="service-image-left w-100 h-100">
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/12.png" alt="Service Image 1" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                    <div class="service-image-left w-100 h-100">                        <?php
+                        $service_1 = esgi_get_service_data(1);
+                        if (!empty($service_1['image'])) {
+                            echo '<img src="' . esc_url($service_1['image']) . '" alt="' . esc_attr($service_1['title']) . '" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">';
+                        } else {
+                            echo '<img src="' . get_template_directory_uri() . '/src/images/png/12.png" alt="' . esc_attr($service_1['title']) . '" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">';
+                        }
+                        ?>
                     </div>
                 </div>
                 <!-- 2nd square: right image -->
                 <div class="service-square d-flex align-items-center justify-content-center" style="height:25vw;padding:0;flex:1 1 0;min-width:0;">
-                    <div class="service-image-right w-100 h-100">
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/5.png" alt="Service Image 2" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                    <div class="service-image-right w-100 h-100">                        <?php
+                        $service_2 = esgi_get_service_data(2);
+                        if (!empty($service_2['image'])) {
+                            echo '<img src="' . esc_url($service_2['image']) . '" alt="' . esc_attr($service_2['title']) . '" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">';
+                        } else {
+                            echo '<img src="' . get_template_directory_uri() . '/src/images/png/5.png" alt="' . esc_attr($service_2['title']) . '" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">';
+                        }
+                        ?>
                     </div>
                 </div>
                 <!-- 3rd square: text -->
                 <div class="service-square d-flex align-items-center justify-content-center" style="height:25vw;padding:0;flex:1 1 0;min-width:0;">
                     <div class="private-parties-wrapper w-100 h-100 d-flex align-items-center justify-content-center" style="background:#fff;">
-                        <h3 class="private-parties-title" style="margin:0;">Private Parties</h3>
+                        <h3 class="private-parties-title" style="margin:0;"><?php echo esc_html($service_2['title']); ?></h3>
                     </div>
                 </div>
                 <!-- 4th square: right image -->
                 <div class="service-square d-flex align-items-center justify-content-center" style="height:25vw;padding:0;flex:1 1 0;min-width:0;">
-                    <div class="featured-image-wrapper w-100 h-100">
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/3.png" alt="Private Parties Featured" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                    <div class="featured-image-wrapper w-100 h-100">                        <?php
+                        $service_3 = esgi_get_service_data(3);
+                        if (!empty($service_3['image'])) {
+                            echo '<img src="' . esc_url($service_3['image']) . '" alt="' . esc_attr($service_3['title']) . '" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">';
+                        } else {
+                            echo '<img src="' . get_template_directory_uri() . '/src/images/png/3.png" alt="' . esc_attr($service_3['title']) . '" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">';
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
