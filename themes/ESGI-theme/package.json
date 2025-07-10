@@ -9,5 +9,8 @@
     "build": "sass --no-charset ./src/css/style.scss ./style.css"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.89.2"
+  }
 }
