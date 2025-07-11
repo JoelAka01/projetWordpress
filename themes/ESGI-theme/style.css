@@ -6790,6 +6790,10 @@ body.error404 .site-footer .footer-logo {
   margin-bottom: 15px;
   color: var(--text-color);
   opacity: 0.8;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 .post .post-content .comments-section .comment-list .comment .reply-button {
   display: inline-flex;
@@ -6844,6 +6848,9 @@ body.error404 .site-footer .footer-logo {
 .post .post-content .reply-form .form-group textarea {
   min-height: 140px;
   resize: none;
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 .post .post-content .reply-form .submit-button {
   color: var(--text-color);
