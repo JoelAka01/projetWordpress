@@ -7128,7 +7128,8 @@ body.error404 .site-footer .footer-logo {
   }
 }
 .blog-page {
-  padding: 120px 10px 80px;
+  padding: 2rem 0;
+  position: relative;
   font-family: "Overpass", sans-serif;
 }
 .blog-page .container {
@@ -7149,6 +7150,7 @@ body.error404 .site-footer .footer-logo {
   letter-spacing: -0.02em;
   line-height: 1.2;
   color: var(--text-color);
+  color: #050a3a;
 }
 .blog-page .blog-content {
   flex: 1;
@@ -7890,6 +7892,7 @@ body.error404 .site-footer .footer-logo {
   text-align: left;
   float: left;
   clear: both;
+  color: #050a3a;
 }
 .home-page .hero-section h1 br {
   display: block;
@@ -8064,7 +8067,7 @@ body.error404 .site-footer .footer-logo {
   transform: translateX(-50%);
   width: 55%;
   height: 4px;
-  background: linear-gradient(90deg, #FFD0A8, #FF4FC0);
+  background: linear-gradient(90deg, #ffd0a8, #ff4fc0);
 }
 .home-page .partners-section {
   padding: 4rem 0;
@@ -8449,6 +8452,7 @@ body.error404 .site-footer .footer-logo {
   text-align: left;
   float: left;
   clear: both;
+  color: #050a3a;
 }
 .services-section .services-title br {
   display: block;
