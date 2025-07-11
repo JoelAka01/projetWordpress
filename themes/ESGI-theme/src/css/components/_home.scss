@@ -525,3 +525,32 @@
     }
   }
 }
+
+@media (max-width: 991px) {
+  .home-page .row.services-content {
+    flex-direction: column !important;
+    gap: 24px !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  .home-page .service-square {
+    width: 90% !important;
+    min-width: 220px;
+    max-width: 340px;
+    align-items: center !important;
+    margin-bottom: 24px;
+    height: auto !important;
+  }
+  .home-page .service-image-left img,
+  .home-page .service-image-right img,
+  .home-page .featured-image-wrapper img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+  .home-page .private-parties-title {
+    font-size: 2rem !important;
+    text-align: center;
+  }
+}

@@ -8280,6 +8280,34 @@ body.error404 .site-footer .footer-logo {
     max-height: none;
   }
 }
+@media (max-width: 991px) {
+  .home-page .row.services-content {
+    flex-direction: column !important;
+    gap: 24px !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  .home-page .service-square {
+    width: 90% !important;
+    min-width: 220px;
+    max-width: 340px;
+    align-items: center !important;
+    margin-bottom: 24px;
+    height: auto !important;
+  }
+  .home-page .service-image-left img,
+  .home-page .service-image-right img,
+  .home-page .featured-image-wrapper img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+  .home-page .private-parties-title {
+    font-size: 2rem !important;
+    text-align: center;
+  }
+}
 .page-title {
   margin-bottom: 2rem;
 }
@@ -8443,19 +8471,13 @@ body.error404 .site-footer .footer-logo {
   padding: 4rem 0;
 }
 .services-section .services-title {
-  font-size: 3.8rem;
-  line-height: 1.2;
-  margin-bottom: 9rem;
-  max-width: 100%;
+  font-size: 3rem;
   font-weight: 400;
   color: var(--text-color);
   text-align: left;
-  float: left;
-  clear: both;
-  color: #050a3a;
-}
-.services-section .services-title br {
-  display: block;
+  margin-bottom: 3rem;
+  font-family: "Overpass", sans-serif;
+  /* set font family */
 }
 .services-section .services-content {
   display: flex;
@@ -8518,7 +8540,7 @@ body.error404 .site-footer .footer-logo {
   transform: translateX(-50%);
   width: 55%;
   height: 4px;
-  background: linear-gradient(90deg, #ffd0a8, #ff4fc0);
+  background: linear-gradient(90deg, #FFD0A8, #FF4FC0);
 }
 
 .corporate-parties {
