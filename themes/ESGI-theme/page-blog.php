@@ -17,7 +17,6 @@ $blog_posts = new WP_Query(array(
 <main class="blog-page">
     <div class="container">
         <h1>Blog.</h1>
-        
         <!-- sidebar -->
         <div class="post-sidebar">
             <!-- search -->

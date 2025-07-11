@@ -8440,13 +8440,18 @@ body.error404 .site-footer .footer-logo {
   padding: 4rem 0;
 }
 .services-section .services-title {
-  font-size: 3rem;
+  font-size: 3.8rem;
+  line-height: 1.2;
+  margin-bottom: 9rem;
+  max-width: 100%;
   font-weight: 400;
   color: var(--text-color);
   text-align: left;
-  margin-bottom: 3rem;
-  font-family: "Overpass", sans-serif;
-  /* set font family */
+  float: left;
+  clear: both;
+}
+.services-section .services-title br {
+  display: block;
 }
 .services-section .services-content {
   display: flex;
@@ -8509,7 +8514,7 @@ body.error404 .site-footer .footer-logo {
   transform: translateX(-50%);
   width: 55%;
   height: 4px;
-  background: linear-gradient(90deg, #FFD0A8, #FF4FC0);
+  background: linear-gradient(90deg, #ffd0a8, #ff4fc0);
 }
 
 .corporate-parties {
