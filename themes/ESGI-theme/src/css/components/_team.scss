@@ -30,6 +30,7 @@
   justify-content: flex-start;
   gap: 56px;
   flex-wrap: nowrap;
+  align-items: flex-start;
 }
 
 .team-member {
@@ -47,11 +48,12 @@
 
 .team-img {
   width: 220px;
-  height: 260px;
+  height: 265px;
   object-fit: cover;
   border-radius: 0;
   margin-bottom: 24px;
   box-shadow: none;
+  display: block;
 }
 
 .team-role {
@@ -87,5 +89,8 @@
   .team-img {
     width: 100%;
     height: auto;
+  }
+  .team-role, .team-contact {
+    text-align: center;
   }
 }
