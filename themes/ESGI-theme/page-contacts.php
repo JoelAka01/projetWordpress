@@ -68,6 +68,7 @@ get_header();
             <p>Gol Don't be shy </p>
 
             <div class="contact-form-contain">
+                
                 <form method="get" class="contact-form row" action="<?php echo esc_url(home_url('/')); ?>">
                     <input type="text" class="contact-field col-12" placeholder="Subject"  name="name" />
                     <div class="middle">

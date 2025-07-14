@@ -8695,8 +8695,8 @@ margin-bottom: 144px;
 }
 .contact-form {
   width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 1051px;
+  margin: 0;
   
   input, textarea {
     width: 100%;
@@ -8733,4 +8733,25 @@ margin-bottom: 144px;
     padding: 0;
   }
 }
+.wirteus-section {
+h2 {
+  margin: 9px 0;
+  
+
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+    padding: O;
+
+}
+
+.contact-form-contain 
+{
+  display: flex;
+  flex-direction: column;
+margin: 0;
+  padding: 0 ;
+}
+
 /*# sourceMappingURL=style.css.map */
