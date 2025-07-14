@@ -12,7 +12,7 @@
     h1 {
       font-size: 3.8rem;
       line-height: 1.2;
-      margin-bottom: 9rem;
+      margin-bottom: 3rem;
       max-width: 100%;
       font-weight: 400;
       color: var(--text-color);
@@ -20,6 +20,7 @@
       float: left;
       clear: both;
       color: #050a3a;
+
       br {
         display: block;
       }
@@ -534,6 +535,7 @@
     width: 100% !important;
     margin-left: 0 !important;
   }
+
   .home-page .service-square {
     width: 90% !important;
     min-width: 220px;
@@ -542,6 +544,7 @@
     margin-bottom: 24px;
     height: auto !important;
   }
+
   .home-page .service-image-left img,
   .home-page .service-image-right img,
   .home-page .featured-image-wrapper img {
@@ -549,6 +552,7 @@
     height: auto !important;
     object-fit: cover !important;
   }
+
   .home-page .private-parties-title {
     font-size: 2rem !important;
     text-align: center;
