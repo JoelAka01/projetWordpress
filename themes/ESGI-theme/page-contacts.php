@@ -12,8 +12,7 @@ get_header();
                 <h1 class="page-title"><?php the_title(); ?>.</h1>
                 <p id="subtitle">A desire for a big big party or a very select congress? Contact us.
                 </p>    
-
-</div>
+        </div>
         </div>
 
         <div class="row">
@@ -23,12 +22,11 @@ get_header();
         </div>
 
         <div class="contacts-info text-end">
-            <div class="row d-flex flex-row-reverse ">
+            <div class="row d-flex justify-content-end ">
                 <div class="col-md-3">
                     <div class="contact-item">
-                        <h3><?php echo get_theme_mod('footer_contact_title', 'Manager'); ?></h3>
-                        <p><?php echo get_theme_mod('footer_contact_phone', '+33 1 53 31 25 23'); ?></p>
-                        <p><?php echo get_theme_mod('footer_contact_email', 'info@esgi.com'); ?></p>
+                        <h3><?php echo get_theme_mod('footer_location_title', 'Location'); ?></h3>
+                        <p><?php echo get_theme_mod('footer_location_address', '242 Rue du Faubourg Saint-Antoine <br> 75020 Paris FRANCE'); ?></p>
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -38,16 +36,19 @@ get_header();
                         <p><?php echo get_theme_mod('footer_ceo_email', 'ceo@company.com'); ?></p>
                     </div>
                 </div>
-                    <div class="col-md-3">
+
+                <div class="col-md-3">
                     <div class="contact-item">
-                        <h3><?php echo get_theme_mod('footer_location_title', 'location'); ?></h3>
-                        <p><?php echo get_theme_mod('footer_location_address', '242 Rue du Faubourg Saint-Antoine 75020 Paris FRANCE'); ?></p>
+                        <h3><?php echo get_theme_mod('footer_contact_title', 'Manager'); ?></h3>
+                        <p><?php echo get_theme_mod('footer_contact_phone', '+33 1 53 31 25 23'); ?></p>
+                        <p><?php echo get_theme_mod('footer_contact_email', 'info@esgi.com'); ?></p>
                     </div>
                 </div>
             </div>
         </div>
-                <div class="row d-flex flex-row-reverse">
-            <div class="col-6">
+    </div>
+        <div class="row">
+            <div class="col-12 d-flex justify-content-end">
                 <div class="hero-image-wrapper">
                     <div class="hero-image">
                         <?php
@@ -63,8 +64,6 @@ get_header();
                 </div>
             </div>
         </div>
-    </div>
-
     <div class="wirteus-section">
         <div class="container">
             <h2> Write us here</h2>

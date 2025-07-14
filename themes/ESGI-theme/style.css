@@ -226,6 +226,7 @@ summary {
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
   --bs-primary: #050A3A;
+  --bs-primary-hover: #24284d;
   --bs-secondary: #6c757d;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
@@ -857,6 +858,7 @@ summary {
   .col-md-3 {
     flex: 0 0 auto;
     width: 25%;
+    height: 130px; /* Ensures consistent height for columns */
   }
   .col-md-4 {
     flex: 0 0 auto;
@@ -8684,12 +8686,19 @@ body.error404 .site-footer .footer-logo {
   h3, p {
     margin: 0;
     text-align: end;
+    margin-bottom: 10px;
   }
   p{
     color: rgba(138, 138, 138, 1);
   }
-}
 
+}
+.contacts-info{
+  margin-top: 124px ;
+}
+ .contacts-page img {
+    margin: 132px 0;
+  }
 .contact-item  {
 margin-bottom: 144px;
 }
@@ -8731,6 +8740,10 @@ margin-bottom: 144px;
     font-weight: 800;
     background-color: transparent;
     padding: 0;
+    hover {
+      color: var(--bs-primary-hover);
+      text-decoration: underline;
+    }
   }
 }
 .wirteus-section {
