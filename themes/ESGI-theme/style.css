@@ -7888,7 +7888,7 @@ body.error404 .site-footer .footer-logo {
 .home-page .hero-section h1 {
   font-size: 3.8rem;
   line-height: 1.2;
-  margin-bottom: 9rem;
+  margin-bottom: 3rem;
   max-width: 100%;
   font-weight: 400;
   color: var(--text-color);
@@ -8587,18 +8587,21 @@ body.error404 .site-footer .footer-logo {
 .teams-section {
   background: #fff;
   padding: 60px 0 0 0;
+  --bs-gutter-x: 1.5rem;
+  font-family: "Overpass", sans-serif;
 }
 
 .teams-section .container {
-  max-width: 1200px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
 }
 
 .teams-title {
   color: #1a2240;
   font-size: 2.6rem;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 48px;
   text-align: left;
   letter-spacing: 1px;
@@ -8614,9 +8617,11 @@ body.error404 .site-footer .footer-logo {
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  gap: 56px;
+  gap: 35px;
   flex-wrap: nowrap;
   align-items: flex-start;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .team-member {
@@ -8624,7 +8629,7 @@ body.error404 .site-footer .footer-logo {
   border-radius: 0;
   box-shadow: none;
   padding: 0;
-  width: 220px;
+  width: 300px;
   min-height: unset;
   display: flex;
   flex-direction: column;
@@ -8633,8 +8638,8 @@ body.error404 .site-footer .footer-logo {
 }
 
 .team-img {
-  width: 220px;
-  height: 265px;
+  width: 280px;
+  height: 420px;
   object-fit: cover;
   border-radius: 0;
   margin-bottom: 24px;
@@ -8646,7 +8651,7 @@ body.error404 .site-footer .footer-logo {
   font-size: 1.5rem;
   font-weight: 600;
   color: #1a2240;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   text-align: left;
 }
 
@@ -8659,7 +8664,8 @@ body.error404 .site-footer .footer-logo {
 
 @media (max-width: 991px) {
   .teams-section .container {
-    padding: 0 16px;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
   }
   .teams-container .row {
     flex-direction: column;
@@ -8676,7 +8682,8 @@ body.error404 .site-footer .footer-logo {
     width: 100%;
     height: auto;
   }
-  .team-role, .team-contact {
+  .team-role,
+  .team-contact {
     text-align: center;
   }
 }
