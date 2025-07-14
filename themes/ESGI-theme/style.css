@@ -15,8 +15,9 @@
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  */
 @import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,600;1,300;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,600;1,300;1,600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
 /*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
 Document
@@ -225,7 +226,7 @@ summary {
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #0d6efd;
+  --bs-primary: #050A3A;
   --bs-secondary: #6c757d;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
@@ -4424,8 +4425,8 @@ summary {
 :root {
   --bg-color: #ffffff;
   --text-color: #1A1A1A;
-  --main-color: #060a3a;
-  --accent-color: rgb(1.21875, 2.03125, 11.78125);
+  --main-color: var(--bs-primary); /* Utilise la variable Bootstrap */
+  --accent-color: var(--bs-primary);
   --light-bg: #f8f9fa;
   --muted-text: #6c757d;
   --border-color: #dee2e6;
@@ -4471,7 +4472,7 @@ body {
 }
 
 body.error404 {
-  background-color: #050A3A;
+  background-color: var(--bs-primary);
 }
 
 h1,
@@ -4481,9 +4482,9 @@ h4,
 h5,
 h6 {
   margin-top: 0;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
-  font-family: "Overpass", sans-serif;
+  font-family: "Mulish", sans-serif;
 }
 
 h1 {
@@ -4492,8 +4493,9 @@ h1 {
 }
 
 h2 {
-  font-size: 2.25rem;
-  margin-bottom: 1.5rem;
+  font-family: Mulish;
+  font-weight: 600;
+  font-size: 3.15em;
 }
 
 h3 {
@@ -4881,7 +4883,7 @@ section:last-child {
   top: 0;
   left: 0;
   right: 0;
-  background: #050A3A;
+  background: var(--bs-primary);
   z-index: 9999;
   transform: translateY(-100%);
   transition: transform 0.3s ease;
@@ -5092,7 +5094,7 @@ body.menu-open {
 }
 
 body.error404 .site-header {
-  background-color: #050A3A;
+  background-color: var(--bs-primary);
   margin: 0;
   padding: 1.5rem 0;
 }
@@ -5148,7 +5150,7 @@ body.error404 .site-header .mobile-menu-toggle svg {
 }
 
 .site-footer {
-  background-color: #050A3A;
+  background-color: var(--bs-primary);
   color: var(--white);
   padding: 3rem 0 1.5rem;
 }
@@ -6258,7 +6260,7 @@ body.error404 .site-footer .footer-logo {
 }
 
 .error-404 {
-  background-color: #050A3A;
+  background-color: var(--bs-primary);
   display: flex;
   align-items: center;
   padding: 0;
@@ -7151,7 +7153,7 @@ body.error404 .site-footer .footer-logo {
   letter-spacing: -0.02em;
   line-height: 1.2;
   color: var(--text-color);
-  color: #050a3a;
+  color: var(--bs-primary); /* Remplace #050a3a */
 }
 .blog-page .blog-content {
   flex: 1;
@@ -7893,7 +7895,7 @@ body.error404 .site-footer .footer-logo {
   text-align: left;
   float: left;
   clear: both;
-  color: #050a3a;
+  color: var(--bs-primary); /* Remplace #050a3a */
 }
 .home-page .hero-section h1 br {
   display: block;
@@ -8678,7 +8680,7 @@ body.error404 .site-footer .footer-logo {
     text-align: center;
   }
 }
-*CONTACT PAGE STYLES*/
+/*CONTACT PAGE STYLES*/
 .contact-item {
   h3, p {
     margin: 0;
@@ -8706,11 +8708,12 @@ margin-bottom: 144px;
     box-sizing: border-box;
   }
   button {
-border: none;
-text-align:start;
-color:rgba(5, 10, 58, 1);
-font-weight: bolder;
-background-color: transparent;
+    border: none;
+    text-align:start;
+    color:var(--bs-primary);
+    font-weight: bolder;
+    background-color: transparent;
+    padding: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
