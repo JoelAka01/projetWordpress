@@ -1,12 +1,14 @@
 .teams-section {
   background: #fff;
   padding: 60px 0 0 0;
+  --bs-gutter-x: 1.5rem;
 }
 
 .teams-section .container {
-  max-width: 1200px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
 }
 
 .teams-title {
@@ -27,10 +29,12 @@
 .teams-container .row {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
-  gap: 56px;
+  justify-content: space-between;
+  gap: 20px;
   flex-wrap: nowrap;
   align-items: flex-start;
+  margin-right: 0;
+  margin-left: 0;
 }
 
 .team-member {
@@ -38,7 +42,8 @@
   border-radius: 0;
   box-shadow: none;
   padding: 0;
-  width: 220px;
+  width: calc(25% - 15px);
+  max-width: 220px;
   min-height: unset;
   display: flex;
   flex-direction: column;
@@ -47,7 +52,8 @@
 }
 
 .team-img {
-  width: 220px;
+  width: 100%;
+  max-width: 220px;
   height: 265px;
   object-fit: cover;
   border-radius: 0;
@@ -73,24 +79,30 @@
 
 @media (max-width: 991px) {
   .teams-section .container {
-    padding: 0 16px;
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
   }
+
   .teams-container .row {
     flex-direction: column;
     gap: 24px;
     align-items: center;
   }
+
   .team-member {
     width: 90%;
     min-width: 220px;
     max-width: 340px;
     align-items: center;
   }
+
   .team-img {
     width: 100%;
     height: auto;
   }
-  .team-role, .team-contact {
+
+  .team-role,
+  .team-contact {
     text-align: center;
   }
 }
