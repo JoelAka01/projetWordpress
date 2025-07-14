@@ -70,10 +70,13 @@ get_header();
             <div class="contact-form-contain">
                 <form method="get" class="contact-form row" action="<?php echo esc_url(home_url('/')); ?>">
                     <input type="text" class="contact-field col-12" placeholder="Subject"  name="name" />
-                    <input type="email" class="contact-field col-5" placeholder="Email" name="email" />
-                    <input type="number" class="contact-field col-5" placeholder="phone" name="phone" />
+                    <div class="middle">
+                        <input type="email" class="contact-field"  placeholder="Email" name="email" />
+                        <input type="number" class="contact-field"  placeholder="phone" name="phone" />
+                    </div>
+
                     <textarea class="contact-field col-12" placeholder="Message" name="message"></textarea>
-                    <button type="submit" class="search-submit">Submit </button>
+                    <button type="submit" class="contact-submit">Submit </button>
                 </form>
 
             </div>
