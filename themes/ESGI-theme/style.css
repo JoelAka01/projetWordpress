@@ -8588,6 +8588,7 @@ body.error404 .site-footer .footer-logo {
   background: #fff;
   padding: 60px 0 0 0;
   --bs-gutter-x: 1.5rem;
+  font-family: "Overpass", sans-serif;
 }
 
 .teams-section .container {
@@ -8600,7 +8601,7 @@ body.error404 .site-footer .footer-logo {
 .teams-title {
   color: #1a2240;
   font-size: 2.6rem;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 48px;
   text-align: left;
   letter-spacing: 1px;

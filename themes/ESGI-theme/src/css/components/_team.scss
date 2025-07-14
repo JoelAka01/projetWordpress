@@ -1,7 +1,10 @@
+@use "../partials/fonts";
+
 .teams-section {
   background: #fff;
   padding: 60px 0 0 0;
   --bs-gutter-x: 1.5rem;
+  font-family: fonts.$font2;
 }
 
 .teams-section .container {
@@ -14,7 +17,7 @@
 .teams-title {
   color: #1a2240;
   font-size: 2.6rem;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 48px;
   text-align: left;
   letter-spacing: 1px;
