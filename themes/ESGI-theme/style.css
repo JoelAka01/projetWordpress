@@ -4639,20 +4639,12 @@ section:last-child {
 .archive,
 .post,
 .page {
-  font-family: "Source Serif Pro", serif;
+  font-family: "Mulish", serif;
   font-size: 1rem;
   line-height: 1.6875rem;
   letter-spacing: 0.03em;
 }
-.archive h1,
-.post h1,
-.page h1 {
-  text-align: center;
-  font-family: "Mulish", sans-serif;
-  font-size: 1.5625rem;
-  line-height: normal;
-  letter-spacing: 0.1em;
-  margin-bottom: 2rem;
+in-bottom: 2rem;
 }
 .archive .post-meta,
 .post .post-meta,
@@ -6612,7 +6604,7 @@ body.error404 .site-footer .footer-logo {
   flex-wrap: wrap;
   gap: 30px;
 }
-.post h1 {
+.post h1 ,h1 .page-title {
   width: 100%;
   font-family: "Mulish", sans-serif;
   font-size: 4.5rem;
@@ -8697,6 +8689,7 @@ body.error404 .site-footer .footer-logo {
     color: rgba(138, 138, 138, 1);
   }
 }
+
 .contact-item  {
 margin-bottom: 144px;
 }
@@ -8757,8 +8750,15 @@ h2 {
 {
   display: flex;
   flex-direction: column;
-margin: 0;
+  margin: 0;
   padding: 0 ;
+}
+
+}
+#subtitle{
+  font-family: Mulish;
+  letter-spacing: 0px;
+  color: #8A8A8A;
 }
 
 /*# sourceMappingURL=style.css.map */
