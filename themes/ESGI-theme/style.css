@@ -5182,6 +5182,7 @@ body.error404 .site-header .mobile-menu-toggle svg {
   margin-bottom: 0.5rem;
   color: var(--white);
 }
+
 .site-footer .footer-contacts .contact-item .contact-phone,
 .site-footer .footer-contacts .contact-item .contact-email {
   margin-bottom: 0.25rem;
@@ -8677,5 +8678,4 @@ body.error404 .site-footer .footer-logo {
     text-align: center;
   }
 }
-
-/*# sourceMappingURL=style.css.map */
+/
