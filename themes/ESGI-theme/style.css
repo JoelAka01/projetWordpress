@@ -8678,4 +8678,32 @@ body.error404 .site-footer .footer-logo {
     text-align: center;
   }
 }
-/
+*CONTACT PAGE STYLES*/
+.contact-item {
+  h3, p {
+    margin: 0;
+    text-align: end;
+  }
+  p{
+    color: rgba(138, 138, 138, 1);
+  }
+}
+.contact-item  {
+margin-bottom: 144px;
+}
+.contact-form {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  
+  input, textarea {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+}
+/*# sourceMappingURL=style.css.map */
