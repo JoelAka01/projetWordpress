@@ -5237,10 +5237,12 @@ body.error404 .site-header .mobile-menu-toggle svg {
     flex-direction: column;
     gap: 1rem;
     justify-content: center;
+    margin-bottom: -3rem;
   }
   .site-footer .footer-contacts .contact-item {
     text-align: center;
     align-items: center;
+    margin-bottom: 5rem;
   }
   .site-footer .footer-contacts .contact-item .contact-title {
     font-size: 1rem !important;
