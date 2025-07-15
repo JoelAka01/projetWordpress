@@ -1,0 +1,128 @@
+@use "../partials/fonts";
+
+.contacts-page {
+    font-family: fonts.$font2;
+    padding: 4rem 0 2rem 0;
+
+    .page-title {
+        font-size: 3.8rem;
+        font-weight: 400;
+        color: var(--text-color);
+        text-align: left;
+        margin-bottom: 2rem;
+        font-family: fonts.$font2;
+    }
+
+    .subtitle {
+        font-family: fonts.$font2;
+        font-weight: 400;
+        color: var(--muted-text);
+        margin-bottom: 2rem;
+    }
+
+    .contacts-info {
+        font-family: fonts.$font2;
+
+        .contact-item {
+            font-family: fonts.$font2;
+
+            h3 {
+                font-family: fonts.$font2;
+                font-weight: 700;
+            }
+
+            p {
+                font-family: fonts.$font2;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .wirteus-section {
+        font-family: fonts.$font2;
+
+        h2 {
+            font-family: fonts.$font2;
+            font-weight: 700;
+        }
+
+        p {
+            font-family: fonts.$font2;
+        }
+
+        .contact-form {
+            font-family: fonts.$font2;
+
+            .contact-field {
+                font-family: fonts.$font2;
+                font-weight: 400;
+
+                &::placeholder {
+                    font-family: fonts.$font2;
+                    font-weight: 400;
+                }
+            }
+
+            .contact-submit {
+                font-family: fonts.$font2;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+// responsive 
+@media (max-width: 768px) {
+    .contacts-page {
+        .page-title {
+            text-align: left;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .subtitle {
+            text-align: left;
+            font-family: fonts.$font2;
+        }
+
+        .contacts-info {
+            text-align: center;
+
+            .contact-item {
+                margin-bottom: 2rem;
+
+                h3,
+                p {
+                    font-family: fonts.$font2;
+                }
+            }
+        }
+
+        .wirteus-section {
+            h2 {
+                text-align: center;
+                font-family: fonts.$font2;
+            }
+
+            p {
+                text-align: center;
+                font-family: fonts.$font2;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .contacts-page {
+        .page-title {
+            font-size: 1.8rem;
+        }
+
+        .wirteus-section {
+            h2 {
+                font-size: 1.6rem;
+                font-family: fonts.$font2;
+            }
+        }
+    }
+}

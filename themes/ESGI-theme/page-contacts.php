@@ -7,12 +7,11 @@ get_header();
 
 <main class="contacts-page">
     <div class="container">
-        <div class="row " >
-            <div class="col-12 header">
+        <div class="row">
+            <div class="col-12">
                 <h1 class="page-title"><?php the_title(); ?>.</h1>
-                <p id="subtitle">A desire for a big big party or a very select congress? Contact us.
-                </p>    
-        </div>
+                <p class="subtitle">A desire for a big big party or a very select congress? Contact us.</p>    
+            </div>
         </div>
 
         <div class="row">
@@ -67,7 +66,7 @@ get_header();
     <div class="wirteus-section">
         <div class="container">
             <h2> Write us here</h2>
-                <p id="subtitle" >Gol Don't be shy    </p>    
+                <p class="subtitle">Gol Don't be shy</p>    
             <div class="contact-form-contain">
                 
                 <form method="get" class="contact-form row" action="<?php echo esc_url(home_url('/')); ?>">
