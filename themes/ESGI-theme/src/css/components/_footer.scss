@@ -11,9 +11,7 @@
 		align-items: center;
 		height: 100%;
 		margin-bottom: 0;
-		/* Remove bottom margin */
 		margin-top: 1rem;
-		/* Add top margin to align with contacts */
 
 		img,
 		svg {
@@ -85,8 +83,8 @@
 	}
 
 	.footer-bottom {
-		padding-top: 1.5rem;
-		margin-top: 2rem;
+		padding-top: 0;
+		margin-top: 0;
 		font-size: 0.675rem;
 		margin-bottom: 2rem;
 
