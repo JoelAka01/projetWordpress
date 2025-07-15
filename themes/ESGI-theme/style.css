@@ -5153,7 +5153,11 @@ body.error404 .site-header .mobile-menu-toggle svg {
   padding: 3rem 0 1.5rem;
 }
 .site-footer .footer-logo {
-  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 0 !important;
+  margin-top: 1rem;
 }
 .site-footer .footer-logo img,
 .site-footer .footer-logo svg {
@@ -5170,42 +5174,35 @@ body.error404 .site-header .mobile-menu-toggle svg {
 .site-footer .footer-contacts {
   display: flex;
   justify-content: flex-end;
-  gap: 4rem;
+  gap: 5rem;
+  height: 100%;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 0 !important;
+  width: 100%;
 }
 .site-footer .footer-contacts .contact-item {
   text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
 }
 .site-footer .footer-contacts .contact-item .contact-title {
-  font-weight: 500;
-  line-height: 3;
+  font-weight: 800;
+  line-height: 1.5;
   font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem !important;
   color: var(--white);
 }
 .site-footer .footer-contacts .contact-item .contact-phone,
 .site-footer .footer-contacts .contact-item .contact-email {
-  margin-bottom: 0.25rem;
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.9);
-}
-.site-footer .footer-contact {
-  margin-bottom: 2rem;
-}
-.site-footer .footer-contact .contact-title {
-  font-weight: 700;
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-  color: var(--white);
-}
-.site-footer .footer-contact .contact-phone,
-.site-footer .footer-contact .contact-email {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.25rem !important;
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.9);
 }
 .site-footer .footer-bottom {
-  padding-top: 1.5rem;
-  margin-top: 2rem;
+  margin-top: -5rem !important;
   font-size: 0.675rem;
   margin-bottom: 2rem;
 }
@@ -5238,19 +5235,40 @@ body.error404 .site-header .mobile-menu-toggle svg {
 @media (max-width: 768px) {
   .site-footer .footer-contacts {
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
+    justify-content: center;
   }
   .site-footer .footer-contacts .contact-item {
     text-align: center;
+    align-items: center;
+  }
+  .site-footer .footer-contacts .contact-item .contact-title {
+    font-size: 1rem !important;
+  }
+  .site-footer .footer-contacts .contact-item .contact-phone,
+  .site-footer .footer-contacts .contact-item .contact-email {
+    font-size: 1rem !important;
   }
   .site-footer .footer-contact {
     text-align: center;
   }
   .site-footer .footer-logo {
     text-align: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .site-footer .footer-logo img,
+  .site-footer .footer-logo svg {
+    max-width: 200px;
+    width: 160px;
+  }
+  .site-footer .footer-bottom {
+    margin-top: -3rem !important;
   }
   .site-footer .footer-bottom .copyright {
     text-align: center;
+    font-size: 0.75rem;
   }
   .site-footer .footer-bottom .social-links {
     justify-content: center;

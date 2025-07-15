@@ -7,7 +7,11 @@
 	padding: 3rem 0 1.5rem;
 
 	.footer-logo {
-		margin-bottom: 1.5rem;
+		display: flex;
+		align-items: center;
+		height: 100%;
+		margin-bottom: 0 !important;
+		margin-top: 1rem;
 
 		img,
 		svg {
@@ -30,49 +34,39 @@
 	.footer-contacts {
 		display: flex;
 		justify-content: flex-end;
-		gap: 4rem;
+		gap: 5rem;
+		height: 100%;
+		align-items: center;
+		margin-top: 2rem;
+		margin-bottom: 0 !important;
+		width: 100%;
 
 		.contact-item {
 			text-align: right;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: flex-end;
 
 			.contact-title {
-				font-weight: 500;
-				line-height: 3;
+				font-weight: 800;
+				line-height: 1.5;
 				font-size: 0.9rem;
-				margin-bottom: 0.5rem;
+				margin-bottom: 1.5rem !important;
 				color: var(--white);
 			}
 
 			.contact-phone,
 			.contact-email {
-				margin-bottom: 0.25rem;
+				margin-bottom: 0.25rem !important;
 				font-size: 0.95rem;
 				color: rgba(255, 255, 255, 0.9);
 			}
 		}
 	}
 
-	.footer-contact {
-		margin-bottom: 2rem;
-
-		.contact-title {
-			font-weight: 700;
-			font-size: 1.25rem;
-			margin-bottom: 0.5rem;
-			color: var(--white);
-		}
-
-		.contact-phone,
-		.contact-email {
-			margin-bottom: 0.25rem;
-			font-size: 0.95rem;
-			color: rgba(255, 255, 255, 0.9);
-		}
-	}
-
 	.footer-bottom {
-		padding-top: 1.5rem;
-		margin-top: 2rem;
+		margin-top: -5rem !important;
 		font-size: 0.675rem;
 		margin-bottom: 2rem;
 
@@ -108,30 +102,54 @@
 			}
 		}
 	}
+
 	// responsive
 	@media (max-width: 768px) {
 		.footer-contacts {
 			flex-direction: column;
-			gap: 2rem;
+			gap: 1rem;
+			justify-content: center;
 
 			.contact-item {
 				text-align: center;
+				align-items: center;
+
+				.contact-title {
+					font-size: 1rem !important; // slightly bigger for mobile
+				}
+
+				.contact-phone,
+				.contact-email {
+					font-size: 1rem !important; // slightly bigger for mobile
+				}
 			}
 		}
 
 		.footer-contact {
 			text-align: center;
 		}
-		
+
 		.footer-logo {
 			text-align: center;
+			justify-content: center;
+			margin-bottom: 1rem;
+			width: 100%;
+
+			img,
+			svg {
+				max-width: 200px;
+				width: 160px;
+			}
 		}
-		
+
 		.footer-bottom {
+			margin-top: -3rem !important; // reduce negative margin for mobile
+
 			.copyright {
 				text-align: center;
+				font-size: 0.75rem; // slightly bigger for mobile
 			}
-			
+
 			.social-links {
 				justify-content: center;
 				margin-top: 1rem;
