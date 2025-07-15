@@ -14,9 +14,9 @@
  * License:           GNU General Public License v2.0 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  */
-@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,600;1,300;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,600;1,300;1,600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-
 /*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
 Document
@@ -225,8 +225,7 @@ summary {
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #050A3A;
-  --bs-primary-hover: #24284d;
+  --bs-primary: #0d6efd;
   --bs-secondary: #6c757d;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
@@ -858,7 +857,6 @@ summary {
   .col-md-3 {
     flex: 0 0 auto;
     width: 25%;
-    height: 130px; /* Ensures consistent height for columns */
   }
   .col-md-4 {
     flex: 0 0 auto;
@@ -4426,7 +4424,7 @@ summary {
 :root {
   --bg-color: #ffffff;
   --text-color: #1A1A1A;
-  --main-color: #050A3A;
+  --main-color: #060a3a;
   --accent-color: rgb(1.21875, 2.03125, 11.78125);
   --light-bg: #f8f9fa;
   --muted-text: #6c757d;
@@ -4459,7 +4457,7 @@ html {
 }
 
 body {
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
@@ -4483,9 +4481,9 @@ h4,
 h5,
 h6 {
   margin-top: 0;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.2;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
 }
 
 h1 {
@@ -4494,10 +4492,8 @@ h1 {
 }
 
 h2 {
-font-family: Mulish;
-font-weight: 600;
-font-size: 3.15em;
-
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
 }
 
 h3 {
@@ -4508,7 +4504,7 @@ h3 {
 p {
   margin-top: 0;
   margin-bottom: 1.5rem;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
 }
 
 img {
@@ -4521,7 +4517,7 @@ a {
   text-decoration: none;
   color: var(--main-color);
   transition: color 0.3s ease, opacity 0.3s ease;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
 }
 a:hover {
   opacity: 0.8;
@@ -4537,7 +4533,7 @@ ol {
 main {
   padding: 2rem 0;
   flex: 1;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
 }
 
 body.error404 main {
@@ -4641,12 +4637,20 @@ section:last-child {
 .archive,
 .post,
 .page {
-  font-family: "Mulish", serif;
+  font-family: "Source Serif Pro", serif;
   font-size: 1rem;
   line-height: 1.6875rem;
   letter-spacing: 0.03em;
 }
-in-bottom: 2rem;
+.archive h1,
+.post h1,
+.page h1 {
+  text-align: center;
+  font-family: "Overpass", sans-serif;
+  font-size: 1.5625rem;
+  line-height: normal;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
 }
 .archive .post-meta,
 .post .post-meta,
@@ -4658,7 +4662,7 @@ in-bottom: 2rem;
   font-size: 0.8125rem;
   line-height: 1.75;
   letter-spacing: 0.05em;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   gap: 2rem;
   margin-bottom: 3rem;
 }
@@ -4922,7 +4926,7 @@ in-bottom: 2rem;
   opacity: 0.7;
 }
 .site-header .mobile-navigation .mobile-nav-content {
-  padding: 1.5rem 0 1.5rem 0;
+  padding: 1.5rem 0 3rem 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -5032,7 +5036,7 @@ in-bottom: 2rem;
   padding: 0 !important;
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 0.7rem;
 }
 @media (min-width: 769px) {
   .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list {
@@ -5073,7 +5077,7 @@ in-bottom: 2rem;
 .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current-menu-item a::after, .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current_page_parent a::after, .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current_page_item a::after {
   content: "";
   position: absolute;
-  bottom: 8px;
+  bottom: 2px;
   left: 0;
   width: 100%;
   height: 3.9px;
@@ -5178,7 +5182,6 @@ body.error404 .site-header .mobile-menu-toggle svg {
   margin-bottom: 0.5rem;
   color: var(--white);
 }
-
 .site-footer .footer-contacts .contact-item .contact-phone,
 .site-footer .footer-contacts .contact-item .contact-email {
   margin-bottom: 0.25rem;
@@ -5277,7 +5280,7 @@ body.error404 .site-footer .footer-logo {
   margin-bottom: 1.5rem;
 }
 .identity-card h1 {
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   font-size: 1.5625rem;
   line-height: normal;
   letter-spacing: 0.1em;
@@ -5352,7 +5355,7 @@ body.error404 .site-footer .footer-logo {
   font-size: 0.8125rem;
   line-height: 1.75;
   letter-spacing: 0.05em;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
 }
 
 .post-list-pagination {
@@ -5361,7 +5364,7 @@ body.error404 .site-footer .footer-logo {
   font-size: 0.8125rem;
   line-height: 1.75;
   letter-spacing: 0.05em;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   margin-top: 3rem;
 }
 .post-list-pagination a {
@@ -5413,7 +5416,7 @@ body.error404 .site-footer .footer-logo {
   padding: 12px 30px 12px 0;
   border: none;
   border-bottom: 1px solid var(--border-color);
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   font-size: 1.1rem;
   background-color: transparent;
 }
@@ -5551,7 +5554,7 @@ body.error404 .site-footer .footer-logo {
 .blog-page .post-sidebar .archives ul li {
   margin-bottom: 15px;
   position: relative;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   font-size: 1rem;
   padding-left: 20px;
 }
@@ -5598,7 +5601,7 @@ body.error404 .site-footer .footer-logo {
 .blog-page .post-sidebar .categories ul li {
   margin-bottom: 15px;
   position: relative;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   font-size: 1rem;
   padding-left: 20px;
 }
@@ -5645,7 +5648,7 @@ body.error404 .site-footer .footer-logo {
   color: var(--muted-text);
   text-decoration: none;
   font-size: 0.7rem;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   letter-spacing: 1.1px;
   transition: all 0.2s;
 }
@@ -5691,7 +5694,7 @@ body.error404 .site-footer .footer-logo {
     padding: 12px 30px 12px 0;
     border: none;
     border-bottom: 1px solid var(--border-color);
-    font-family: "Mulish", sans-serif;
+    font-family: "Overpass", sans-serif;
     font-size: 1.1rem;
     background-color: transparent;
   }
@@ -5830,7 +5833,7 @@ body.error404 .site-footer .footer-logo {
   .blog-page .post-sidebar-mobile .archives ul li {
     margin-bottom: 15px;
     position: relative;
-    font-family: "Mulish", sans-serif;
+    font-family: "Overpass", sans-serif;
     font-size: 1rem;
     padding-left: 20px;
   }
@@ -5877,7 +5880,7 @@ body.error404 .site-footer .footer-logo {
   .blog-page .post-sidebar-mobile .categories ul li {
     margin-bottom: 15px;
     position: relative;
-    font-family: "Mulish", sans-serif;
+    font-family: "Overpass", sans-serif;
     font-size: 1rem;
     padding-left: 20px;
   }
@@ -5924,7 +5927,7 @@ body.error404 .site-footer .footer-logo {
     color: var(--muted-text);
     text-decoration: none;
     font-size: 0.7rem;
-    font-family: "Mulish", sans-serif;
+    font-family: "Overpass", sans-serif;
     letter-spacing: 1.1px;
     transition: all 0.2s;
   }
@@ -6268,7 +6271,7 @@ body.error404 .site-footer .footer-logo {
   text-align: left;
 }
 .error-404 .error-title {
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   color: white;
   font-size: 4.5rem;
   font-weight: bold;
@@ -6288,7 +6291,7 @@ body.error404 .site-footer .footer-logo {
   }
 }
 .error-404 .error-message {
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   font-size: 1rem;
   line-height: 1.49;
   letter-spacing: 0.1em;
@@ -6346,7 +6349,7 @@ body.error404 .site-footer .footer-logo {
 
 .search-page {
   padding: 80px 10px 80px;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
 }
 .search-page .container {
   max-width: 1200px;
@@ -6357,7 +6360,7 @@ body.error404 .site-footer .footer-logo {
   margin-bottom: 80px;
 }
 .search-page .search-header .search-title {
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   font-size: 4.2rem;
   font-weight: 400;
   text-align: left;
@@ -6596,7 +6599,7 @@ body.error404 .site-footer .footer-logo {
 }
 .post {
   padding: 120px 10px 80px;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
 }
 .post .container {
   max-width: 1200px;
@@ -6606,9 +6609,9 @@ body.error404 .site-footer .footer-logo {
   flex-wrap: wrap;
   gap: 30px;
 }
-.post h1 ,h1 .page-title {
+.post h1 {
   width: 100%;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   font-size: 4.5rem;
   font-weight: 500;
   margin-bottom: 50px;
@@ -6751,7 +6754,7 @@ body.error404 .site-footer .footer-logo {
   color: var(--muted-text);
   text-decoration: none;
   font-size: 0.7rem;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   letter-spacing: 1.1px;
   transition: all 0.2s;
 }
@@ -6775,13 +6778,13 @@ body.error404 .site-footer .footer-logo {
 }
 .post .post-content .comments-section .comment-list .comment .comment-author {
   font-weight: 600;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   font-size: 1.5rem;
   margin-bottom: 12px;
   color: var(--text-color);
 }
 .post .post-content .comments-section .comment-list .comment .comment-content {
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 15px;
@@ -6796,7 +6799,7 @@ body.error404 .site-footer .footer-logo {
   display: inline-flex;
   align-items: center;
   color: var(--text-color);
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   font-size: 1rem;
   text-decoration: none;
   font-weight: 800;
@@ -6829,7 +6832,7 @@ body.error404 .site-footer .footer-logo {
   border: none;
   border-bottom: 1px solid var(--border-color);
   padding: 15px 0;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   font-size: 1rem;
   background: transparent;
   color: var(--text-color);
@@ -6889,7 +6892,7 @@ body.error404 .site-footer .footer-logo {
 .post .post-content .post-footer-menu nav ul li a {
   color: var(--text-color);
   text-decoration: none;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   font-size: 1rem;
   font-weight: 500;
   transition: color 0.2s;
@@ -7127,7 +7130,7 @@ body.error404 .site-footer .footer-logo {
 .blog-page {
   padding: 2rem 0;
   position: relative;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
 }
 .blog-page .container {
   max-width: 1200px;
@@ -7139,7 +7142,7 @@ body.error404 .site-footer .footer-logo {
 }
 .blog-page h1 {
   width: 100%;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   font-size: 4.5rem;
   font-weight: 500;
   margin-bottom: 50px;
@@ -7535,7 +7538,7 @@ body.error404 .site-footer .footer-logo {
 }
 .archive-page {
   padding: 120px 0 80px;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
 }
 .archive-page .container {
   max-width: 1200px;
@@ -7547,7 +7550,7 @@ body.error404 .site-footer .footer-logo {
   margin-bottom: 60px;
 }
 .archive-page .archive-header h1 {
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   font-size: 4rem;
   font-weight: 500;
   margin-bottom: 20px;
@@ -7873,7 +7876,7 @@ body.error404 .site-footer .footer-logo {
 
 .home-page {
   overflow-x: hidden;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
 }
 .home-page .hero-section {
   padding: 2rem 0;
@@ -8461,7 +8464,7 @@ body.error404 .site-footer .footer-logo {
 .services-page {
   background: #fff;
   padding: 0rem 0 !important;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
 }
 
 .services-section {
@@ -8473,7 +8476,7 @@ body.error404 .site-footer .footer-logo {
   color: var(--text-color);
   text-align: left;
   margin-bottom: 3rem;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
   /* set font family */
 }
 .services-section .services-content {
@@ -8527,7 +8530,7 @@ body.error404 .site-footer .footer-logo {
   white-space: normal;
   word-break: break-word;
   position: relative;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
 }
 .services-section .services-content .private-parties-wrapper .private-parties-title:after {
   content: "";
@@ -8550,7 +8553,7 @@ body.error404 .site-footer .footer-logo {
   color: var(--text-color);
   margin-bottom: 1rem;
   text-align: left;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
 }
 .corporate-parties .service-description {
   color: #555;
@@ -8559,7 +8562,7 @@ body.error404 .site-footer .footer-logo {
   line-height: 1.6;
   margin-bottom: 0;
   text-align: left;
-  font-family: "Mulish", sans-serif;
+  font-family: "Overpass", sans-serif;
 }
 
 .large-event-section {
@@ -8680,99 +8683,6 @@ body.error404 .site-footer .footer-logo {
   .team-contact {
     text-align: center;
   }
-}
-/*CONTACT PAGE STYLES*/
-.contact-item {
-  h3, p {
-    margin: 0;
-    text-align: end;
-    margin-bottom: 10px;
-  }
-  p{
-    color: rgba(138, 138, 138, 1);
-  }
-
-}
-.contacts-info{
-  margin-top: 124px ;
-}
- .contacts-page img {
-    margin: 132px 0;
-  }
-.contact-item  {
-margin-bottom: 144px;
-}
-.contact-form {
-  width: 100%;
-  max-width: 1051px;
-  margin: 0;
-  
-  input, textarea {
-    width: 100%;
-    padding: 8px 0;
-    margin: 31px 0;
-    border: none;
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 10px;
-    font-size: 16px;
-    box-sizing: border-box;
-
-  }
-  textarea{
-    height: 178px;
-    margin: 31px 0 39px 0;
-    resize: none;
-  }
-  .middle{
-    input {
-    width: 50%;
-    }
-    display: flex;
-    gap: 43px;
-    padding: 0px;
-
-
-  }
-  button {
-    border: none;
-    text-align:start;
-    color:var(--bs-primary);
-    font-weight: 800;
-    font-size: 20px;
-    background-color: transparent;
-    padding: 0;
-    hover {
-      color: var(--bs-primary-hover);
-      text-decoration: underline;
-    }
-  }
-}
-.wirteus-section {
-h2 {
-  margin: 9px 0;
-  
-
-}
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-    padding: O;
-
-}
-
-.contact-form-contain 
-{
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0 ;
-}
-
-}
-#subtitle{
-  font-family: Mulish;
-  letter-spacing: 0px;
-  color: #8A8A8A;
 }
 
 /*# sourceMappingURL=style.css.map */
