@@ -8472,6 +8472,102 @@ body.error404 .site-footer .footer-logo {
     border-radius: 0;
   }
 }
+.contacts-page {
+  font-family: "Overpass", sans-serif;
+  padding: 4rem 0 2rem 0;
+}
+.contacts-page .page-title {
+  font-size: 3.8rem;
+  font-weight: 400;
+  color: var(--text-color);
+  text-align: left;
+  margin-bottom: 2rem;
+  font-family: "Overpass", sans-serif;
+}
+.contacts-page .subtitle {
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+  color: var(--muted-text);
+  margin-bottom: 2rem;
+}
+.contacts-page .contacts-info {
+  font-family: "Overpass", sans-serif;
+}
+.contacts-page .contacts-info .contact-item {
+  font-family: "Overpass", sans-serif;
+}
+.contacts-page .contacts-info .contact-item h3 {
+  font-family: "Overpass", sans-serif;
+  font-weight: 700;
+}
+.contacts-page .contacts-info .contact-item p {
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+}
+.contacts-page .wirteus-section {
+  font-family: "Overpass", sans-serif;
+}
+.contacts-page .wirteus-section h2 {
+  font-family: "Overpass", sans-serif;
+  font-weight: 700;
+}
+.contacts-page .wirteus-section p {
+  font-family: "Overpass", sans-serif;
+}
+.contacts-page .wirteus-section .contact-form {
+  font-family: "Overpass", sans-serif;
+}
+.contacts-page .wirteus-section .contact-form .contact-field {
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+}
+.contacts-page .wirteus-section .contact-form .contact-field::placeholder {
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+}
+.contacts-page .wirteus-section .contact-form .contact-submit {
+  font-family: "Overpass", sans-serif;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .contacts-page .page-title {
+    text-align: left;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .contacts-page .subtitle {
+    text-align: left;
+    font-family: "Overpass", sans-serif;
+  }
+  .contacts-page .contacts-info {
+    text-align: center;
+  }
+  .contacts-page .contacts-info .contact-item {
+    margin-bottom: 2rem;
+  }
+  .contacts-page .contacts-info .contact-item h3,
+  .contacts-page .contacts-info .contact-item p {
+    font-family: "Overpass", sans-serif;
+  }
+  .contacts-page .wirteus-section h2 {
+    text-align: center;
+    font-family: "Overpass", sans-serif;
+  }
+  .contacts-page .wirteus-section p {
+    text-align: center;
+    font-family: "Overpass", sans-serif;
+  }
+}
+@media (max-width: 576px) {
+  .contacts-page .page-title {
+    font-size: 1.8rem;
+  }
+  .contacts-page .wirteus-section h2 {
+    font-size: 1.6rem;
+    font-family: "Overpass", sans-serif;
+  }
+}
 .services-page {
   background: #fff;
   padding: 0rem 0 !important;
