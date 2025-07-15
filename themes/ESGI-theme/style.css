@@ -5235,11 +5235,19 @@ body.error404 .site-header .mobile-menu-toggle svg {
 @media (max-width: 768px) {
   .site-footer .footer-contacts {
     flex-direction: column;
-    gap: 2rem;
-    margin-top: 1rem;
+    gap: 1rem;
+    justify-content: center;
   }
   .site-footer .footer-contacts .contact-item {
     text-align: center;
+    align-items: center;
+  }
+  .site-footer .footer-contacts .contact-item .contact-title {
+    font-size: 1rem !important;
+  }
+  .site-footer .footer-contacts .contact-item .contact-phone,
+  .site-footer .footer-contacts .contact-item .contact-email {
+    font-size: 1rem !important;
   }
   .site-footer .footer-contact {
     text-align: center;
@@ -5248,9 +5256,19 @@ body.error404 .site-header .mobile-menu-toggle svg {
     text-align: center;
     justify-content: center;
     margin-bottom: 1rem;
+    width: 100%;
+  }
+  .site-footer .footer-logo img,
+  .site-footer .footer-logo svg {
+    max-width: 200px;
+    width: 160px;
+  }
+  .site-footer .footer-bottom {
+    margin-top: -3rem !important;
   }
   .site-footer .footer-bottom .copyright {
     text-align: center;
+    font-size: 0.75rem;
   }
   .site-footer .footer-bottom .social-links {
     justify-content: center;

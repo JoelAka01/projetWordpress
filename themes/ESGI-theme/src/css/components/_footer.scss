@@ -107,11 +107,21 @@
 	@media (max-width: 768px) {
 		.footer-contacts {
 			flex-direction: column;
-			gap: 2rem;
-			margin-top: 1rem;
+			gap: 1rem;
+			justify-content: center;
 
 			.contact-item {
 				text-align: center;
+				align-items: center;
+
+				.contact-title {
+					font-size: 1rem !important; // slightly bigger for mobile
+				}
+
+				.contact-phone,
+				.contact-email {
+					font-size: 1rem !important; // slightly bigger for mobile
+				}
 			}
 		}
 
@@ -123,11 +133,21 @@
 			text-align: center;
 			justify-content: center;
 			margin-bottom: 1rem;
+			width: 100%;
+
+			img,
+			svg {
+				max-width: 200px;
+				width: 160px;
+			}
 		}
 
 		.footer-bottom {
+			margin-top: -3rem !important; // reduce negative margin for mobile
+
 			.copyright {
 				text-align: center;
+				font-size: 0.75rem; // slightly bigger for mobile
 			}
 
 			.social-links {
