@@ -8623,8 +8623,8 @@ body.error404 .site-footer .footer-logo {
   background-color: transparent;
   padding: 0;
 }
-.contact-form button hover {
-  color: var(--bs-primary-hover);
+.contact-form button ::hover {
+  color: var(#3d458d);
   text-decoration: underline;
 }
 
@@ -8670,6 +8670,10 @@ body.error404 .site-footer .footer-logo {
   justify-content: flex-end;
   max-width: 75%;
   padding: 0;
+}
+
+.contact-form {
+  margin-bottom: 140px;
 }
 
 .services-page {
