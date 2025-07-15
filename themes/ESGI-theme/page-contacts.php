@@ -48,19 +48,15 @@ get_header();
     </div>
         <div class="row">
             <div class="col-12 d-flex justify-content-end">
-                <div class="hero-image-wrapper">
-                    <div class="hero-image">
                         <?php
                         $hero_image = get_theme_mod('hero_image');
                         if ($hero_image) {
                             echo '<img src="' . esc_url($hero_image) . '" alt="Hero Image" class="img-fluid">';
                         } else {
                             // display default hero image from theme
-                            echo '<img src="' . get_template_directory_uri() . '/src/images/png/10.png" alt="Hero Image" class="img-fluid">';
+                            echo '<img src="' . get_template_directory_uri() . '/src/images/png/10.png" alt="Hero Image" class="img-fluid-contact">';
                         }
                         ?>
-                    </div>
-                </div>
             </div>
         </div>
     <div class="wirteus-section">
@@ -81,11 +77,7 @@ get_header();
                 </form>
 
             </div>
-
-
-
         </div>
-
     </div>
 </main>
 
