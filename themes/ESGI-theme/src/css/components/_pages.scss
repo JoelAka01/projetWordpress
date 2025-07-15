@@ -1,3 +1,5 @@
+@use "../partials/fonts";
+
 .page-title {
     margin-bottom: 2rem;
 }
@@ -78,6 +80,14 @@
 
 // partners 
 .partners-page {
+    .page-title {
+        font-family: fonts.$font2;
+        font-size: 3rem;
+        font-weight: 400;
+        color: var(--text-color);
+        margin-bottom: 2rem;
+    }
+
     .partners-list {
         margin-top: 3rem;
     }
@@ -162,6 +172,7 @@
     .partners-page {
         .page-title {
             text-align: center;
+            font-size: 2rem; // match about section h2 on mobile
         }
 
         .partner-item {
@@ -197,6 +208,10 @@
 
     // Partners page 
     .partners-page {
+        .page-title {
+            font-size: 1.8rem; // match about section h2 on small mobile
+        }
+
         .partners-list {
             .row {
                 margin-left: -5px;

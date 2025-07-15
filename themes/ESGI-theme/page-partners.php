@@ -9,12 +9,6 @@ get_header();
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="page-title"><?php the_title(); ?></h1>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12">
                 <?php the_content(); ?>
             </div>
         </div>
@@ -22,7 +16,7 @@ get_header();
         <section class="partners-section">
             <div class="row">
                 <div class="col-12">
-                    <h2><?php echo get_theme_mod('partners_title', 'Our Partners'); ?></h2>
+                    <h2><?php echo get_theme_mod('partners_title', 'Our Partners.'); ?></h2>
                 </div>
             </div>
             <div class="row partners-list">
