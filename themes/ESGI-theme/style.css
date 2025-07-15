@@ -8471,11 +8471,11 @@ body.error404 .site-footer .footer-logo {
   padding: 4rem 0;
 }
 .services-section .services-title {
-  font-size: 3rem;
+  font-size: 3.8rem;
   font-weight: 400;
   color: var(--text-color);
   text-align: left;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   font-family: "Overpass", sans-serif;
   /* set font family */
 }
