@@ -8548,7 +8548,7 @@ body.error404 .site-footer .footer-logo {
   padding: 3rem 0 2rem 0;
 }
 .corporate-parties .service-title {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 400;
   color: var(--text-color);
   margin-bottom: 1rem;
@@ -8556,9 +8556,9 @@ body.error404 .site-footer .footer-logo {
   font-family: "Overpass", sans-serif;
 }
 .corporate-parties .service-description {
-  color: #555;
+  color: var(--muted-text);
   font-size: 1rem;
-  max-width: 520px;
+  max-width: 600px;
   line-height: 1.6;
   margin-bottom: 0;
   text-align: left;
