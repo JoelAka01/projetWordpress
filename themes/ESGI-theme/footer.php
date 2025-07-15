@@ -1,6 +1,6 @@
 <footer class="site-footer">
-    <div class="container">        <div class="row align-items-center">
-            <div class="col-md-6">
+    <div class="container">        <div class="row align-items-start">
+            <div class="col-md-6 d-flex align-items-start">
                 <div class="footer-logo">
                     <?php 
                     if (has_custom_logo()) {
