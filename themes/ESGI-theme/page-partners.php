@@ -9,44 +9,63 @@ get_header();
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="page-title"><?php the_title(); ?></h1>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12">
                 <?php the_content(); ?>
             </div>
         </div>
 
-        <div class="partners-list">
+        <section class="partners-section">
             <div class="row">
-                <?php
-                // Display up to 6 partners
-                for ($i = 1; $i <= 6; $i++) :
-                    $partner_logo = get_theme_mod('partner_logo_' . $i);
-                    $partner_name = get_theme_mod('partner_name_' . $i, 'Partner ' . $i);
-                    $partner_url = get_theme_mod('partner_url_' . $i, '#');
-                    
-                    if ($partner_logo) :
-                ?>
-                <div class="col-6 col-md-2 partner-item">
-                    <div class="partner-logo">
-                        <?php if ($partner_url) : ?>
-                        <a href="<?php echo esc_url($partner_url); ?>" target="_blank" rel="noopener">
-                        <?php endif; ?>
-                            <img src="<?php echo esc_url($partner_logo); ?>" alt="<?php echo esc_attr($partner_name); ?>">
-                        <?php if ($partner_url) : ?>
-                        </a>
-                        <?php endif; ?>
-                    </div>
+                <div class="col-12">
+                    <h2><?php echo get_theme_mod('partners_title', 'Our Partners.'); ?></h2>
                 </div>
-                <?php 
-                    endif;
-                endfor;
+            </div>
+            <div class="row partners-list">
+                <?php
+                // dynamic partners
+                $partners = esgi_get_partners();
+
+                if (!empty($partners)) :
+                    foreach ($partners as $index => $partner) :
+                        $partner_name = !empty($partner['name']) ? $partner['name'] : 'Partner ' . ($index + 1);
+                        $partner_url = !empty($partner['url']) ? $partner['url'] : '#';
+                        $partner_logo = !empty($partner['logo']) ? $partner['logo'] : '';
+
+                        // Skip if no logo and no name
+                        if (empty($partner_logo) && empty($partner['name'])) {
+                            continue;
+                        }
+
+                        // Fallback default logo if no custom logo
+                        if (empty($partner_logo)) {
+                            $default_logo_number = ($index % 6) + 1; // cycle 1-6
+                            $partner_logo = get_template_directory_uri() . '/src/images/svg/partner-' . $default_logo_number . '.svg';
+                        }
+                ?>
+                        <div class="col-6 col-md-2 partner-item">
+                            <?php if ($partner_url && $partner_url !== '#') : ?>
+                                <a href="<?php echo esc_url($partner_url); ?>" target="_blank" rel="noopener">
+                                <?php endif; ?>
+                                <img src="<?php echo esc_url($partner_logo); ?>" alt="<?php echo esc_attr($partner_name); ?>" class="img-fluid">
+                                <?php if ($partner_url && $partner_url !== '#') : ?>
+                                </a>
+                            <?php endif; ?>
+                        </div>
+                    <?php
+                    endforeach;
+                else :
+                    // fallback display default partner logos if no partners are configured
+                    for ($i = 1; $i <= 6; $i++) :
+                        $default_logo = get_template_directory_uri() . '/src/images/svg/partner-' . $i . '.svg';
+                    ?>
+                        <div class="col-6 col-md-2 partner-item">
+                            <img src="<?php echo esc_url($default_logo); ?>" alt="Partner <?php echo $i; ?>" class="img-fluid">
+                        </div>
+                <?php
+                    endfor;
+                endif;
                 ?>
             </div>
-        </div>
+        </section>
     </div>
 </main>
 
