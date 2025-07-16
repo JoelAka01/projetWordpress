@@ -21,14 +21,23 @@ get_header();
         </div>
 
         <div class="contacts-info text-end">
-            <div class="row d-flex justify-content-end ">
-                <div class="col-md-3">
+            <div class="row d-flex justify-content-end contact-items-row">
+                <div class="col-md-2 col-lg-2">
                     <div class="contact-item">
                         <h3><?php echo get_theme_mod('footer_location_title', 'Location'); ?></h3>
-                        <p><?php echo get_theme_mod('footer_location_address', '242 Rue du Faubourg Saint-Antoine <br> 75020 Paris FRANCE'); ?></p>
+                        <p><?php echo get_theme_mod('footer_location_address', '242 Rue du Faubourg Saint-Antoine'); ?></p>
+                        <p><?php echo get_theme_mod('footer_location_address', '75020 Paris FRANCE'); ?></p>
                     </div>
                 </div>
-                <div class="col-md-3">
+
+                <div class="col-md-2 col-lg-2">
+                    <div class="contact-item">
+                        <h3><?php echo get_theme_mod('footer_contact_title', 'Manager'); ?></h3>
+                        <p><?php echo get_theme_mod('footer_contact_phone', '+33 1 53 31 25 23'); ?></p>
+                        <p><?php echo get_theme_mod('footer_contact_email', 'info@company.com'); ?></p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-lg-2">
                     <div class="contact-item">
                         <h3><?php echo get_theme_mod('footer_ceo_title', 'CEO'); ?></h3>
                         <p><?php echo get_theme_mod('footer_ceo_phone', '+33 1 53 31 25 25'); ?></p>
@@ -36,13 +45,7 @@ get_header();
                     </div>
                 </div>
 
-                <div class="col-md-3">
-                    <div class="contact-item">
-                        <h3><?php echo get_theme_mod('footer_contact_title', 'Manager'); ?></h3>
-                        <p><?php echo get_theme_mod('footer_contact_phone', '+33 1 53 31 25 23'); ?></p>
-                        <p><?php echo get_theme_mod('footer_contact_email', 'info@esgi.com'); ?></p>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
@@ -62,7 +65,7 @@ get_header();
     <div class="wirteus-section">
         <div class="container">
             <h2> Write us here</h2>
-                <p class="subtitle">Gol Don't be shy</p>    
+                <p class="subtitle">Gol Don't be shy.</p>    
             <div class="contact-form-contain">
                 
                 <form method="get" class="contact-form row" action="<?php echo esc_url(home_url('/')); ?>">

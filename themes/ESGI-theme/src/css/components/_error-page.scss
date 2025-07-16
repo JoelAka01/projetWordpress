@@ -19,11 +19,11 @@
     .error-title {
         font-family: fonts.$font2;
         color: white;
-        font-size: f.rem(72);
-        font-weight: bold;
+        font-size: f.rem(70);
+        font-weight: 500;
         margin: 0 0 f.rem(40) 0;
         line-height: 1;
-        letter-spacing: 0.1em;
+        letter-spacing: 2px;
         text-align: left;
 
         @media (max-width: 768px) {
@@ -39,8 +39,9 @@
         @include fonts.text3;
         color: white;
         font-size: f.rem(18);
-        margin: 0 0 f.rem(50) 0;
+        margin: 0 0 f.rem(45) 0;
         line-height: 1.4;
+        letter-spacing: 2px;
 
         @media (max-width: 480px) {
             font-size: f.rem(16);
@@ -48,6 +49,8 @@
     }
 
     .search-form-container {
+
+
         .search-form {
             display: flex;
             align-items: center;
