@@ -20,6 +20,7 @@
       float: left;
       clear: both;
       color: #050a3a;
+      letter-spacing: 2px;
 
       br {
         display: block;
@@ -34,7 +35,7 @@
 
     .hero-image {
       overflow: hidden;
-      max-width: 79%;
+      max-width: 78%;
       margin-left: auto;
 
       img {
@@ -53,7 +54,7 @@
     .about-intro {
       margin-bottom: 3rem;
       max-width: 650px;
-      margin-left: 20rem;
+      margin-left: 21rem;
       margin-right: auto;
 
       h2 {

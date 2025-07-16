@@ -5070,7 +5070,7 @@ section:last-child {
 }
 .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current-menu-item a, .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current_page_parent a, .site-header .mobile-navigation .mobile-nav-menu .mobile-menu-list li.current_page_item a {
   color: white;
-  font-weight: 600;
+  font-weight: 400;
   position: relative;
   display: inline-block;
 }
@@ -5237,10 +5237,12 @@ body.error404 .site-header .mobile-menu-toggle svg {
     flex-direction: column;
     gap: 1rem;
     justify-content: center;
+    margin-bottom: -3rem;
   }
   .site-footer .footer-contacts .contact-item {
     text-align: center;
     align-items: center;
+    margin-bottom: 5rem;
   }
   .site-footer .footer-contacts .contact-item .contact-title {
     font-size: 1rem !important;
@@ -6291,11 +6293,11 @@ body.error404 .site-footer .footer-logo {
 .error-404 .error-title {
   font-family: "Mulish", sans-serif;
   color: white;
-  font-size: 4.5rem;
-  font-weight: bold;
+  font-size: 4.375rem;
+  font-weight: 500;
   margin: 0 0 2.5rem 0;
   line-height: 1;
-  letter-spacing: 0.1em;
+  letter-spacing: 2px;
   text-align: left;
 }
 @media (max-width: 768px) {
@@ -6315,8 +6317,9 @@ body.error404 .site-footer .footer-logo {
   letter-spacing: 0.1em;
   color: white;
   font-size: 1.125rem;
-  margin: 0 0 3.125rem 0;
+  margin: 0 0 2.8125rem 0;
   line-height: 1.4;
+  letter-spacing: 2px;
 }
 @media (max-width: 480px) {
   .error-404 .error-message {
@@ -6379,10 +6382,10 @@ body.error404 .site-footer .footer-logo {
 }
 .search-page .search-header .search-title {
   font-family: "Mulish", sans-serif;
-  font-size: 4.2rem;
+  font-size: 4rem;
   font-weight: 400;
   text-align: left;
-  letter-spacing: -0.02em;
+  letter-spacing: 2px;
   line-height: 1.2;
   color: var(--text-color);
   margin: 0;
@@ -6394,7 +6397,7 @@ body.error404 .site-footer .footer-logo {
 .search-page .search-header .search-title .search-term::after {
   content: "";
   position: absolute;
-  bottom: 8px;
+  bottom: 3px;
   left: 0;
   width: 100%;
   height: 3.9px;
@@ -6416,7 +6419,7 @@ body.error404 .site-footer .footer-logo {
 }
 .search-page .search-results-grid .search-post-item .post-content h2 {
   margin: 0 0 15px 0;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: 500;
   line-height: 1.3;
 }
@@ -6432,7 +6435,7 @@ body.error404 .site-footer .footer-logo {
   display: flex;
   align-items: center;
   margin-bottom: 15px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--muted-text);
   font-weight: 500;
 }
@@ -7911,6 +7914,7 @@ body.error404 .site-footer .footer-logo {
   float: left;
   clear: both;
   color: #050a3a;
+  letter-spacing: 2px;
 }
 .home-page .hero-section h1 br {
   display: block;
@@ -7922,7 +7926,7 @@ body.error404 .site-footer .footer-logo {
 }
 .home-page .hero-section .hero-image {
   overflow: hidden;
-  max-width: 79%;
+  max-width: 78%;
   margin-left: auto;
 }
 .home-page .hero-section .hero-image img {
@@ -7936,7 +7940,7 @@ body.error404 .site-footer .footer-logo {
 .home-page .about-section .about-intro {
   margin-bottom: 3rem;
   max-width: 650px;
-  margin-left: 20rem;
+  margin-left: 21rem;
   margin-right: auto;
 }
 .home-page .about-section .about-intro h2 {
@@ -8495,21 +8499,24 @@ body.error404 .site-footer .footer-logo {
   padding: 4rem 0 2rem 0;
 }
 .contacts-page .page-title {
-  font-size: 3.8rem;
-  font-weight: 400;
+  font-size: 3.7rem;
+  font-weight: 500;
   color: var(--text-color);
   text-align: left;
   margin-bottom: 2rem;
   font-family: "Mulish", sans-serif;
+  letter-spacing: -0.5px;
 }
 .contacts-page .subtitle {
+  font-size: 1.04rem;
   font-family: "Mulish", sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--muted-text);
-  margin-bottom: 2rem;
+  margin-bottom: -0.5rem;
 }
 .contacts-page .contacts-info {
   font-family: "Mulish", sans-serif;
+  margin-bottom: -2rem;
 }
 .contacts-page .contacts-info .contact-item {
   font-family: "Mulish", sans-serif;
@@ -8517,6 +8524,7 @@ body.error404 .site-footer .footer-logo {
 .contacts-page .contacts-info .contact-item h3 {
   font-family: "Mulish", sans-serif;
   font-weight: 700;
+  margin-bottom: 1.8rem;
 }
 .contacts-page .contacts-info .contact-item p {
   font-family: "Mulish", sans-serif;
@@ -8527,13 +8535,16 @@ body.error404 .site-footer .footer-logo {
 }
 .contacts-page .wirteus-section h2 {
   font-family: "Mulish", sans-serif;
-  font-weight: 700;
+  font-weight: 500;
+  font-size: 2.9rem;
 }
 .contacts-page .wirteus-section p {
   font-family: "Mulish", sans-serif;
+  font-size: 1.1rem;
 }
 .contacts-page .wirteus-section .contact-form {
   font-family: "Mulish", sans-serif;
+  max-width: 51rem;
 }
 .contacts-page .wirteus-section .contact-form .contact-field {
   font-family: "Mulish", sans-serif;
@@ -8549,6 +8560,9 @@ body.error404 .site-footer .footer-logo {
 }
 
 @media (max-width: 768px) {
+  .contacts-page {
+    padding: 2rem 0 1rem 0;
+  }
   .contacts-page .page-title {
     text-align: left;
     font-size: 2.5rem;
@@ -8559,7 +8573,17 @@ body.error404 .site-footer .footer-logo {
     font-family: "Mulish", sans-serif;
   }
   .contacts-page .contacts-info {
+    margin-top: 60px;
     text-align: center;
+  }
+  .contacts-page .contacts-info .contact-items-row {
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contacts-page .contacts-info .contact-items-row [class*=col-] {
+    width: 100%;
+    max-width: 300px;
   }
   .contacts-page .contacts-info .contact-item {
     margin-bottom: 2rem;
@@ -8567,6 +8591,20 @@ body.error404 .site-footer .footer-logo {
   .contacts-page .contacts-info .contact-item h3,
   .contacts-page .contacts-info .contact-item p {
     font-family: "Mulish", sans-serif;
+    text-align: center !important;
+    white-space: normal;
+  }
+  .contacts-page .img-fluid-contact {
+    max-width: 90%;
+    margin-bottom: 60px;
+    justify-content: center;
+  }
+  .contacts-page .contact-form .middle {
+    flex-direction: column;
+    gap: 0;
+  }
+  .contacts-page .contact-form .middle input {
+    width: 100%;
   }
   .contacts-page .wirteus-section h2 {
     text-align: center;
@@ -8578,16 +8616,115 @@ body.error404 .site-footer .footer-logo {
   }
 }
 @media (max-width: 576px) {
+  .contacts-page {
+    padding: 1.5rem 0;
+  }
   .contacts-page .page-title {
     font-size: 1.8rem;
+  }
+  .contacts-page .contacts-info {
+    margin-top: 40px;
+  }
+  .contacts-page .contacts-info .contact-items-row {
+    gap: 20px;
+  }
+  .contacts-page .contacts-info .contact-item {
+    margin-bottom: 1.5rem;
+  }
+  .contacts-page .contacts-info .contact-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+  .contacts-page .contacts-info .contact-item p {
+    font-size: 0.9rem;
+  }
+  .contacts-page .img-fluid-contact {
+    max-width: 95%;
+    margin-bottom: 40px;
+  }
+  .contacts-page .contact-form {
+    margin-bottom: 60px;
+  }
+  .contacts-page .contact-form input,
+  .contacts-page .contact-form textarea {
+    margin: 20px 0;
+    font-size: 14px;
+  }
+  .contacts-page .contact-form textarea {
+    height: 120px;
+    margin: 20px 0 30px 0;
+  }
+  .contacts-page .contact-form button {
+    font-size: 18px;
   }
   .contacts-page .wirteus-section h2 {
     font-size: 1.6rem;
     font-family: "Mulish", sans-serif;
+    margin: 20px 0;
+  }
+  .contacts-page .wirteus-section .container {
+    padding: 0 15px;
+  }
+}
+@media (max-width: 480px) {
+  .contacts-page {
+    padding: 1rem 0;
+  }
+  .contacts-page .page-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .contacts-page .subtitle {
+    font-size: 0.95rem;
+  }
+  .contacts-page .contacts-info {
+    margin-top: 30px;
+  }
+  .contacts-page .contacts-info .contact-item {
+    margin-bottom: 1rem;
+  }
+  .contacts-page .contacts-info .contact-item h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .contacts-page .contacts-info .contact-item p {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+  }
+  .contacts-page .img-fluid-contact {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+  .contacts-page .contact-form {
+    margin-bottom: 40px;
+  }
+  .contacts-page .contact-form input,
+  .contacts-page .contact-form textarea {
+    margin: 15px 0;
+    padding: 6px 0 12px 0;
+    font-size: 13px;
+  }
+  .contacts-page .contact-form textarea {
+    height: 100px;
+    margin: 15px 0 25px 0;
+  }
+  .contacts-page .contact-form button {
+    font-size: 16px;
+  }
+  .contacts-page .wirteus-section h2 {
+    font-size: 1.4rem;
+    margin: 15px 0;
+  }
+  .contacts-page .wirteus-section p {
+    font-size: 1rem;
+  }
+  .contacts-page .wirteus-section .container {
+    padding: 0 10px;
   }
 }
 /*CONTACT PAGE STYLES*/
-.contact-item h3, .contact-item p {
+.contact-item h3,
+.contact-item p {
   margin: 0;
   text-align: end;
   margin-bottom: 10px;
@@ -8599,9 +8736,28 @@ body.error404 .site-footer .footer-logo {
 .contacts-info {
   margin-top: 124px;
 }
+.contacts-info .contact-items-row {
+  gap: 80px;
+}
+.contacts-info .contact-items-row [class*=col-] {
+  padding-left: 8px;
+  padding-right: 8px;
+  flex: 0 0 auto;
+  width: auto;
+  min-width: fit-content;
+}
 
 .contact-item {
   margin-bottom: 144px;
+}
+.contact-item h3,
+.contact-item p {
+  white-space: nowrap;
+  overflow: visible;
+}
+.contact-item p {
+  word-wrap: break-word;
+  white-space: normal;
 }
 
 .contact-form {
@@ -8609,15 +8765,22 @@ body.error404 .site-footer .footer-logo {
   max-width: 1051px;
   margin: 0;
 }
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
   width: 100%;
-  padding: 8px 0;
+  padding: 8px 0 16px 0;
   margin: 31px 0;
   border: none;
   border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
   font-size: 16px;
   box-sizing: border-box;
+  outline: none;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-bottom: 1px solid #ccc;
 }
 .contact-form textarea {
   height: 178px;
@@ -8672,7 +8835,7 @@ body.error404 .site-footer .footer-logo {
   justify-content: flex-end;
   width: 100%;
   height: auto;
-  max-width: 75%;
+  max-width: 79%;
   margin-bottom: 132px;
   padding: 0;
 }
@@ -8691,7 +8854,7 @@ body.error404 .site-footer .footer-logo {
 }
 
 .contact-form {
-  margin-bottom: 140px;
+  margin-bottom: 100px;
 }
 
 .services-page {
@@ -8710,7 +8873,7 @@ body.error404 .site-footer .footer-logo {
   text-align: left;
   margin-bottom: 5rem;
   font-family: "Mulish", sans-serif;
-  /* set font family */
+  letter-spacing: 2px;
 }
 .services-section .services-content {
   display: flex;
@@ -8782,7 +8945,7 @@ body.error404 .site-footer .footer-logo {
 }
 .corporate-parties .service-title {
   font-size: 2.5rem;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--text-color);
   margin-bottom: 1rem;
   text-align: left;
@@ -8913,7 +9076,7 @@ body.error404 .site-footer .footer-logo {
 .teams-title {
   color: #1a2240;
   font-size: 2.6rem;
-  font-weight: 400;
+  font-weight: 500;
   margin-bottom: 48px;
   text-align: left;
   letter-spacing: 1px;
