@@ -8560,6 +8560,9 @@ body.error404 .site-footer .footer-logo {
 }
 
 @media (max-width: 768px) {
+  .contacts-page {
+    padding: 2rem 0 1rem 0;
+  }
   .contacts-page .page-title {
     text-align: left;
     font-size: 2.5rem;
@@ -8570,7 +8573,17 @@ body.error404 .site-footer .footer-logo {
     font-family: "Mulish", sans-serif;
   }
   .contacts-page .contacts-info {
+    margin-top: 60px;
     text-align: center;
+  }
+  .contacts-page .contacts-info .contact-items-row {
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contacts-page .contacts-info .contact-items-row [class*=col-] {
+    width: 100%;
+    max-width: 300px;
   }
   .contacts-page .contacts-info .contact-item {
     margin-bottom: 2rem;
@@ -8578,6 +8591,20 @@ body.error404 .site-footer .footer-logo {
   .contacts-page .contacts-info .contact-item h3,
   .contacts-page .contacts-info .contact-item p {
     font-family: "Mulish", sans-serif;
+    text-align: center !important;
+    white-space: normal;
+  }
+  .contacts-page .img-fluid-contact {
+    max-width: 90%;
+    margin-bottom: 60px;
+    justify-content: center;
+  }
+  .contacts-page .contact-form .middle {
+    flex-direction: column;
+    gap: 0;
+  }
+  .contacts-page .contact-form .middle input {
+    width: 100%;
   }
   .contacts-page .wirteus-section h2 {
     text-align: center;
@@ -8589,12 +8616,110 @@ body.error404 .site-footer .footer-logo {
   }
 }
 @media (max-width: 576px) {
+  .contacts-page {
+    padding: 1.5rem 0;
+  }
   .contacts-page .page-title {
     font-size: 1.8rem;
+  }
+  .contacts-page .contacts-info {
+    margin-top: 40px;
+  }
+  .contacts-page .contacts-info .contact-items-row {
+    gap: 20px;
+  }
+  .contacts-page .contacts-info .contact-item {
+    margin-bottom: 1.5rem;
+  }
+  .contacts-page .contacts-info .contact-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+  .contacts-page .contacts-info .contact-item p {
+    font-size: 0.9rem;
+  }
+  .contacts-page .img-fluid-contact {
+    max-width: 95%;
+    margin-bottom: 40px;
+  }
+  .contacts-page .contact-form {
+    margin-bottom: 60px;
+  }
+  .contacts-page .contact-form input,
+  .contacts-page .contact-form textarea {
+    margin: 20px 0;
+    font-size: 14px;
+  }
+  .contacts-page .contact-form textarea {
+    height: 120px;
+    margin: 20px 0 30px 0;
+  }
+  .contacts-page .contact-form button {
+    font-size: 18px;
   }
   .contacts-page .wirteus-section h2 {
     font-size: 1.6rem;
     font-family: "Mulish", sans-serif;
+    margin: 20px 0;
+  }
+  .contacts-page .wirteus-section .container {
+    padding: 0 15px;
+  }
+}
+@media (max-width: 480px) {
+  .contacts-page {
+    padding: 1rem 0;
+  }
+  .contacts-page .page-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .contacts-page .subtitle {
+    font-size: 0.95rem;
+  }
+  .contacts-page .contacts-info {
+    margin-top: 30px;
+  }
+  .contacts-page .contacts-info .contact-item {
+    margin-bottom: 1rem;
+  }
+  .contacts-page .contacts-info .contact-item h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .contacts-page .contacts-info .contact-item p {
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+  }
+  .contacts-page .img-fluid-contact {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+  .contacts-page .contact-form {
+    margin-bottom: 40px;
+  }
+  .contacts-page .contact-form input,
+  .contacts-page .contact-form textarea {
+    margin: 15px 0;
+    padding: 6px 0 12px 0;
+    font-size: 13px;
+  }
+  .contacts-page .contact-form textarea {
+    height: 100px;
+    margin: 15px 0 25px 0;
+  }
+  .contacts-page .contact-form button {
+    font-size: 16px;
+  }
+  .contacts-page .wirteus-section h2 {
+    font-size: 1.4rem;
+    margin: 15px 0;
+  }
+  .contacts-page .wirteus-section p {
+    font-size: 1rem;
+  }
+  .contacts-page .wirteus-section .container {
+    padding: 0 10px;
   }
 }
 /*CONTACT PAGE STYLES*/
@@ -8643,13 +8768,19 @@ body.error404 .site-footer .footer-logo {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 8px 0;
+  padding: 8px 0 16px 0;
   margin: 31px 0;
   border: none;
   border-bottom: 1px solid #ccc;
   margin-bottom: 10px;
   font-size: 16px;
   box-sizing: border-box;
+  outline: none;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-bottom: 1px solid #ccc;
 }
 .contact-form textarea {
   height: 178px;
@@ -8723,7 +8854,7 @@ body.error404 .site-footer .footer-logo {
 }
 
 .contact-form {
-  margin-bottom: 140px;
+  margin-bottom: 100px;
 }
 
 .services-page {
