@@ -7154,7 +7154,7 @@ body.error404 .site-footer .footer-logo {
 .blog-page .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 0px;
+  padding: 0 calc(var(--bs-gutter-x) * 0.5);
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -7164,6 +7164,7 @@ body.error404 .site-footer .footer-logo {
   font-family: "Mulish", sans-serif;
   font-size: 4.5rem;
   font-weight: 500;
+  margin-top: 30px;
   margin-bottom: 50px;
   text-align: left;
   letter-spacing: -0.02em;
@@ -7410,7 +7411,7 @@ body.error404 .site-footer .footer-logo {
   .blog-page .container {
     flex-direction: column;
     gap: 0;
-    padding: 0 15px;
+    padding: 0 calc(var(--bs-gutter-x) * 0.5);
   }
   .blog-page h1 {
     font-size: 2.2rem;
@@ -7431,7 +7432,7 @@ body.error404 .site-footer .footer-logo {
   .blog-page.category-archive .container:last-child, .blog-page.tag-archive .container:last-child, .blog-page.date-archive .container:last-child {
     flex-direction: column;
     gap: 0;
-    padding: 0 15px;
+    padding: 0 calc(var(--bs-gutter-x) * 0.5);
   }
   .blog-page .blog-content {
     width: 100%;
@@ -8535,6 +8536,7 @@ body.error404 .site-footer .footer-logo {
 }
 .contacts-page .wirteus-section {
   font-family: "Mulish", sans-serif;
+  margin-top: -2rem;
 }
 .contacts-page .wirteus-section h2 {
   font-family: "Mulish", sans-serif;
@@ -8544,6 +8546,7 @@ body.error404 .site-footer .footer-logo {
 .contacts-page .wirteus-section p {
   font-family: "Mulish", sans-serif;
   font-size: 1.1rem;
+  margin-bottom: 1rem;
 }
 .contacts-page .wirteus-section .contact-form {
   font-family: "Mulish", sans-serif;
