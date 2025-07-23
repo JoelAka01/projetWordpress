@@ -6617,7 +6617,7 @@ body.error404 .site-footer .footer-logo {
   }
 }
 .post {
-  padding: 120px 10px 80px;
+  padding: 60px 10px 80px;
   font-family: "Mulish", sans-serif;
 }
 .post .container {
@@ -7047,7 +7047,7 @@ body.error404 .site-footer .footer-logo {
 
 @media (max-width: 768px) {
   .post {
-    padding: 80px 0 60px;
+    padding: 40px 0 60px;
   }
   .post .container {
     flex-direction: column;
@@ -7087,7 +7087,7 @@ body.error404 .site-footer .footer-logo {
 }
 @media (max-width: 576px) {
   .post {
-    padding: 60px 0 40px;
+    padding: 30px 0 40px;
   }
   .post h1 {
     font-size: 1.8rem;
