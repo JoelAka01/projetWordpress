@@ -16,9 +16,9 @@
                 <div class="hero-image-wrapper">
                     <div class="hero-image">
                         <?php
-                        $hero_image = get_theme_mod('hero_image');
-                        if ($hero_image) {
-                            echo '<img src="' . esc_url($hero_image) . '" alt="Hero Image" class="img-fluid">';
+                        $about_hero_image_2 = get_theme_mod('about_hero_image_2');
+                        if ($about_hero_image_2) {
+                            echo '<img src="' . esc_url($about_hero_image_2) . '" alt="Hero Image" class="img-fluid">';
                         } else {
                             // display default hero image from theme
                             echo '<img src="' . get_template_directory_uri() . '/src/images/png/4.png" alt="Hero Image" class="img-fluid">';
@@ -88,25 +88,29 @@
             <div class="teams-container">
                 <div class="row">
                     <?php
-                    $members = [
+                    $defaults = [
                         ['5.png', 'Sales Manager', '+33 1 53 31 25 23', 'sales@company.com'],
                         ['6.png', 'Event planner', '+33 1 53 31 25 24', 'plan@company.com'],
                         ['7.png', 'Designer', '+33 1 53 31 25 20', 'design@company.com'],
                         ['8.png', 'CEO', '+33 1 53 31 25 25', 'ceo@company.com'],
                     ];
-                    foreach ($members as $m) :
-                        list($img, $role, $phone, $email) = $m;
+                    for ($i = 1; $i <= 4; $i++) :
+                        $img = get_theme_mod('team_member_image_' . $i);
+                        $role = get_theme_mod('team_member_role_' . $i, $defaults[$i-1][1]);
+                        $phone = get_theme_mod('team_member_phone_' . $i, $defaults[$i-1][2]);
+                        $email = get_theme_mod('team_member_email_' . $i, $defaults[$i-1][3]);
+                        $img_src = $img ? esc_url($img) : get_template_directory_uri() . '/src/images/png/' . $defaults[$i-1][0];
                     ?>
                         <div class="team-member">
                             <img
-                                src="<?php echo get_template_directory_uri() . "/src/images/png/{$img}"; ?>"
+                                src="<?php echo $img_src; ?>"
                                 alt="<?php echo esc_attr($role); ?>"
                                 class="team-img">
                             <div class="team-role"><?php echo esc_html($role); ?></div>
                             <div class="team-contact"><?php echo esc_html($phone); ?></div>
                             <div class="team-contact"><?php echo esc_html($email); ?></div>
                         </div>
-                    <?php endforeach; ?>
+                    <?php endfor; ?>
                 </div>
             </div>
         </div>

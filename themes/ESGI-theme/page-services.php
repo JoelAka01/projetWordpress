@@ -23,13 +23,13 @@ get_header();
             <!-- 1st square: left image -->
             <div class="service-square d-flex align-items-center justify-content-center" style="height:25vw;padding:0;flex:1 1 0;min-width:0;">
                 <div class="service-image-left w-100 h-100">
-                    <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/12.png" alt="Service Image 1" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                    <img src="<?php echo get_theme_mod('service_image_1', get_template_directory_uri() . '/src/images/png/12.png'); ?>" alt="<?php echo esc_attr(get_theme_mod('service_title_1', 'Service 1')); ?>" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
                 </div>
             </div>
             <!-- 2nd square: right image -->
             <div class="service-square d-flex align-items-center justify-content-center" style="height:25vw;padding:0;flex:1 1 0;min-width:0;">
                 <div class="service-image-right w-100 h-100">
-                    <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/5.png" alt="Service Image 2" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                    <img src="<?php echo get_theme_mod('service_image_2', get_template_directory_uri() . '/src/images/png/5.png'); ?>" alt="<?php echo esc_attr(get_theme_mod('service_title_2', 'Service 2')); ?>" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
                 </div>
             </div>
             <!-- 3rd square: text -->
@@ -41,7 +41,7 @@ get_header();
             <!-- 4th square: right image -->
             <div class="service-square d-flex align-items-center justify-content-center" style="height:25vw;padding:0;flex:1 1 0;min-width:0;">
                 <div class="featured-image-wrapper w-100 h-100">
-                    <img src="<?php echo get_template_directory_uri(); ?>/src/images/png/3.png" alt="Private Parties Featured" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
+                    <img src="<?php echo get_theme_mod('service_image_3', get_template_directory_uri() . '/src/images/png/3.png'); ?>" alt="<?php echo esc_attr(get_theme_mod('service_title_3', 'Service 3')); ?>" class="img-fluid" style="width:100%;height:100%;object-fit:cover;">
                 </div>
             </div>
         </div>
@@ -79,8 +79,8 @@ get_header();
     <section class="large-event-section">
         <div class="container-fluid p-0">
             <div class="large-event-image">
-                <img src="<?php echo get_theme_mod('large_event_image', get_template_directory_uri() . '/src/images/png/9.png'); ?>"
-                    alt="Large Event" class="img-fluid w-100">
+                <img src="<?php echo get_theme_mod('service_image_4', get_template_directory_uri() . '/src/images/png/9.png'); ?>"
+                    alt="<?php echo esc_attr(get_theme_mod('service_title_4', 'Service 4')); ?>" class="img-fluid w-100">
             </div>
         </div>
     </section>
