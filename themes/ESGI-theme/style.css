@@ -5430,7 +5430,7 @@ body.error404 .site-footer .footer-logo {
 }
 .post .post-sidebar .search-section .search-form input[type=search],
 .blog-page .post-sidebar .search-section .search-form input[type=search] {
-  width: 100%;
+  width: 90%;
   padding: 12px 30px 12px 0;
   border: none;
   border-bottom: 1px solid var(--border-color);
@@ -5450,7 +5450,7 @@ body.error404 .site-footer .footer-logo {
 .post .post-sidebar .search-section .search-form button,
 .blog-page .post-sidebar .search-section .search-form button {
   position: absolute;
-  right: 0;
+  right: 50px;
   top: 50%;
   transform: translateY(-50%);
   background: transparent;
@@ -5708,7 +5708,7 @@ body.error404 .site-footer .footer-logo {
   }
   .post .post-sidebar-mobile .search-section .search-form input[type=search],
   .blog-page .post-sidebar-mobile .search-section .search-form input[type=search] {
-    width: 100%;
+    width: 90%;
     padding: 12px 30px 12px 0;
     border: none;
     border-bottom: 1px solid var(--border-color);
@@ -7176,15 +7176,14 @@ body.error404 .site-footer .footer-logo {
   padding: 0 calc(var(--bs-gutter-x) * 0.5);
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
 }
 .blog-page h1 {
   width: 100%;
   font-family: "Mulish", sans-serif;
   font-size: 4.5rem;
   font-weight: 500;
-  margin-top: 30px;
-  margin-bottom: 50px;
+  margin-top: 40px;
+  margin-bottom: 90px;
   text-align: left;
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -7232,7 +7231,7 @@ body.error404 .site-footer .footer-logo {
   opacity: 0.7;
 }
 .blog-page .blog-content .posts-grid .blog-post-item .post-content {
-  padding: 25px 20px 25px 0;
+  padding: 25px 0 25px 0;
 }
 .blog-page .blog-content .posts-grid .blog-post-item .post-content h2 {
   margin: 0 0 15px 0;
@@ -7277,7 +7276,7 @@ body.error404 .site-footer .footer-logo {
 .blog-page .blog-content .pagination-wrapper {
   display: flex;
   justify-content: flex-start;
-  margin-top: 60px;
+  margin-top: -1rem;
 }
 .blog-page .blog-content .pagination-wrapper .pagination {
   display: flex;
@@ -7468,7 +7467,7 @@ body.error404 .site-footer .footer-logo {
     height: 200px;
   }
   .blog-page .blog-content .posts-grid .blog-post-item .post-content {
-    padding: 20px 15px 20px 0;
+    padding: 20px 0 20px 0;
   }
   .blog-page .blog-content .posts-grid .blog-post-item .post-content h2 {
     font-size: 1.2rem;
@@ -7544,7 +7543,7 @@ body.error404 .site-footer .footer-logo {
     font-size: 0.7rem;
   }
   .blog-page .blog-content .posts-grid .blog-post-item .post-content {
-    padding: 15px 12px 15px 0;
+    padding: 15px 0 15px 0;
   }
   .blog-page .blog-content .posts-grid .blog-post-item .post-content h2 {
     font-size: 1.1rem;
