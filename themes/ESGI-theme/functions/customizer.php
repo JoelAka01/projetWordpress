@@ -48,6 +48,9 @@ function esgi_customize_register($wp_customize)
     // Footer
     esgi_add_footer_section($wp_customize);
 
+    // Team
+    esgi_add_team_section($wp_customize);
+
     // additional aettings
     esgi_add_additional_settings($wp_customize);
 }
@@ -430,6 +433,73 @@ function esgi_add_footer_section($wp_customize)
             'section' => 'esgi_footer',
             'type' => $data[1],
             'priority' => $priority++,
+        ]);
+    }
+}
+
+// Team section settings
+function esgi_add_team_section($wp_customize)
+{
+    $wp_customize->add_section('esgi_team', [
+        'title' => __('Team Section', 'ESGI'),
+        'priority' => 8,
+        'capability' => 'edit_theme_options',
+    ]);
+    for ($i = 1; $i <= 4; $i++) {
+        $defaults = [
+            1 => ['5.png', 'Sales Manager', '+33 1 53 31 25 23', 'sales@company.com'],
+            2 => ['6.png', 'Event planner', '+33 1 53 31 25 24', 'plan@company.com'],
+            3 => ['7.png', 'Designer', '+33 1 53 31 25 20', 'design@company.com'],
+            4 => ['8.png', 'CEO', '+33 1 53 31 25 25', 'ceo@company.com'],
+        ];
+        $wp_customize->add_setting('team_member_image_' . $i, [
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'transport' => 'refresh',
+        ]);
+        $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'team_member_image_' . $i, [
+            'label' => sprintf(__('Team Member %d Image', 'ESGI'), $i),
+            'section' => 'esgi_team',
+            'priority' => $i * 10 + 1,
+        ]));
+        $wp_customize->add_setting('team_member_role_' . $i, [
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'default' => $defaults[$i][1],
+            'transport' => 'refresh',
+            'sanitize_callback' => 'sanitize_text_field',
+        ]);
+        $wp_customize->add_control('team_member_role_' . $i, [
+            'label' => sprintf(__('Team Member %d Role', 'ESGI'), $i),
+            'section' => 'esgi_team',
+            'type' => 'text',
+            'priority' => $i * 10 + 2,
+        ]);
+        $wp_customize->add_setting('team_member_phone_' . $i, [
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'default' => $defaults[$i][2],
+            'transport' => 'refresh',
+            'sanitize_callback' => 'sanitize_text_field',
+        ]);
+        $wp_customize->add_control('team_member_phone_' . $i, [
+            'label' => sprintf(__('Team Member %d Phone', 'ESGI'), $i),
+            'section' => 'esgi_team',
+            'type' => 'text',
+            'priority' => $i * 10 + 3,
+        ]);
+        $wp_customize->add_setting('team_member_email_' . $i, [
+            'type' => 'theme_mod',
+            'capability' => 'edit_theme_options',
+            'default' => $defaults[$i][3],
+            'transport' => 'refresh',
+            'sanitize_callback' => 'sanitize_email',
+        ]);
+        $wp_customize->add_control('team_member_email_' . $i, [
+            'label' => sprintf(__('Team Member %d Email', 'ESGI'), $i),
+            'section' => 'esgi_team',
+            'type' => 'email',
+            'priority' => $i * 10 + 4,
         ]);
     }
 }
