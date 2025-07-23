@@ -16,9 +16,9 @@
                 <div class="hero-image-wrapper">
                     <div class="hero-image">
                         <?php
-                        $hero_image = get_theme_mod('hero_image');
-                        if ($hero_image) {
-                            echo '<img src="' . esc_url($hero_image) . '" alt="Hero Image" class="img-fluid">';
+                        $about_hero_image_2 = get_theme_mod('about_hero_image_2');
+                        if ($about_hero_image_2) {
+                            echo '<img src="' . esc_url($about_hero_image_2) . '" alt="Hero Image" class="img-fluid">';
                         } else {
                             // display default hero image from theme
                             echo '<img src="' . get_template_directory_uri() . '/src/images/png/4.png" alt="Hero Image" class="img-fluid">';

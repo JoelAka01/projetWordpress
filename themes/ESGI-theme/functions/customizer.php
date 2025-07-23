@@ -183,6 +183,18 @@ function esgi_add_about_section($wp_customize)
         'section' => 'esgi_about',
         'priority' => $priority++,
     ]));
+
+    // About Hero Image 2
+    $wp_customize->add_setting('about_hero_image_2', [
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+    ]);
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'about_hero_image_2', [
+        'label' => __('About Hero Image 2', 'ESGI'),
+        'section' => 'esgi_about',
+        'priority' => $priority++,
+    ]));
 }
 
 //services settings
