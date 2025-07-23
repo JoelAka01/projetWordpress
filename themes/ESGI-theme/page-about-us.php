@@ -13,7 +13,7 @@
 
         <div class="row">
             <div class="col-12">
-                <div class="hero-image-wrapper">
+                <div class="hero-image-wrapper-secondary">
                     <div class="hero-image">
                         <?php
                         $about_hero_image_2 = get_theme_mod('about_hero_image_2');
