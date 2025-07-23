@@ -9095,6 +9095,7 @@ body.error404 .site-footer .footer-logo {
   margin-bottom: 48px;
   text-align: left;
   letter-spacing: 1px;
+  margin-top: -2rem;
 }
 
 .teams-container {
@@ -9175,6 +9176,15 @@ body.error404 .site-footer .footer-logo {
   .team-role,
   .team-contact {
     text-align: center;
+  }
+  .teams-title {
+    color: #1a2240;
+    font-size: 2.6rem;
+    font-weight: 500;
+    margin-bottom: 48px;
+    text-align: center;
+    letter-spacing: 1px;
+    margin-top: 2rem;
   }
 }
 .partners-page {
