@@ -5415,7 +5415,7 @@ body.error404 .site-footer .footer-logo {
 }
 .post .post-sidebar .search-section,
 .blog-page .post-sidebar .search-section {
-  margin-bottom: 50px;
+  margin-bottom: 80px;
 }
 .post .post-sidebar .search-section h2,
 .blog-page .post-sidebar .search-section h2 {
@@ -5693,7 +5693,7 @@ body.error404 .site-footer .footer-logo {
   }
   .post .post-sidebar-mobile .search-section,
   .blog-page .post-sidebar-mobile .search-section {
-    margin-bottom: 50px;
+    margin-bottom: 80px;
   }
   .post .post-sidebar-mobile .search-section h2,
   .blog-page .post-sidebar-mobile .search-section h2 {
