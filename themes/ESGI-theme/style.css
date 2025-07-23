@@ -5481,7 +5481,7 @@ body.error404 .site-footer .footer-logo {
 .blog-page .post-sidebar .recent-posts h2 {
   font-size: 1.1rem;
   margin-bottom: 25px;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--text-color);
 }
 .post .post-sidebar .recent-posts .post-item,
@@ -5559,7 +5559,7 @@ body.error404 .site-footer .footer-logo {
 .blog-page .post-sidebar .archives h2 {
   font-size: 1.1rem;
   margin-bottom: 25px;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--text-color);
 }
 .post .post-sidebar .archives ul,
@@ -5606,7 +5606,7 @@ body.error404 .site-footer .footer-logo {
 .blog-page .post-sidebar .categories h2 {
   font-size: 1.1rem;
   margin-bottom: 25px;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--text-color);
 }
 .post .post-sidebar .categories ul,
@@ -5649,7 +5649,7 @@ body.error404 .site-footer .footer-logo {
 .blog-page .post-sidebar .tags-sidebar h2 {
   font-size: 1.1rem;
   margin-bottom: 25px;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--text-color);
 }
 .post .post-sidebar .tags-sidebar .tag-list,
@@ -5759,7 +5759,7 @@ body.error404 .site-footer .footer-logo {
   .blog-page .post-sidebar-mobile .recent-posts h2 {
     font-size: 1.1rem;
     margin-bottom: 25px;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--text-color);
   }
   .post .post-sidebar-mobile .recent-posts .post-item,
@@ -5838,7 +5838,7 @@ body.error404 .site-footer .footer-logo {
   .blog-page .post-sidebar-mobile .archives h2 {
     font-size: 1.1rem;
     margin-bottom: 25px;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--text-color);
   }
   .post .post-sidebar-mobile .archives ul,
@@ -5885,7 +5885,7 @@ body.error404 .site-footer .footer-logo {
   .blog-page .post-sidebar-mobile .categories h2 {
     font-size: 1.1rem;
     margin-bottom: 25px;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--text-color);
   }
   .post .post-sidebar-mobile .categories ul,
@@ -5928,7 +5928,7 @@ body.error404 .site-footer .footer-logo {
   .blog-page .post-sidebar-mobile .tags-sidebar h2 {
     font-size: 1.1rem;
     margin-bottom: 25px;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--text-color);
   }
   .post .post-sidebar-mobile .tags-sidebar .tag-list,
@@ -7189,7 +7189,7 @@ body.error404 .site-footer .footer-logo {
 }
 .blog-page .blog-content .posts-grid .blog-post-item .post-image {
   position: relative;
-  height: 250px;
+  height: 280px;
   overflow: hidden;
 }
 .blog-page .blog-content .posts-grid .blog-post-item .post-image img {
@@ -7341,7 +7341,7 @@ body.error404 .site-footer .footer-logo {
 }
 .blog-page .blog-content.category-archive .blog-content .posts-grid .blog-post-item .post-image, .blog-page .blog-content.tag-archive .blog-content .posts-grid .blog-post-item .post-image, .blog-page .blog-content.date-archive .blog-content .posts-grid .blog-post-item .post-image {
   position: relative;
-  height: 200px;
+  height: 240px;
   overflow: hidden;
   margin-bottom: 15px;
 }
