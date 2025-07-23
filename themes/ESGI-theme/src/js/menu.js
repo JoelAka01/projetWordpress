@@ -103,3 +103,14 @@ document.addEventListener("DOMContentLoaded", function () {
     true
   );
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const form = document.querySelector('.contact-form');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('message envoyé');
+      form.reset();
+    });
+  }
+});
