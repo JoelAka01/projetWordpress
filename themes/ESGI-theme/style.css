@@ -8030,7 +8030,7 @@ body.error404 .site-footer .footer-logo {
   max-width: 560px;
 }
 .home-page .services-section {
-  padding: 4rem 0;
+  padding: 3rem 0 2rem;
 }
 .home-page .services-section .services-title {
   font-size: 3rem;
@@ -8102,7 +8102,7 @@ body.error404 .site-footer .footer-logo {
   background: linear-gradient(90deg, #ffd0a8, #ff4fc0);
 }
 .home-page .partners-section {
-  padding: 4rem 0;
+  padding: 0rem 0 4rem;
   overflow-x: hidden;
 }
 .home-page .partners-section h2 {
@@ -8243,6 +8243,10 @@ body.error404 .site-footer .footer-logo {
   }
   .home-page .services-section .services-content .featured-image-wrapper {
     height: 200px;
+  }
+  .home-page .partners-section {
+    padding: 4rem 0 4rem;
+    overflow-x: hidden;
   }
   .home-page .partners-section h2 {
     text-align: center;
