@@ -4453,7 +4453,6 @@ summary {
 html {
   font-size: 16px;
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 body {
@@ -6279,10 +6278,10 @@ body.error404 .site-footer .footer-logo {
 .error-404 {
   background-color: #050A3A;
   display: flex;
-  align-items: center;
-  padding: 0;
+  align-items: flex-start;
+  padding: 5rem 0 2.5rem 0;
   margin: 0;
-  min-height: calc(100vh - 380px);
+  min-height: calc(100vh - 480px);
   flex: 1;
 }
 .error-404 .error-content {
