@@ -12,7 +12,7 @@
         padding: 0 0px;
         display: flex;
         flex-wrap: wrap;
-        gap: 30px;
+
     }
 
     h1 {
@@ -20,7 +20,7 @@
         font-family: fonts.$font2;
         font-size: 4.5rem;
         font-weight: 500;
-        margin-bottom: 50px;
+        margin-bottom: 90px;
         text-align: left;
         letter-spacing: -0.02em;
         line-height: 1.2;
@@ -45,7 +45,7 @@
         min-width: 0;
 
         .post-thumbnail {
-            margin-bottom: 30px;
+            margin-bottom: 50px;
 
             img {
                 width: 100%;
@@ -214,11 +214,12 @@
                     padding: 30px;
                     margin-bottom: 25px;
 
+
                     .comment-author {
                         font-weight: 600;
                         font-family: fonts.$font2;
                         font-size: 1.5rem;
-                        margin-bottom: 12px;
+                        margin-bottom: 20px;
                         color: var(--text-color);
                     }
 
@@ -226,7 +227,7 @@
                         font-family: fonts.$font2;
                         font-size: 1rem;
                         line-height: 1.7;
-                        margin-bottom: 15px;
+                        margin-bottom: 20px;
                         color: var(--text-color);
                         opacity: 0.8;
                         word-wrap: break-word;
@@ -242,7 +243,7 @@
                         font-family: fonts.$font2;
                         font-size: 1rem;
                         text-decoration: none;
-                        font-weight: 800;
+                        font-weight: 900;
                         transition: opacity 0.2s;
 
                         svg {

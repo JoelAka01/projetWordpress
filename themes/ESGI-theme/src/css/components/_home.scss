@@ -157,7 +157,7 @@
 
   // services section
   .services-section {
-    padding: 4rem 0;
+    padding: 3rem 0 2rem;
 
     .services-title {
       font-size: 3rem;
@@ -237,7 +237,7 @@
 
   // partners section
   .partners-section {
-    padding: 4rem 0;
+    padding: 0rem 0 4rem;
     overflow-x: hidden; // no horizontal scroll
 
     h2 {
@@ -429,6 +429,10 @@
     }
 
     .partners-section {
+
+      padding: 4rem 0 4rem;
+      overflow-x: hidden; // no horizontal scroll
+
       h2 {
         text-align: center;
       }

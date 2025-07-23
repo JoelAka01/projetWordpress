@@ -95,19 +95,21 @@
   padding: 0rem 0 2rem 0;
 
   .service-title {
-    font-size: 2.5rem;
+    font-size: 2.9rem;
     font-weight: 500;
     color: var(--text-color);
     margin-bottom: 1rem;
     text-align: left;
     font-family: fonts.$font2;
+    letter-spacing: 3px;
   }
 
   .service-description {
     color: var(--muted-text);
-    font-size: 1rem;
-    max-width: 600px;
+    font-size: 1.2rem;
+    min-width: 720px;
     line-height: 1.6;
+
     margin-bottom: 0;
     text-align: left;
     font-family: fonts.$font2;
@@ -143,9 +145,12 @@
           max-height: 300px;
           flex: 1 1 50%; // 2 columns on tablet
         }
+
       }
     }
   }
+
+
 }
 
 @media (max-width: 768px) {
@@ -185,6 +190,7 @@
       }
     }
   }
+
 }
 
 @media (max-width: 576px) {
@@ -207,6 +213,15 @@
       }
     }
   }
+
+  .corporate-parties {
+    .service-description {
+      min-width: unset; // Remove minwidth on mobile
+    }
+  }
+
+
+
 }
 
 @media (max-width: 991px) {
@@ -239,4 +254,6 @@
     font-size: 2rem !important;
     text-align: center;
   }
+
+
 }
