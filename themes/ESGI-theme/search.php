@@ -84,7 +84,7 @@ $search_posts = new WP_Query([
                                 } else {
                                     $content = get_the_content();
                                 }
-                                // Remove HTML tags and get plain text
+                                // Remove html tags and get plain text
                                 $content = strip_tags($content);
                                 // Remove extra whitespace and normalize line breaks
                                 $content = preg_replace('/\s+/', ' ', $content);
@@ -95,7 +95,7 @@ $search_posts = new WP_Query([
                                 $first_sentences = array_slice($sentences, 0, 3);
                                 $trimmed_content = implode('. ', $first_sentences);
                                 
-                                // If we have content and it doesn't end with a period, add one
+                                // If we have content and it doesnt end with a period, add one
                                 if (!empty($trimmed_content) && !str_ends_with($trimmed_content, '.')) {
                                     $trimmed_content .= '.';
                                 }

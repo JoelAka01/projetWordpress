@@ -4,10 +4,10 @@
 .error-404 {
     background-color: #050A3A;
     display: flex;
-    align-items: center;
-    padding: 0;
+    align-items: flex-start;
+    padding: f.rem(80) 0 f.rem(40) 0;
     margin: 0;
-    min-height: calc(100vh - 380px); // account for header and footer height
+    min-height: calc(100vh - 480px);
     flex: 1; // take up available space
 
     .error-content {

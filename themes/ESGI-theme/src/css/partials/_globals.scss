@@ -7,7 +7,6 @@
 html {
 	font-size: 16px;
 	scroll-behavior: smooth;
-	overflow-x: hidden; // no horizontal scroll
 }
 
 body {
@@ -57,7 +56,6 @@ h3 {
 }
 
 p {
-	margin-top: 0;
 	margin-bottom: 1.5rem;
 	font-family: fonts.$font2;
 }

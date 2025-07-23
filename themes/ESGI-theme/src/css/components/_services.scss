@@ -124,9 +124,8 @@
 
     img {
       width: 100%;
-      min-height: 260px;
-      max-height: 400px;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
       display: block;
     }
   }

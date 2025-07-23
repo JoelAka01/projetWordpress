@@ -10,7 +10,7 @@
   .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 0px;
+    padding: 0 calc(var(--bs-gutter-x) * 0.5);
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -21,6 +21,7 @@
     font-family: fonts.$font2;
     font-size: 4.5rem;
     font-weight: 500;
+    margin-top: 30px;
     margin-bottom: 50px;
     text-align: left;
     letter-spacing: -0.02em;
@@ -83,6 +84,7 @@
             font-size: 1.7rem;
             font-weight: 500;
             line-height: 1.3;
+            height: calc(1.7rem * 1.3 * 2); // Reserve space for exactly 2 lines 
             display: -webkit-box;
             -webkit-line-clamp: 2;
             line-clamp: 2;
@@ -282,6 +284,7 @@
                 font-size: 1.4rem;
                 font-weight: 500;
                 line-height: 1.3;
+                height: calc(1.4rem * 1.3 * 2); // Reserve space for exactly 2 lines
                 display: -webkit-box;
                 -webkit-line-clamp: 2;
                 line-clamp: 2;
@@ -328,7 +331,7 @@
     .container {
       flex-direction: column;
       gap: 0;
-      padding: 0 15px;
+      padding: 0 calc(var(--bs-gutter-x) * 0.5);
     }
 
     h1 {
@@ -358,7 +361,7 @@
       .container:last-child {
         flex-direction: column;
         gap: 0;
-        padding: 0 15px;
+        padding: 0 calc(var(--bs-gutter-x) * 0.5);
       }
     }
 
@@ -381,6 +384,7 @@
 
             h2 {
               font-size: 1.2rem;
+              height: calc(1.2rem * 1.3 * 2); // Reserve space for exactly 2 lines
               display: -webkit-box;
               -webkit-line-clamp: 2;
               line-clamp: 2;
@@ -416,6 +420,7 @@
 // Archive pages mobile responsiveness
 @media (max-width: 768px) {
   .blog-page {
+
     &.category-archive,
     &.tag-archive,
     &.date-archive {
@@ -442,6 +447,7 @@
 
               h2 {
                 font-size: 1.3rem;
+                height: calc(1.3rem * 1.3 * 2); // Reserve space for exactly 2 lines
               }
 
               .post-excerpt {
@@ -458,6 +464,7 @@
 // Tablet responsive for archive pages
 @media (min-width: 769px) and (max-width: 1024px) {
   .blog-page {
+
     &.category-archive,
     &.tag-archive,
     &.date-archive {
@@ -502,6 +509,7 @@
             h2 {
               font-size: 1.1rem;
               margin-bottom: 12px;
+              height: calc(1.1rem * 1.3 * 2); // Reserve space for exactly 2 lines
               display: -webkit-box;
               -webkit-line-clamp: 2;
               line-clamp: 2;
@@ -545,6 +553,7 @@
 
               h2 {
                 font-size: 1.1rem;
+                height: calc(1.1rem * 1.3 * 2); // Reserve space for exactly 2 lines
               }
 
               .post-excerpt {
