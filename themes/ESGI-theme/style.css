@@ -8960,17 +8960,18 @@ body.error404 .site-footer .footer-logo {
   padding: 0rem 0 2rem 0;
 }
 .corporate-parties .service-title {
-  font-size: 2.5rem;
+  font-size: 2.9rem;
   font-weight: 500;
   color: var(--text-color);
   margin-bottom: 1rem;
   text-align: left;
   font-family: "Mulish", sans-serif;
+  letter-spacing: 3px;
 }
 .corporate-parties .service-description {
   color: var(--muted-text);
-  font-size: 1rem;
-  max-width: 600px;
+  font-size: 1.2rem;
+  min-width: 720px;
   line-height: 1.6;
   margin-bottom: 0;
   text-align: left;
@@ -9044,6 +9045,9 @@ body.error404 .site-footer .footer-logo {
     width: 100% !important;
     height: 70vw !important;
     max-height: none;
+  }
+  .corporate-parties .service-description {
+    min-width: unset;
   }
 }
 @media (max-width: 991px) {
