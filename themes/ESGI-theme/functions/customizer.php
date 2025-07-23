@@ -255,6 +255,43 @@ function esgi_add_services_section($wp_customize)
             'priority' => $priority + 2,
         ]));
     }
+    // Service 4
+    $wp_customize->add_setting('service_title_4', [
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => 'Service 4',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    $wp_customize->add_control('service_title_4', [
+        'label' => __('Service 4 Title', 'ESGI'),
+        'section' => 'esgi_services',
+        'type' => 'text',
+        'priority' => 13,
+    ]);
+    $wp_customize->add_setting('service_description_4', [
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'default' => 'Description for service 4',
+        'transport' => 'refresh',
+        'sanitize_callback' => 'wp_kses_post',
+    ]);
+    $wp_customize->add_control('service_description_4', [
+        'label' => __('Service 4 Description', 'ESGI'),
+        'section' => 'esgi_services',
+        'type' => 'textarea',
+        'priority' => 14,
+    ]);
+    $wp_customize->add_setting('service_image_4', [
+        'type' => 'theme_mod',
+        'capability' => 'edit_theme_options',
+        'transport' => 'refresh',
+    ]);
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'service_image_4', [
+        'label' => __('Service 4 Image', 'ESGI'),
+        'section' => 'esgi_services',
+        'priority' => 15,
+    ]));
 }
 
 // partners section settings
