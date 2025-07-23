@@ -6645,14 +6645,13 @@ body.error404 .site-footer .footer-logo {
   padding: 0 0px;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
 }
 .post h1 {
   width: 100%;
   font-family: "Mulish", sans-serif;
   font-size: 4.5rem;
   font-weight: 500;
-  margin-bottom: 50px;
+  margin-bottom: 90px;
   text-align: left;
   letter-spacing: -0.02em;
   line-height: 1.2;
@@ -6673,7 +6672,7 @@ body.error404 .site-footer .footer-logo {
   min-width: 0;
 }
 .post .post-content .post-thumbnail {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 .post .post-content .post-thumbnail img {
   width: 100%;
@@ -6818,14 +6817,14 @@ body.error404 .site-footer .footer-logo {
   font-weight: 600;
   font-family: "Mulish", sans-serif;
   font-size: 1.5rem;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   color: var(--text-color);
 }
 .post .post-content .comments-section .comment-list .comment .comment-content {
   font-family: "Mulish", sans-serif;
   font-size: 1rem;
   line-height: 1.7;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   color: var(--text-color);
   opacity: 0.8;
   word-wrap: break-word;
@@ -6840,7 +6839,7 @@ body.error404 .site-footer .footer-logo {
   font-family: "Mulish", sans-serif;
   font-size: 1rem;
   text-decoration: none;
-  font-weight: 800;
+  font-weight: 900;
   transition: opacity 0.2s;
 }
 .post .post-content .comments-section .comment-list .comment .reply-button svg {
