@@ -14,6 +14,12 @@ $category_link = !empty($categories) ? get_category_link($categories[0]->term_id
 
 // get post tags
 $tags = get_the_tags();
+// Sort tags by term_id to maintain creation order
+if ($tags) {
+    usort($tags, function($a, $b) {
+        return $a->term_id - $b->term_id;
+    });
+}
 
 // get custom fields
 $subtitle = esgi_get_post_subtitle();
