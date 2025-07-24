@@ -99,7 +99,7 @@ $reading_time = esgi_get_post_reading_time();
                 <h2>Tags</h2>
                 <div class="tag-list">
                     <?php
-                    $tags_list = get_tags(array('number' => 10));
+                    $tags_list = get_tags(array('number' => 10, 'orderby' => 'term_id', 'order' => 'ASC'));
                     if ($tags_list) {
                         foreach($tags_list as $tag) {
                             echo '<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>';
@@ -274,7 +274,7 @@ $reading_time = esgi_get_post_reading_time();
                     <h2>Tags</h2>
                     <div class="tag-list">
                         <?php
-                        $tags_list = get_tags(array('number' => 10));
+                        $tags_list = get_tags(array('number' => 10, 'orderby' => 'term_id', 'order' => 'ASC'));
                         if ($tags_list) {
                             foreach($tags_list as $tag) {
                                 echo '<a href="' . get_tag_link($tag->term_id) . '">' . $tag->name . '</a>';

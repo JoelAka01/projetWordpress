@@ -83,7 +83,7 @@ $blog_posts = new WP_Query(array(
                 <h2>Tags</h2>
                 <div class="tag-list">
                     <?php
-                    $tags_list = get_tags(array('number' => 10));
+                    $tags_list = get_tags(array('number' => 10, 'orderby' => 'term_id', 'order' => 'ASC'));
                     if ($tags_list) {
                         foreach($tags_list as $tag) {
                             echo '<a href="' . get_tag_link($tag->term_id) . '">' . esc_html($tag->name) . '</a>';
@@ -290,7 +290,7 @@ if ($total_pages > 1) {
                 <h2>Tags</h2>
                 <div class="tag-list">
                     <?php
-                    $tags_list = get_tags(array('number' => 10));
+                    $tags_list = get_tags(array('number' => 10, 'orderby' => 'term_id', 'order' => 'ASC'));
                     if ($tags_list) {
                         foreach($tags_list as $tag) {
                             echo '<a href="' . get_tag_link($tag->term_id) . '">' . esc_html($tag->name) . '</a>';
