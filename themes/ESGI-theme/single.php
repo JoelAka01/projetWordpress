@@ -135,7 +135,7 @@ $reading_time = esgi_get_post_reading_time();
                     <a href="<?php echo $category_link; ?>"><?php echo $category_name; ?></a>
                 </div>
                 <?php endif; ?>                <div class="post-date">
-                    <?php echo ucfirst(wp_date('F j, Y', strtotime($post->post_date))); ?>
+                    <?php echo ucfirst(wp_date('j M, Y', strtotime($post->post_date))); ?>
                 </div>
                 <?php if ($reading_time) : ?>
                 <div class="reading-time">
@@ -249,7 +249,7 @@ $reading_time = esgi_get_post_reading_time();
                         <img src="<?php echo $main_image_url; ?>" alt="<?php echo $recent['post_title']; ?>">
                         <div class="post-info">
                             <h3><a href="<?php echo get_permalink($recent['ID']); ?>"><?php echo $recent['post_title']; ?></a></h3>
-                            <div class="post-date"><?php echo ucfirst(wp_date('F j, Y', strtotime($recent['post_date']))); ?></div>
+                            <div class="post-date"><?php echo ucfirst(wp_date('j M, Y', strtotime($recent['post_date']))); ?></div>
                         </div>
                     </div>
                     <?php } ?>
@@ -309,3 +309,5 @@ $reading_time = esgi_get_post_reading_time();
 
 <?php
 get_footer();
+
+

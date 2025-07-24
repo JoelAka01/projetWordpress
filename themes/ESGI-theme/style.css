@@ -5542,7 +5542,7 @@ body.error404 .site-footer .footer-logo {
 .post .post-sidebar .recent-posts .post-item .post-info .post-date,
 .blog-page .post-sidebar .recent-posts .post-item .post-info .post-date {
   font-size: 0.85rem;
-  color: var(--muted-text);
+  color: #a3a3a3;
   line-height: 1.2;
   height: 20px;
   margin: 0;

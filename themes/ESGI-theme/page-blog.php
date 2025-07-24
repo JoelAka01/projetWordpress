@@ -52,7 +52,7 @@ $blog_posts = new WP_Query(array(
                     <img src="<?php echo esc_url($main_image_url); ?>" alt="<?php echo esc_attr($recent['post_title']); ?>">
                     <div class="post-info">
                         <h3><a href="<?php echo get_permalink($recent_id); ?>"><?php echo esc_html($recent['post_title']); ?></a></h3>
-                        <div class="post-date"><?php echo get_the_date('F j, Y', $recent_id); ?></div>
+                        <div class="post-date"><?php echo get_the_date('j M, Y', $recent_id); ?></div>
                     </div>
                 </div>
                 <?php } ?>
@@ -259,7 +259,7 @@ if ($total_pages > 1) {
                     <img src="<?php echo esc_url($main_image_url); ?>" alt="<?php echo esc_attr($recent['post_title']); ?>">
                     <div class="post-info">
                         <h3><a href="<?php echo get_permalink($recent_id); ?>"><?php echo esc_html($recent['post_title']); ?></a></h3>
-                        <div class="post-date"><?php echo get_the_date('F j, Y', $recent_id); ?></div>
+                        <div class="post-date"><?php echo get_the_date('j M, Y', $recent_id); ?></div>
                     </div>
                 </div>
                 <?php } ?>
@@ -307,3 +307,4 @@ if ($total_pages > 1) {
 wp_reset_postdata();
 get_footer();
 ?>
+
