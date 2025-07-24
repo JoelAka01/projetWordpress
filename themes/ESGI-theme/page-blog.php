@@ -52,7 +52,7 @@ $blog_posts = new WP_Query(array(
                     <img src="<?php echo esc_url($main_image_url); ?>" alt="<?php echo esc_attr($recent['post_title']); ?>">
                     <div class="post-info">
                         <h3><a href="<?php echo get_permalink($recent_id); ?>"><?php echo esc_html($recent['post_title']); ?></a></h3>
-                        <div class="post-date"><?php echo get_the_date('F j, Y', $recent_id); ?></div>
+                        <div class="post-date"><?php echo get_the_date('j M, Y', $recent_id); ?></div>
                     </div>
                 </div>
                 <?php } ?>
@@ -83,7 +83,7 @@ $blog_posts = new WP_Query(array(
                 <h2>Tags</h2>
                 <div class="tag-list">
                     <?php
-                    $tags_list = get_tags(array('number' => 10));
+                    $tags_list = get_tags(array('number' => 10, 'orderby' => 'term_id', 'order' => 'ASC'));
                     if ($tags_list) {
                         foreach($tags_list as $tag) {
                             echo '<a href="' . get_tag_link($tag->term_id) . '">' . esc_html($tag->name) . '</a>';
@@ -133,7 +133,7 @@ $blog_posts = new WP_Query(array(
                             <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>                            <div class="post-excerpt">
                                 <?php 
                                 $excerpt = get_the_excerpt();
-                                echo esgi_truncate_text($excerpt, 120, '...');
+                                echo esgi_truncate_text($excerpt, 160, '...');
                                 ?>
                             </div>
                         </div>
@@ -259,7 +259,7 @@ if ($total_pages > 1) {
                     <img src="<?php echo esc_url($main_image_url); ?>" alt="<?php echo esc_attr($recent['post_title']); ?>">
                     <div class="post-info">
                         <h3><a href="<?php echo get_permalink($recent_id); ?>"><?php echo esc_html($recent['post_title']); ?></a></h3>
-                        <div class="post-date"><?php echo get_the_date('F j, Y', $recent_id); ?></div>
+                        <div class="post-date"><?php echo get_the_date('j M, Y', $recent_id); ?></div>
                     </div>
                 </div>
                 <?php } ?>
@@ -290,7 +290,7 @@ if ($total_pages > 1) {
                 <h2>Tags</h2>
                 <div class="tag-list">
                     <?php
-                    $tags_list = get_tags(array('number' => 10));
+                    $tags_list = get_tags(array('number' => 10, 'orderby' => 'term_id', 'order' => 'ASC'));
                     if ($tags_list) {
                         foreach($tags_list as $tag) {
                             echo '<a href="' . get_tag_link($tag->term_id) . '">' . esc_html($tag->name) . '</a>';
@@ -307,3 +307,4 @@ if ($total_pages > 1) {
 wp_reset_postdata();
 get_footer();
 ?>
+

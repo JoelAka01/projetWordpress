@@ -186,9 +186,21 @@ function esgi_list_categories($args = array())
     );
     
     $args = wp_parse_args($args, $defaults);
+    
+    // get "Uncategorized" category id and  exclude it
+    $uncategorized_term = get_term_by('name', 'Uncategorized', 'category');
+    if (!$uncategorized_term) {
+        $uncategorized_term = get_term_by('name', 'Non classé', 'category'); //  version french
+    }
+    
+    // add exclude parameter to exclude uncategorized
+    if ($uncategorized_term) {
+        $args['exclude'] = $uncategorized_term->term_id;
+    }
+    
     $categories_html = wp_list_categories($args);
     
-    // Replace fr category names with eng ones
+    // replace fr category names with eng ones
     $categories_html = str_replace('Non classé', 'Uncategorized', $categories_html);
     
     echo $categories_html;
